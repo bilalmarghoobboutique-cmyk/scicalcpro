@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  
+  <!-- SEO Meta Tags -->
+  <title>SciCalcPro — Fast Scientific Calculator | Bilal Marghoob Creations</title>
+  <meta name="description" content="The fastest free online scientific calculator. 100% accurate results with sin, cos, tan, log, factorial & more. By Bilal Marghoob Creations." />
+  <meta name="author" content="Bilal Marghoob" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="SciCalcPro — Fast Scientific Calculator" />
+  <meta property="og:description" content="The fastest free online scientific calculator." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#0a0e27" />
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="w-full py-3 px-4 md:px-6 flex items-center justify-between border-b border-white/10 backdrop-blur-sm bg-black/10 sticky top-0 z-50">
+      <div class="flex items-center gap-2 md:gap-3">
+        <span class="text-2xl md:text-3xl">🧮</span>
+        <div>
+          <h1 class="text-lg md:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent leading-tight">
+            SciCalcPro
+          </h1>
+          <p class="text-[10px] md:text-xs text-white/50 -mt-0.5">Scientific Calculator Pro</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="history-toggle" class="header-btn" title="History">
+          📜 <span class="hidden md:inline">History</span>
+        </button>
+        <button id="theme-toggle" class="header-btn" title="Theme">
+          🌙 <span class="hidden md:inline">Dark</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex items-start md:items-center justify-center p-3 md:p-6">
+      
+      <!-- Layout Wrapper: Calculator + History Panel -->
+      <div class="w-full max-w-5xl flex flex-col md:flex-row gap-4 md:gap-6 items-start justify-center">
+        
+        <!-- Calculator Container -->
+        <div class="calculator-container w-full max-w-md mx-auto md:mx-0 flex-shrink-0">
+          
+          <!-- Glass Calculator Body -->
+          <div class="glass-calculator rounded-3xl p-4 md:p-5 relative overflow-hidden">
+            
+            <!-- Brand Watermark (behind buttons) -->
+            <div class="watermark" aria-hidden="true">
+              <div class="watermark-text">
+                BILAL MARGHOOB<br/>
+                CREATIONS
+              </div>
+            </div>
+
+            <!-- Display Screen -->
+            <div class="display-screen mb-4 rounded-2xl p-4 relative z-10">
+              <!-- Top Bar: Memory + DEG/RAD -->
+              <div class="flex items-center justify-between text-xs text-white/50 mb-2 h-4">
+                <span id="memory-indicator" class="memory-badge">M</span>
+                <span id="angle-mode" class="angle-badge">DEG</span>
+              </div>
+              
+              <!-- Previous Expression -->
+              <div id="previous-expression" class="text-sm text-white/40 h-5 text-right overflow-hidden font-mono">
+                &nbsp;
+              </div>
+              
+              <!-- Current Input with Result Animation -->
+              <div id="current-input" class="text-3xl md:text-4xl font-mono font-bold text-right text-white break-all transition-all duration-150">
+                0
+              </div>
+            </div>
+
+            <!-- Buttons Grid -->
+            <div class="buttons-grid relative z-10">
+              
+              <!-- Row 1: Scientific Functions -->
+              <button class="btn btn-function" data-action="sin" data-tooltip="Sine">sin</button>
+              <button class="btn btn-function" data-action="cos" data-tooltip="Cosine">cos</button>
+              <button class="btn btn-function" data-action="tan" data-tooltip="Tangent">tan</button>
+              <button class="btn btn-function" data-action="log" data-tooltip="Log base 10">log</button>
+              <button class="btn btn-function" data-action="ln" data-tooltip="Natural log">ln</button>
+
+              <!-- Row 2: More Scientific -->
+              <button class="btn btn-function" data-action="√" data-tooltip="Square root">√</button>
+              <button class="btn btn-function" data-action="x²" data-tooltip="Square">x²</button>
+              <button class="btn btn-function" data-action="x^y" data-tooltip="Power">x^y</button>
+              <button class="btn btn-function" data-action="π" data-tooltip="Pi (3.14159...)">π</button>
+              <button class="btn btn-function" data-action="e" data-tooltip="Euler's number">e</button>
+
+              <!-- Row 3: Memory + Parentheses -->
+              <button class="btn btn-memory" data-action="MC" data-tooltip="Memory clear">MC</button>
+              <button class="btn btn-memory" data-action="MR" data-tooltip="Memory recall">MR</button>
+              <button class="btn btn-memory" data-action="M+" data-tooltip="Memory add">M+</button>
+              <button class="btn btn-function" data-action="(" data-tooltip="Open bracket">(</button>
+              <button class="btn btn-function" data-action=")" data-tooltip="Close bracket">)</button>
+
+              <!-- Row 4: Clear + Operations -->
+              <button class="btn btn-clear" data-action="AC" data-tooltip="All clear">AC</button>
+              <button class="btn btn-clear" data-action="C" data-tooltip="Clear">C</button>
+              <button class="btn btn-function" data-action="⌫" data-tooltip="Backspace">⌫</button>
+              <button class="btn btn-operator" data-action="÷" data-tooltip="Divide">÷</button>
+              <button class="btn btn-function" data-action="%" data-tooltip="Percentage">%</button>
+
+              <!-- Row 5: 7 8 9 × -->
+              <button class="btn btn-number" data-action="7">7</button>
+              <button class="btn btn-number" data-action="8">8</button>
+              <button class="btn btn-number" data-action="9">9</button>
+              <button class="btn btn-operator" data-action="×" data-tooltip="Multiply">×</button>
+              <button class="btn btn-function" data-action="!" data-tooltip="Factorial">x!</button>
+
+              <!-- Row 6: 4 5 6 - -->
+              <button class="btn btn-number" data-action="4">4</button>
+              <button class="btn btn-number" data-action="5">5</button>
+              <button class="btn btn-number" data-action="6">6</button>
+              <button class="btn btn-operator" data-action="-" data-tooltip="Subtract">−</button>
+              <button class="btn btn-function" data-action="1/x" data-tooltip="Reciprocal">1/x</button>
+
+              <!-- Row 7: 1 2 3 + -->
+              <button class="btn btn-number" data-action="1">1</button>
+              <button class="btn btn-number" data-action="2">2</button>
+              <button class="btn btn-number" data-action="3">3</button>
+              <button class="btn btn-operator" data-action="+" data-tooltip="Add">+</button>
+              <button class="btn btn-function" data-action="+/-" data-tooltip="Toggle sign">±</button>
+
+              <!-- Row 8: 0 . = (span 3) -->
+              <button class="btn btn-number" data-action="0">0</button>
+              <button class="btn btn-number" data-action=".">.</button>
+              <button class="btn btn-equals" data-action="=" data-tooltip="Equals">=</button>
+
+            </div>
+
+            <!-- Brand Stamp (corner) -->
+            <div class="brand-stamp-corner" aria-hidden="true">
+              <div class="stamp-text">BILAL MARGHOOB</div>
+              <div class="stamp-subtext">C R E A T I O N S</div>
+            </div>
+
+          </div>
+
+          <!-- Angle Mode Toggle (Below Calculator) -->
+          <div class="flex items-center justify-center gap-2 mt-4">
+            <button id="mode-toggle" class="control-btn" title="Angle mode">
+              <span id="angle-label">DEG</span>
+            </button>
+            <span class="text-xs text-white/40">Angle Mode</span>
+          </div>
+
+        </div>
+
+        <!-- History Panel -->
+        <aside id="history-panel" class="history-panel w-full max-w-md md:w-80 md:max-w-none">
+          <div class="history-header">
+            <h2 class="text-lg font-bold text-white flex items-center gap-2">
+              📜 History
+            </h2>
+            <button id="clear-history" class="clear-history-btn" title="Clear all history">
+              🗑️ Clear
+            </button>
+          </div>
+          <div id="history-list" class="history-list">
+            <div class="history-empty">
+              <div class="text-4xl mb-2">📭</div>
+              <p>No calculations yet</p>
+              <p class="text-xs opacity-60 mt-1">Your history will appear here</p>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full py-3 px-6 text-center text-xs text-white/40 border-t border-white/10">
+      © 2026 Bilal Marghoob Creations. All rights reserved.
+    </footer>
+  </div>
+  
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
