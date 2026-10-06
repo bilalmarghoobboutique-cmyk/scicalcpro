@@ -4,6 +4,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 /* ============================================
    COLOR SYSTEM — Midnight Professional
    ============================================ */
@@ -143,15 +144,9 @@ body.light-mode {
 }
 
 @media (min-width: 768px) {
-  .header-logo-icon {
-    font-size: 2.2rem;
-  }
-  .header-logo-title {
-    font-size: 1.6rem;
-  }
-  .header-logo-subtitle {
-    font-size: 0.75rem;
-  }
+  .header-logo-icon { font-size: 2.2rem; }
+  .header-logo-title { font-size: 1.6rem; }
+  .header-logo-subtitle { font-size: 0.75rem; }
 }
 
 .header-actions {
@@ -266,15 +261,9 @@ body.light-mode {
 }
 
 @media (max-width: 640px) {
-  .category-btn {
-    padding: 6px 10px;
-  }
-  .category-icon {
-    font-size: 0.9rem;
-  }
-  .category-label {
-    font-size: 0.7rem;
-  }
+  .category-btn { padding: 6px 10px; }
+  .category-icon { font-size: 0.9rem; }
+  .category-label { font-size: 0.7rem; }
 }
 
 /* ============================================
@@ -343,6 +332,52 @@ body.light-mode {
 .ad-mobile {
   min-height: 50px;
   max-width: 320px;
+}
+
+/* ============================================
+   ADSTERRA AD CONTAINERS
+   ============================================ */
+.adsterra-container {
+  width: 100%;
+  max-width: 728px;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(30, 41, 59, 0.2);
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.adsterra-container:hover {
+  border-color: rgba(6, 182, 212, 0.3);
+  background: rgba(30, 41, 59, 0.3);
+}
+
+.adsterra-container iframe {
+  max-width: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Sidebar Adsterra Container */
+.adsterra-sidebar {
+  width: 160px;
+  height: 300px;
+  max-width: 160px;
+  min-height: 300px;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+@media (max-width: 1024px) {
+  .ad-sidebar {
+    display: none !important;
+  }
 }
 
 /* ============================================
@@ -1400,12 +1435,8 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
    RESPONSIVE (Mobile)
    ============================================ */
 @media (max-width: 768px) {
-  .history-panel {
-    max-height: 400px;
-  }
-  .history-list {
-    max-height: 300px;
-  }
+  .history-panel { max-height: 400px; }
+  .history-list { max-height: 300px; }
 }
 
 @media (max-width: 480px) {
@@ -1458,17 +1489,6 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
 }
 
 /* ============================================
-   PRINT STYLES (SEO Friendly)
-   ============================================ */
-@media print {
-  .main-header,
-  .category-nav,
-  .main-footer,
-  .signature-space,
-  .ad-container {
-    display: none !important;
-  }
-}/* ============================================
    GOLD & SILVER CALCULATOR
    ============================================ */
 .gold-section {
@@ -1753,25 +1773,15 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
 
 /* Mobile */
 @media (max-width: 480px) {
-  .gold-total {
-    font-size: 1.4rem;
-  }
-  .gold-detail-value {
-    font-size: 0.75rem;
-  }
-  .gold-details-grid {
-    gap: 8px;
-  }
-  .gold-detail-card {
-    padding: 10px 6px;
-  }
-  .metal-btn {
-    padding: 10px 6px;
-  }
-  .metal-name {
-    font-size: 0.75rem;
-  }
-}/* ============================================
+  .gold-total { font-size: 1.4rem; }
+  .gold-detail-value { font-size: 0.75rem; }
+  .gold-details-grid { gap: 8px; }
+  .gold-detail-card { padding: 10px 6px; }
+  .metal-btn { padding: 10px 6px; }
+  .metal-name { font-size: 0.75rem; }
+}
+
+/* ============================================
    PRINT BUTTON (Header)
    ============================================ */
 .print-btn {
@@ -2108,7 +2118,7 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
 }
 
 /* ============================================
-   PRINT STYLES (When User Clicks Print)
+   PRINT STYLES (Combined)
    ============================================ */
 @media print {
   /* Hide everything */
@@ -2147,6 +2157,16 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
     display: none !important;
   }
 
+  /* Hide all other sections during print */
+  .main-header,
+  .category-nav,
+  .main-footer,
+  .signature-space,
+  .ad-container,
+  .adsterra-container {
+    display: none !important;
+  }
+
   /* Page setup */
   @page {
     margin: 0.5in;
@@ -2154,43 +2174,19 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
   }
 }
 
-/* Mobile */
+/* Mobile Print Modal */
 @media (max-width: 480px) {
-  .print-modal-content {
-    max-height: 95vh;
-  }
-
-  .receipt {
-    padding: 20px 16px;
-  }
-
-  .receipt-logo-title {
-    font-size: 1.1rem;
-  }
-
-  .receipt-title {
-    font-size: 0.95rem;
-  }
-
-  .receipt-table {
-    font-size: 0.75rem;
-  }
-
+  .print-modal-content { max-height: 95vh; }
+  .receipt { padding: 20px 16px; }
+  .receipt-logo-title { font-size: 1.1rem; }
+  .receipt-title { font-size: 0.95rem; }
+  .receipt-table { font-size: 0.75rem; }
   .receipt-footer {
     flex-direction: column;
     text-align: center;
   }
-
-  .receipt-footer-left {
-    text-align: center;
-  }
-
-  .print-modal-footer {
-    flex-direction: column;
-  }
-
+  .receipt-footer-left { text-align: center; }
+  .print-modal-footer { flex-direction: column; }
   .print-btn-primary,
-  .print-btn-secondary {
-    width: 100%;
-  }
+  .print-btn-secondary { width: 100%; }
 }
