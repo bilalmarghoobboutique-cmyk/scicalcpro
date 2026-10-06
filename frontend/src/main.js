@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const themeToggle = document.getElementById('theme-toggle')
   const historyToggle = document.getElementById('history-toggle')
   const clearHistoryBtn = document.getElementById('clear-history')
+  const categoryButtons = document.querySelectorAll('.category-btn')
 
   loadHistory()
   renderHistory()
@@ -75,13 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
       `)
       .join('')
 
-    // Add click listeners to history items
     document.querySelectorAll('.history-item').forEach(item => {
       item.addEventListener('click', () => {
         const index = parseInt(item.dataset.index)
         const historyItem = state.history[index]
         if (historyItem) {
-          // Remove commas from result
           currentInputValue = historyItem.result.replace(/,/g, '')
           lastWasEquals = true
           updateDisplay()
@@ -279,6 +278,28 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   // ============================================
+  // CATEGORY BUTTONS
+  // ============================================
+  categoryButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const category = btn.dataset.category
+      console.log('Category clicked:', category)
+
+      // Remove active from all
+      categoryButtons.forEach(b => b.classList.remove('active'))
+      // Add active to clicked
+      btn.classList.add('active')
+
+      // Future: navigate to category page
+      // For now, just log
+      if (category !== 'scientific') {
+        // Placeholder for future pages
+        alert(`${category.charAt(0).toUpperCase() + category.slice(1)} Calculator coming soon!`)
+      }
+    })
+  })
+
+  // ============================================
   // HISTORY PANEL TOGGLE
   // ============================================
   if (historyToggle) {
@@ -339,7 +360,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // KEYBOARD SUPPORT
   // ============================================
   document.addEventListener('keydown', (e) => {
-    // Don't trigger if user is typing in an input field
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return
 
     const key = e.key

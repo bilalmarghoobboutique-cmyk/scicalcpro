@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  
+  <!-- SEO Meta Tags -->
+  <title>Age Calculator — Calculate Your Exact Age | SciCalcPro</title>
+  <meta name="description" content="Free online age calculator. Calculate your exact age in years, months, days, hours & minutes. By Bilal Marghoob Creations." />
+  <meta name="author" content="Bilal Marghoob" />
+  <meta name="keywords" content="age calculator, calculate age, date of birth calculator, birthday calculator" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Age Calculator — SciCalcPro" />
+  <meta property="og:description" content="Calculate your exact age in years, months, days, hours & minutes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://scicalcpro.vercel.app/age-calculator.html" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Age Calculator — SciCalcPro" />
+  <meta name="twitter:description" content="Calculate your exact age in years, months, days, hours & minutes." />
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://scicalcpro.vercel.app/age-calculator.html" />
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#0b1020" />
+  
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Age Calculator — SciCalcPro",
+    "url": "https://scicalcpro.vercel.app/age-calculator.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Organization", "name": "Bilal Marghoob Creations" }
+  }
+  </script>
+</head>
+<body>
+  <div id="app">
+    
+    <!-- ============================================
+         HEADER
+         ============================================ -->
+    <header class="main-header">
+      <div class="header-content">
+        <a href="/" class="header-logo">
+          <span class="header-logo-icon">🧮</span>
+          <div>
+            <h1 class="header-logo-title">SciCalcPro</h1>
+            <p class="header-logo-subtitle">Scientific Calculator Pro</p>
+          </div>
+        </a>
+        <div class="header-actions">
+          <button id="theme-toggle" class="header-btn" title="Theme">
+            🌙 <span class="hidden md:inline">Dark</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================================
+         CATEGORY NAVIGATION
+         ============================================ -->
+    <nav class="category-nav">
+      <div class="category-nav-content">
+        <a href="/" class="category-btn">
+          <span class="category-icon">🧮</span>
+          <span class="category-label">Scientific Calculator</span>
+        </a>
+        <a href="/age-calculator.html" class="category-btn active">
+          <span class="category-icon">🎂</span>
+          <span class="category-label">Age Calculator</span>
+        </a>
+        <a href="/profit-calculator.html" class="category-btn">
+          <span class="category-icon">💰</span>
+          <span class="category-label">Profit Calculator</span>
+        </a>
+        <a href="/area-calculator.html" class="category-btn">
+          <span class="category-icon">📐</span>
+          <span class="category-label">Area Calculator</span>
+        </a>
+        <a href="/time-calculator.html" class="category-btn">
+          <span class="category-icon">⏰</span>
+          <span class="category-label">Time Calculator</span>
+        </a>
+        <a href="/engineering-calculator.html" class="category-btn">
+          <span class="category-icon">⚙️</span>
+          <span class="category-label">Engineering Calculator</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- ============================================
+         GOOGLE ADS — TOP BANNER
+         ============================================ -->
+    <div class="ad-container">
+      <div class="ad-placeholder">
+        <div class="ad-placeholder-label">📢 Advertisement</div>
+        <div class="ad-placeholder-size">728 × 90 — Top Banner</div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         MAIN CONTENT
+         ============================================ -->
+    <main class="flex-1 flex items-start md:items-center justify-center p-3 md:p-6">
+      <div class="w-full max-w-2xl mx-auto">
+        
+        <!-- Page Title -->
+        <div class="text-center mb-6">
+          <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
+            🎂 Age Calculator
+          </h2>
+          <p class="text-white/60 text-sm">Calculate your exact age in years, months, days & more</p>
+        </div>
+
+        <!-- Calculator Card -->
+        <div class="glass-calculator rounded-3xl p-6 md:p-8 relative overflow-hidden">
+          
+          <div class="watermark" aria-hidden="true">
+            <div class="watermark-text">Age Calculator</div>
+          </div>
+
+          <div class="relative z-10">
+            
+            <div class="mb-4">
+              <label class="block text-sm font-semibold text-white/80 mb-2">
+                📅 Date of Birth
+              </label>
+              <input type="date" id="dob-input" class="age-input" />
+            </div>
+
+            <div class="mb-6">
+              <label class="block text-sm font-semibold text-white/80 mb-2">
+                📆 Calculate Age As Of (optional)
+              </label>
+              <input type="date" id="asof-input" class="age-input" />
+              <p class="text-xs text-white/40 mt-1">Leave empty to use today's date</p>
+            </div>
+
+            <button id="calculate-age" class="age-calculate-btn">
+              ✨ Calculate Age
+            </button>
+
+            <div id="age-result" class="age-result hidden">
+              
+              <div class="age-main-result">
+                <div class="text-xs text-white/50 mb-1 uppercase tracking-wider">Your Age</div>
+                <div id="age-display" class="age-display">0 years, 0 months, 0 days</div>
+              </div>
+
+              <div class="age-details-grid">
+                <div class="age-detail-card">
+                  <div class="age-detail-icon">📊</div>
+                  <div class="age-detail-label">Total Months</div>
+                  <div id="total-months" class="age-detail-value">0</div>
+                </div>
+                <div class="age-detail-card">
+                  <div class="age-detail-icon">📅</div>
+                  <div class="age-detail-label">Total Days</div>
+                  <div id="total-days" class="age-detail-value">0</div>
+                </div>
+                <div class="age-detail-card">
+                  <div class="age-detail-icon">⏰</div>
+                  <div class="age-detail-label">Total Hours</div>
+                  <div id="total-hours" class="age-detail-value">0</div>
+                </div>
+                <div class="age-detail-card">
+                  <div class="age-detail-icon">⏱️</div>
+                  <div class="age-detail-label">Total Minutes</div>
+                  <div id="total-minutes" class="age-detail-value">0</div>
+                </div>
+                <div class="age-detail-card">
+                  <div class="age-detail-icon">🎉</div>
+                  <div class="age-detail-label">Next Birthday</div>
+                  <div id="next-birthday" class="age-detail-value">0 days</div>
+                </div>
+                <div class="age-detail-card">
+                  <div class="age-detail-icon">📆</div>
+                  <div class="age-detail-label">Day Born</div>
+                  <div id="day-born" class="age-detail-value">—</div>
+                </div>
+              </div>
+
+              <button id="reset-age" class="age-reset-btn">
+                🔄 Calculate Again
+              </button>
+
+            </div>
+          </div>
+
+          <div class="brand-stamp-corner" aria-hidden="true">
+            <div class="stamp-text">BILAL MARGHOOB</div>
+            <div class="stamp-subtext">C R E A T I O N S</div>
+          </div>
+        </div>
+
+        <!-- In-Content Ad -->
+        <div class="ad-container">
+          <div class="ad-placeholder">
+            <div class="ad-placeholder-label">📢 Advertisement</div>
+            <div class="ad-placeholder-size">Responsive — In-Content</div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- ============================================
+         SIGNATURE SPACE
+         ============================================ -->
+    <div class="signature-space">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="brand-signature mb-3">
+          <div class="signature-line"></div>
+          <div class="signature-text">
+            <span class="signature-crafted">✨ Crafted with precision by</span>
+            <span class="signature-brand">BILAL MARGHOOB CREATIONS</span>
+          </div>
+          <div class="signature-line"></div>
+        </div>
+        <div class="contact-info flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
+          <a href="mailto:bilalmarghoobboutique@gmail.com" class="contact-item">
+            <span class="contact-icon">📧</span>
+            <span class="contact-text">bilalmarghoobboutique@gmail.com</span>
+          </a>
+          <span class="hidden md:inline text-white/20">|</span>
+          <a href="https://wa.me/923266501314" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-icon">💬</span>
+            <span class="contact-text">+92 326 650 1314</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         GOOGLE ADS — BOTTOM BANNER
+         ============================================ -->
+    <div class="ad-container">
+      <div class="ad-placeholder">
+        <div class="ad-placeholder-label">📢 Advertisement</div>
+        <div class="ad-placeholder-size">728 × 90 — Bottom Banner</div>
+      </div>
+    </div>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="/" class="footer-link">Home</a>
+          <a href="/age-calculator.html" class="footer-link">Age Calculator</a>
+          <a href="/profit-calculator.html" class="footer-link">Profit Calculator</a>
+          <a href="/area-calculator.html" class="footer-link">Area Calculator</a>
+          <a href="/time-calculator.html" class="footer-link">Time Calculator</a>
+          <a href="/engineering-calculator.html" class="footer-link">Engineering Calculator</a>
+        </div>
+        <div class="footer-copyright">
+          © 2026 <strong>Bilal Marghoob Creations</strong>. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+  <script type="module" src="/src/age-calculator.js"></script>
+</body>
+</html>
