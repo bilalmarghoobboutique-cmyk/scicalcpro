@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  
+  <!-- SEO Meta Tags -->
+  <title>Gold & Silver Calculator — Live Price Calculator | SciCalcPro</title>
+  <meta name="description" content="Free online gold & silver calculator. Calculate gold & silver prices in any country, any currency, any weight unit. By Bilal Marghoob Creations." />
+  <meta name="author" content="Bilal Marghoob" />
+  <meta name="keywords" content="gold calculator, silver calculator, gold price calculator, gold rate today, silver rate, gold jewelry calculator" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gold & Silver Calculator — SciCalcPro" />
+  <meta property="og:description" content="Calculate gold & silver prices in any country, any currency, any weight unit." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://scicalcpro.vercel.app/gold-silver-calculator.html" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gold & Silver Calculator — SciCalcPro" />
+  <meta name="twitter:description" content="Calculate gold & silver prices in any country, any currency, any weight unit." />
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://scicalcpro.vercel.app/gold-silver-calculator.html" />
+  
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#0b1020" />
+  
+  <!-- QR Code Library -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Gold & Silver Calculator — SciCalcPro",
+    "url": "https://scicalcpro.vercel.app/gold-silver-calculator.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Organization", "name": "Bilal Marghoob Creations" }
+  }
+  </script>
+</head>
+<body>
+  <div id="app">
+    
+    <!-- HEADER -->
+    <header class="main-header">
+      <div class="header-content">
+        <a href="/" class="header-logo">
+          <span class="header-logo-icon">🧮</span>
+          <div>
+            <h1 class="header-logo-title">SciCalcPro</h1>
+            <p class="header-logo-subtitle">Scientific Calculator Pro</p>
+          </div>
+        </a>
+        <div class="header-actions">
+          <button id="print-btn" class="header-btn print-btn" title="Print Result">
+            🖨️ <span class="hidden md:inline">Print</span>
+          </button>
+          <button id="theme-toggle" class="header-btn" title="Theme">
+            🌙 <span class="hidden md:inline">Dark</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- CATEGORY NAVIGATION -->
+    <nav class="category-nav">
+      <div class="category-nav-content">
+        <a href="/" class="category-btn">
+          <span class="category-icon">🧮</span>
+          <span class="category-label">Scientific Calculator</span>
+        </a>
+        <a href="/age-calculator.html" class="category-btn">
+          <span class="category-icon">🎂</span>
+          <span class="category-label">Age Calculator</span>
+        </a>
+        <a href="/profit-calculator.html" class="category-btn">
+          <span class="category-icon">💰</span>
+          <span class="category-label">Profit Calculator</span>
+        </a>
+        <a href="/area-calculator.html" class="category-btn">
+          <span class="category-icon">📐</span>
+          <span class="category-label">Area Calculator</span>
+        </a>
+        <a href="/time-calculator.html" class="category-btn">
+          <span class="category-icon">⏰</span>
+          <span class="category-label">Time Calculator</span>
+        </a>
+        <a href="/engineering-calculator.html" class="category-btn">
+          <span class="category-icon">⚙️</span>
+          <span class="category-label">Engineering Calculator</span>
+        </a>
+        <a href="/gold-silver-calculator.html" class="category-btn active">
+          <span class="category-icon">🥇</span>
+          <span class="category-label">Gold & Silver Calculator</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- TOP AD -->
+    <div class="ad-container">
+      <div class="ad-placeholder">
+        <div class="ad-placeholder-label">📢 Advertisement</div>
+        <div class="ad-placeholder-size">728 × 90 — Top Banner</div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 flex items-start md:items-center justify-center p-3 md:p-6">
+      <div class="w-full max-w-3xl mx-auto">
+        
+        <div class="text-center mb-6">
+          <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent mb-2">
+            🥇 Gold & Silver Calculator
+          </h2>
+          <p class="text-white/60 text-sm">Calculate gold & silver prices in any country, any currency, any unit</p>
+        </div>
+
+        <div class="glass-calculator rounded-3xl p-6 md:p-8 relative overflow-hidden">
+          
+          <div class="watermark" aria-hidden="true">
+            <div class="watermark-text">Gold & Silver</div>
+          </div>
+
+          <div class="relative z-10">
+            
+            <!-- Step 1: Country & Currency -->
+            <div class="gold-section">
+              <h3 class="gold-section-title">🌍 Step 1: Select Country & Currency</h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-semibold text-white/80 mb-2">
+                    🌍 Country
+                  </label>
+                  <select id="country-select" class="gold-select">
+                    <option value="">-- Select Country --</option>
+                    <option value="PK|PKR|Pakistani Rupee|🇵🇰" selected>🇵🇰 Pakistan (PKR)</option>
+                    <option value="IN|INR|Indian Rupee|🇮🇳">🇮🇳 India (INR)</option>
+                    <option value="AE|AED|UAE Dirham|🇦🇪">🇦🇪 UAE (AED)</option>
+                    <option value="SA|SAR|Saudi Riyal|🇸🇦">🇸🇦 Saudi Arabia (SAR)</option>
+                    <option value="US|USD|US Dollar|🇺🇸">🇺🇸 USA (USD)</option>
+                    <option value="GB|GBP|British Pound|🇬🇧">🇬🇧 UK (GBP)</option>
+                    <option value="DE|EUR|Euro|🇩🇪">🇩🇪 Germany (EUR)</option>
+                    <option value="FR|EUR|Euro|🇫🇷">🇫🇷 France (EUR)</option>
+                    <option value="IT|EUR|Euro|🇮🇹">🇮🇹 Italy (EUR)</option>
+                    <option value="ES|EUR|Euro|🇪🇸">🇪🇸 Spain (EUR)</option>
+                    <option value="CA|CAD|Canadian Dollar|🇨🇦">🇨🇦 Canada (CAD)</option>
+                    <option value="AU|AUD|Australian Dollar|🇦🇺">🇦🇺 Australia (AUD)</option>
+                    <option value="BD|BDT|Bangladeshi Taka|🇧🇩">🇧🇩 Bangladesh (BDT)</option>
+                    <option value="LK|LKR|Sri Lankan Rupee|🇱🇰">🇱🇰 Sri Lanka (LKR)</option>
+                    <option value="NP|NPR|Nepalese Rupee|🇳🇵">🇳🇵 Nepal (NPR)</option>
+                    <option value="AF|AFN|Afghan Afghani|🇦🇫">🇦🇫 Afghanistan (AFN)</option>
+                    <option value="IR|IRR|Iranian Rial|🇮🇷">🇮🇷 Iran (IRR)</option>
+                    <option value="IQ|IQD|Iraqi Dinar|🇮🇶">🇮🇶 Iraq (IQD)</option>
+                    <option value="KW|KWD|Kuwaiti Dinar|🇰🇼">🇰🇼 Kuwait (KWD)</option>
+                    <option value="QA|QAR|Qatari Riyal|🇶🇦">🇶🇦 Qatar (QAR)</option>
+                    <option value="BH|BHD|Bahraini Dinar|🇧🇭">🇧🇭 Bahrain (BHD)</option>
+                    <option value="OM|OMR|Omani Rial|🇴🇲">🇴🇲 Oman (OMR)</option>
+                    <option value="JO|JOD|Jordanian Dinar|🇯🇴">🇯🇴 Jordan (JOD)</option>
+                    <option value="LB|LBP|Lebanese Pound|🇱🇧">🇱🇧 Lebanon (LBP)</option>
+                    <option value="TR|TRY|Turkish Lira|🇹🇷">🇹🇷 Turkey (TRY)</option>
+                    <option value="CN|CNY|Chinese Yuan|🇨🇳">🇨🇳 China (CNY)</option>
+                    <option value="JP|JPY|Japanese Yen|🇯🇵">🇯🇵 Japan (JPY)</option>
+                    <option value="KR|KRW|South Korean Won|🇰🇷">🇰🇷 South Korea (KRW)</option>
+                    <option value="MY|MYR|Malaysian Ringgit|🇲🇾">🇲🇾 Malaysia (MYR)</option>
+                    <option value="SG|SGD|Singapore Dollar|🇸🇬">🇸🇬 Singapore (SGD)</option>
+                    <option value="ID|IDR|Indonesian Rupiah|🇮🇩">🇮🇩 Indonesia (IDR)</option>
+                    <option value="TH|THB|Thai Baht|🇹🇭">🇹🇭 Thailand (THB)</option>
+                    <option value="PH|PHP|Philippine Peso|🇵🇭">🇵🇭 Philippines (PHP)</option>
+                    <option value="CH|CHF|Swiss Franc|🇨🇭">🇨🇭 Switzerland (CHF)</option>
+                    <option value="SE|SEK|Swedish Krona|🇸🇪">🇸🇪 Sweden (SEK)</option>
+                    <option value="NO|NOK|Norwegian Krone|🇳🇴">🇳🇴 Norway (NOK)</option>
+                    <option value="RU|RUB|Russian Ruble|🇷🇺">🇷🇺 Russia (RUB)</option>
+                    <option value="MX|MXN|Mexican Peso|🇲🇽">🇲🇽 Mexico (MXN)</option>
+                    <option value="BR|BRL|Brazilian Real|🇧🇷">🇧🇷 Brazil (BRL)</option>
+                    <option value="AR|ARS|Argentine Peso|🇦🇷">🇦🇷 Argentina (ARS)</option>
+                    <option value="EG|EGP|Egyptian Pound|🇪🇬">🇪🇬 Egypt (EGP)</option>
+                    <option value="ZA|ZAR|South African Rand|🇿🇦">🇿🇦 South Africa (ZAR)</option>
+                    <option value="NG|NGN|Nigerian Naira|🇳🇬">🇳🇬 Nigeria (NGN)</option>
+                    <option value="KE|KES|Kenyan Shilling|🇰🇪">🇰🇪 Kenya (KES)</option>
+                    <option value="NZ|NZD|New Zealand Dollar|🇳🇿">🇳🇿 New Zealand (NZD)</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-semibold text-white/80 mb-2">
+                    💱 Currency
+                  </label>
+                  <input type="text" id="currency-display" class="gold-input" readonly value="PKR — Pakistani Rupee" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Metal Type -->
+            <div class="gold-section">
+              <h3 class="gold-section-title">🥇 Step 2: Select Metal Type</h3>
+              
+              <div class="metal-selector">
+                <button class="metal-btn active" data-metal="gold24" data-purity="99.9">
+                  <span class="metal-icon">🥇</span>
+                  <span class="metal-name">Gold 24K</span>
+                  <span class="metal-purity">99.9%</span>
+                </button>
+                <button class="metal-btn" data-metal="gold22" data-purity="91.6">
+                  <span class="metal-icon">🥇</span>
+                  <span class="metal-name">Gold 22K</span>
+                  <span class="metal-purity">91.6%</span>
+                </button>
+                <button class="metal-btn" data-metal="gold21" data-purity="87.5">
+                  <span class="metal-icon">🥇</span>
+                  <span class="metal-name">Gold 21K</span>
+                  <span class="metal-purity">87.5%</span>
+                </button>
+                <button class="metal-btn" data-metal="gold18" data-purity="75.0">
+                  <span class="metal-icon">🥇</span>
+                  <span class="metal-name">Gold 18K</span>
+                  <span class="metal-purity">75.0%</span>
+                </button>
+                <button class="metal-btn" data-metal="silver999" data-purity="99.9">
+                  <span class="metal-icon">🥈</span>
+                  <span class="metal-name">Silver 999</span>
+                  <span class="metal-purity">99.9%</span>
+                </button>
+                <button class="metal-btn" data-metal="silver925" data-purity="92.5">
+                  <span class="metal-icon">🥈</span>
+                  <span class="metal-name">Silver 925</span>
+                  <span class="metal-purity">92.5%</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 3: Rate Input -->
+            <div class="gold-section">
+              <h3 class="gold-section-title">💰 Step 3: Enter Rate (Any Unit)</h3>
+              <p class="text-xs text-white/50 mb-3">💡 Enter rate in ANY ONE unit — others will auto-calculate</p>
+              
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div>
+                  <label class="block text-xs font-semibold text-white/70 mb-2">⚖️ Per Gram</label>
+                  <input type="number" id="rate-gram" class="gold-input-small" placeholder="0.00" step="0.01" />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-white/70 mb-2">⚖️ Per Tola</label>
+                  <input type="number" id="rate-tola" class="gold-input-small" placeholder="0.00" step="0.01" />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-white/70 mb-2">⚖️ Per Ounce</label>
+                  <input type="number" id="rate-ounce" class="gold-input-small" placeholder="0.00" step="0.01" />
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-white/70 mb-2">⚖️ Per KG</label>
+                  <input type="number" id="rate-kg" class="gold-input-small" placeholder="0.00" step="0.01" />
+                </div>
+              </div>
+              <p class="text-xs text-white/40 mt-2">💡 1 Tola = 11.6638 grams • 1 Ounce = 31.1035 grams • 1 KG = 1000 grams</p>
+            </div>
+
+            <!-- Step 4: Weight Input -->
+            <div class="gold-section">
+              <h3 class="gold-section-title">⚖️ Step 4: Enter Weight to Calculate</h3>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-semibold text-white/80 mb-2">⚖️ Weight</label>
+                  <input type="number" id="weight-input" class="gold-input" placeholder="Enter weight" step="0.001" />
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-white/80 mb-2">📏 Unit</label>
+                  <select id="weight-unit" class="gold-select">
+                    <option value="gram" selected>Gram (g)</option>
+                    <option value="tola">Tola</option>
+                    <option value="ounce">Ounce (oz)</option>
+                    <option value="kg">Kilogram (kg)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <div>
+                  <label class="block text-sm font-semibold text-white/80 mb-2">🔨 Making Charges % (optional)</label>
+                  <input type="number" id="making-charges" class="gold-input" placeholder="0" step="0.01" value="0" />
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold text-white/80 mb-2">💵 Tax % (optional)</label>
+                  <input type="number" id="tax-percent" class="gold-input" placeholder="0" step="0.01" value="0" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Calculate Button -->
+            <button id="calculate-gold" class="gold-calculate-btn">
+              ✨ Calculate Price
+            </button>
+
+            <!-- Result -->
+            <div id="gold-result" class="gold-result hidden">
+              
+              <div class="gold-main-result">
+                <div class="text-xs text-white/50 mb-1 uppercase tracking-wider">Total Price</div>
+                <div id="total-price" class="gold-total">0.00</div>
+                <div id="total-price-detail" class="text-xs text-white/60 mt-2">0 grams × 0.00 per gram</div>
+              </div>
+
+              <h4 class="text-sm font-bold text-white/80 mb-3 mt-6">📊 Breakdown</h4>
+              
+              <div class="gold-details-grid">
+                <div class="gold-detail-card">
+                  <div class="gold-detail-icon">⚖️</div>
+                  <div class="gold-detail-label">Weight (g)</div>
+                  <div id="result-weight-grams" class="gold-detail-value">0</div>
+                </div>
+                <div class="gold-detail-card">
+                  <div class="gold-detail-icon">⚖️</div>
+                  <div class="gold-detail-label">Weight (Tola)</div>
+                  <div id="result-weight-tola" class="gold-detail-value">0</div>
+                </div>
+                <div class="gold-detail-card">
+                  <div class="gold-detail-icon">⚖️</div>
+                  <div class="gold-detail-label">Weight (Ounce)</div>
+                  <div id="result-weight-ounce" class="gold-detail-value">0</div>
+                </div>
+                <div class="gold-detail-card">
+                  <div class="gold-detail-icon">💰</div>
+                  <div class="gold-detail-label">Rate per Gram</div>
+                  <div id="result-rate-gram" class="gold-detail-value">0</div>
+                </div>
+                <div class="gold-detail-card">
+                  <div class="gold-detail-icon">💰</div>
+                  <div class="gold-detail-label">Rate per Tola</div>
+                  <div id="result-rate-tola" class="gold-detail-value">0</div>
+                </div>
+                <div class="gold-detail-card">
+                  <div class="gold-detail-icon">💰</div>
+                  <div class="gold-detail-label">Rate per Ounce</div>
+                  <div id="result-rate-ounce" class="gold-detail-value">0</div>
+                </div>
+                <div class="gold-detail-card">
+                  <div class="gold-detail-icon">🏷️</div>
+                  <div class="gold-detail-label">Metal Price</div>
+                  <div id="result-metal-price" class="gold-detail-value">0</div>
+                </div>
+                <div class="gold-detail-card">
+                  <div class="gold-detail-icon">🔨</div>
+                  <div class="gold-detail-label">Making Charges</div>
+                  <div id="result-making" class="gold-detail-value">0</div>
+                </div>
+                <div class="gold-detail-card">
+                  <div class="gold-detail-icon">💵</div>
+                  <div class="gold-detail-label">Tax</div>
+                  <div id="result-tax" class="gold-detail-value">0</div>
+                </div>
+              </div>
+
+              <div class="flex gap-2 mt-4">
+                <button id="copy-result" class="gold-secondary-btn">📋 Copy Result</button>
+                <button id="reset-gold" class="gold-secondary-btn">🔄 Reset</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="brand-stamp-corner" aria-hidden="true">
+            <div class="stamp-text">BILAL MARGHOOB</div>
+            <div class="stamp-subtext">C R E A T I O N S</div>
+          </div>
+        </div>
+
+        <!-- Info Section -->
+        <div class="gold-info-section">
+          <h3 class="text-lg font-bold text-white/90 mb-3">💡 How to Use This Calculator</h3>
+          <ol class="text-sm text-white/60 space-y-2 list-decimal list-inside">
+            <li>Select your country from the dropdown (currency will auto-change)</li>
+            <li>Choose metal type (Gold 24K, 22K, 21K, 18K or Silver 999, 925)</li>
+            <li>Enter the current rate in ANY unit — others will auto-calculate</li>
+            <li>Enter the weight you want to calculate</li>
+            <li>Optionally add making charges and tax</li>
+            <li>Click "Calculate Price" to get the total</li>
+            <li>Click "🖨️ Print" in header to save/print receipt</li>
+          </ol>
+        </div>
+
+        <!-- IN-CONTENT AD -->
+        <div class="ad-container">
+          <div class="ad-placeholder">
+            <div class="ad-placeholder-label">📢 Advertisement</div>
+            <div class="ad-placeholder-size">Responsive — In-Content</div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- ============================================
+         PRINT MODAL
+         ============================================ -->
+    <div id="print-modal" class="print-modal hidden">
+      <div class="print-modal-overlay" id="print-modal-overlay"></div>
+      <div class="print-modal-content">
+        
+        <div class="print-modal-header">
+          <h3 class="text-lg font-bold text-white">🖨️ Print Preview</h3>
+          <button id="print-modal-close" class="print-modal-close">✕</button>
+        </div>
+
+        <div class="print-modal-body">
+          <!-- Receipt -->
+          <div id="receipt-content" class="receipt">
+            
+            <!-- Receipt Header -->
+            <div class="receipt-header">
+              <div class="receipt-logo">
+                <span class="receipt-logo-icon">🧮</span>
+                <div>
+                  <div class="receipt-logo-title">SciCalcPro</div>
+                  <div class="receipt-logo-subtitle">Scientific Calculator Pro</div>
+                </div>
+              </div>
+              <div class="receipt-title">🥇 Gold & Silver Receipt</div>
+              <div class="receipt-meta">
+                <div>Date: <span id="receipt-date">—</span></div>
+                <div>Time: <span id="receipt-time">—</span></div>
+                <div>Receipt #: <span id="receipt-number">—</span></div>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="receipt-divider"></div>
+
+            <!-- Calculation Details -->
+            <div class="receipt-section">
+              <div class="receipt-section-title">📋 Calculation Details</div>
+              <table class="receipt-table">
+                <tr>
+                  <td>🌍 Country</td>
+                  <td id="receipt-country">—</td>
+                </tr>
+                <tr>
+                  <td>🥇 Metal Type</td>
+                  <td id="receipt-metal">—</td>
+                </tr>
+                <tr>
+                  <td>⚖️ Weight</td>
+                  <td id="receipt-weight">—</td>
+                </tr>
+                <tr>
+                  <td>💰 Rate (per gram)</td>
+                  <td id="receipt-rate">—</td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- Divider -->
+            <div class="receipt-divider"></div>
+
+            <!-- Price Breakdown -->
+            <div class="receipt-section">
+              <div class="receipt-section-title">💵 Price Breakdown</div>
+              <table class="receipt-table">
+                <tr>
+                  <td>🏷️ Metal Price</td>
+                  <td id="receipt-metal-price">—</td>
+                </tr>
+                <tr id="receipt-making-row">
+                  <td>🔨 Making Charges</td>
+                  <td id="receipt-making">—</td>
+                </tr>
+                <tr id="receipt-tax-row">
+                  <td>💵 Tax</td>
+                  <td id="receipt-tax">—</td>
+                </tr>
+              </table>
+              <div class="receipt-total">
+                <span>💰 TOTAL</span>
+                <span id="receipt-total">—</span>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="receipt-divider"></div>
+
+            <!-- Rate in All Units -->
+            <div class="receipt-section">
+              <div class="receipt-section-title">📊 Rate in All Units</div>
+              <table class="receipt-table">
+                <tr>
+                  <td>Per Gram</td>
+                  <td id="receipt-rate-gram">—</td>
+                </tr>
+                <tr>
+                  <td>Per Tola</td>
+                  <td id="receipt-rate-tola">—</td>
+                </tr>
+                <tr>
+                  <td>Per Ounce</td>
+                  <td id="receipt-rate-ounce">—</td>
+                </tr>
+                <tr>
+                  <td>Per KG</td>
+                  <td id="receipt-rate-kg">—</td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- Divider -->
+            <div class="receipt-divider"></div>
+
+            <!-- Footer with QR Code -->
+            <div class="receipt-footer">
+              <div class="receipt-footer-left">
+                <div class="receipt-brand">✨ BILAL MARGHOOB CREATIONS</div>
+                <div class="receipt-contact">📧 bilalmarghoobboutique@gmail.com</div>
+                <div class="receipt-contact">💬 +92 326 650 1314</div>
+                <div class="receipt-contact">🌐 scicalcpro.vercel.app</div>
+              </div>
+              <div class="receipt-qr">
+                <div id="qrcode"></div>
+                <div class="receipt-qr-label">Scan me</div>
+              </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="receipt-copyright">
+              © 2026 Bilal Marghoob Creations. All rights reserved.
+            </div>
+
+          </div>
+        </div>
+
+        <div class="print-modal-footer">
+          <button id="print-action" class="print-btn-primary">🖨️ Print</button>
+          <button id="pdf-action" class="print-btn-secondary">📄 Save PDF</button>
+          <button id="share-action" class="print-btn-secondary">💬 Share</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SIGNATURE SPACE -->
+    <div class="signature-space">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="brand-signature mb-3">
+          <div class="signature-line"></div>
+          <div class="signature-text">
+            <span class="signature-crafted">✨ Crafted with precision by</span>
+            <span class="signature-brand">BILAL MARGHOOB CREATIONS</span>
+          </div>
+          <div class="signature-line"></div>
+        </div>
+        <div class="contact-info flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
+          <a href="mailto:bilalmarghoobboutique@gmail.com" class="contact-item">
+            <span class="contact-icon">📧</span>
+            <span class="contact-text">bilalmarghoobboutique@gmail.com</span>
+          </a>
+          <span class="hidden md:inline text-white/20">|</span>
+          <a href="https://wa.me/923266501314" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-icon">💬</span>
+            <span class="contact-text">+92 326 650 1314</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM AD -->
+    <div class="ad-container">
+      <div class="ad-placeholder">
+        <div class="ad-placeholder-label">📢 Advertisement</div>
+        <div class="ad-placeholder-size">728 × 90 — Bottom Banner</div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="/" class="footer-link">Home</a>
+          <a href="/age-calculator.html" class="footer-link">Age Calculator</a>
+          <a href="/profit-calculator.html" class="footer-link">Profit Calculator</a>
+          <a href="/area-calculator.html" class="footer-link">Area Calculator</a>
+          <a href="/time-calculator.html" class="footer-link">Time Calculator</a>
+          <a href="/engineering-calculator.html" class="footer-link">Engineering Calculator</a>
+          <a href="/gold-silver-calculator.html" class="footer-link">Gold & Silver Calculator</a>
+        </div>
+        <div class="footer-copyright">
+          © 2026 <strong>Bilal Marghoob Creations</strong>. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+  <script type="module" src="/src/gold-silver-calculator.js"></script>
+</body>
+</html>

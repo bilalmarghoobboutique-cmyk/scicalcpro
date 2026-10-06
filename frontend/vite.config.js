@@ -11,6 +11,7 @@ export default defineConfig({
         area: resolve(__dirname, 'area-calculator.html'),
         time: resolve(__dirname, 'time-calculator.html'),
         engineering: resolve(__dirname, 'engineering-calculator.html'),
+        gold: resolve(__dirname, 'gold-silver-calculator.html'),
       }
     }
   }
