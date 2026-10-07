@@ -1,8 +1,25 @@
 # SciCalcPro Robots.txt
-# Bilal Marghoob Creations
+# By Bilal Marghoob Creations
+# Last Updated: 2026-10-08
 
+# Allow all search engines
 User-agent: *
 Allow: /
 
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /api/
+
 # Sitemap location
 Sitemap: https://scicalcpro.vercel.app/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Google AdSense crawler
+User-agent: Mediapartners-Google
+Allow: /
+
+# Google AdsBot
+User-agent: AdsBot-Google
+Allow: /
