@@ -8,18 +8,15 @@
 :root {
   color-scheme: dark;
   
-  /* Backgrounds */
   --bg-primary: #0b1020;
   --bg-secondary: #141a35;
   --bg-card: rgba(30, 41, 59, 0.55);
   --bg-card-hover: rgba(40, 51, 69, 0.7);
   
-  /* Text */
   --text-primary: #f8fafc;
   --text-secondary: rgba(248, 250, 252, 0.65);
   --text-muted: rgba(248, 250, 252, 0.4);
   
-  /* Accents */
   --accent-cyan: #06b6d4;
   --accent-purple: #a855f7;
   --accent-emerald: #10b981;
@@ -27,12 +24,10 @@
   --accent-rose: #f43f5e;
   --accent-blue: #3b82f6;
   
-  /* Borders */
   --border-subtle: rgba(248, 250, 252, 0.08);
   --border-medium: rgba(248, 250, 252, 0.12);
 }
 
-/* Light Mode Override */
 :root.light-mode {
   color-scheme: light;
   --bg-primary: #f8fafc;
@@ -181,6 +176,20 @@ body.light-mode {
   transform: scale(0.96);
 }
 
+/* Print Button (Header) */
+.print-btn {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(245, 158, 11, 0.15)) !important;
+  border-color: rgba(255, 215, 0, 0.4) !important;
+  color: #fcd34d !important;
+}
+
+.print-btn:hover {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(245, 158, 11, 0.3)) !important;
+  border-color: rgba(255, 215, 0, 0.7) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4) !important;
+}
+
 /* ============================================
    CATEGORY NAVIGATION
    ============================================ */
@@ -264,7 +273,7 @@ body.light-mode {
 }
 
 /* ============================================
-   GOOGLE ADS — Placeholder Styles
+   ADS — Desktop + Mobile Optimized
    ============================================ */
 .ad-container {
   width: 100%;
@@ -312,27 +321,24 @@ body.light-mode {
   color: var(--accent-cyan);
 }
 
-/* Sidebar Ad */
+/* Sidebar Ad — Desktop only */
 .ad-sidebar {
   width: 300px;
   height: 600px;
   max-width: 100%;
 }
 
-@media (max-width: 1024px) {
-  .ad-sidebar {
-    display: none;
-  }
+.ad-sidebar-left {
+  flex-shrink: 0;
 }
 
-/* Mobile Ad */
-.ad-mobile {
-  min-height: 50px;
-  max-width: 320px;
+.ad-sidebar-left .adsterra-container {
+  position: sticky;
+  top: 80px;
 }
 
 /* ============================================
-   ADSTERRA AD CONTAINERS
+   ADSTERRA CONTAINERS
    ============================================ */
 .adsterra-container {
   width: 100%;
@@ -360,7 +366,6 @@ body.light-mode {
   border-radius: 8px;
 }
 
-/* Sidebar Adsterra Container */
 .adsterra-sidebar {
   width: 160px;
   height: 300px;
@@ -371,9 +376,101 @@ body.light-mode {
   border: none;
 }
 
+/* ============================================
+   MOBILE AD OPTIMIZATION — Chhote Ads
+   ============================================ */
 @media (max-width: 1024px) {
-  .ad-sidebar {
+  /* Sidebar ads mobile/tablet par hide */
+  .ad-sidebar,
+  .ad-sidebar-left,
+  .adsterra-sidebar {
     display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Ad container padding kam */
+  .ad-container {
+    padding: 4px;
+    margin: 4px 0;
+  }
+
+  /* Top ad mobile par hide */
+  .ad-container.top-ad {
+    display: none !important;
+  }
+
+  /* Native Banner chhota */
+  .adsterra-container {
+    max-width: 100%;
+    min-height: auto;
+    padding: 2px;
+    border-radius: 6px;
+    background: transparent;
+    border: none;
+  }
+
+  /* Adsterra iframe chhota */
+  .adsterra-container iframe {
+    max-width: 100%;
+    height: auto !important;
+    min-height: 40px;
+    max-height: 60px;
+  }
+
+  /* Ad placeholder chhota */
+  .ad-placeholder {
+    min-height: 40px;
+    padding: 6px;
+    font-size: 0.6rem;
+    border-radius: 8px;
+  }
+
+  .ad-placeholder-label {
+    font-size: 0.5rem;
+    margin-bottom: 2px;
+  }
+
+  .ad-placeholder-size {
+    font-size: 0.55rem;
+  }
+
+  /* Ad container height limit */
+  .ad-container > div {
+    max-height: 70px;
+    overflow: hidden;
+  }
+
+  /* Bottom ad chhota */
+  .bottom-ad .adsterra-container {
+    max-height: 50px;
+  }
+
+  .bottom-ad .adsterra-container iframe {
+    max-height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ad-container {
+    padding: 3px;
+    margin: 3px 0;
+  }
+
+  /* Ad bilkul minimum */
+  .adsterra-container {
+    max-height: 50px;
+    overflow: hidden;
+  }
+
+  .adsterra-container iframe {
+    max-height: 50px;
+  }
+  
+  .ad-placeholder {
+    min-height: 35px;
+    padding: 4px;
+    font-size: 0.55rem;
   }
 }
 
@@ -419,7 +516,7 @@ body.light-mode {
 }
 
 /* ============================================
-   WATERMARK (Pro)
+   WATERMARK
    ============================================ */
 .watermark {
   position: absolute;
@@ -577,21 +674,30 @@ body.light-mode .display-screen {
   bottom: 110%;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.95);
-  color: #06b6d4;
-  padding: 4px 8px;
-  border-radius: 6px;
+  background: linear-gradient(135deg, #1e1b4b, #0b1020);
+  color: #22d3ee;
+  padding: 6px 12px;
+  border-radius: 8px;
   font-size: 0.7rem;
+  font-weight: 700;
   white-space: nowrap;
   z-index: 100;
   pointer-events: none;
-  border: 1px solid rgba(6, 182, 212, 0.3);
+  border: 1px solid rgba(6, 182, 212, 0.5);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.3px;
   animation: tooltipFade 0.2s ease;
 }
 
 @keyframes tooltipFade {
   from { opacity: 0; transform: translateX(-50%) translateY(4px); }
   to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .btn[data-tooltip]:hover::after {
+    display: none;
+  }
 }
 
 /* Number Buttons */
@@ -677,7 +783,7 @@ body.light-mode .display-screen {
 }
 
 /* ============================================
-   BRAND STAMP (Calculator Corner)
+   BRAND STAMP
    ============================================ */
 .brand-stamp-corner {
   position: absolute;
@@ -718,7 +824,7 @@ body.light-mode .display-screen {
 }
 
 /* ============================================
-   CONTROL BUTTONS (Below Calculator)
+   CONTROL BUTTONS
    ============================================ */
 .control-btn {
   padding: 8px 20px;
@@ -913,7 +1019,6 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
   transition: all 0.25s ease;
 }
 
-/* Age - Blue */
 .age-calculate-btn {
   background: linear-gradient(135deg, #3b82f6, #06b6d4);
   box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
@@ -924,7 +1029,6 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
   filter: brightness(1.1);
 }
 
-/* Profit - Green */
 .profit-calculate-btn {
   background: linear-gradient(135deg, #10b981, #059669);
   box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
@@ -935,7 +1039,6 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
   filter: brightness(1.1);
 }
 
-/* Area - Orange */
 .area-calculate-btn {
   background: linear-gradient(135deg, #f97316, #ea580c);
   box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
@@ -946,7 +1049,6 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
   filter: brightness(1.1);
 }
 
-/* Time - Pink */
 .time-calculate-btn {
   background: linear-gradient(135deg, #ec4899, #db2777);
   box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4);
@@ -957,7 +1059,6 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
   filter: brightness(1.1);
 }
 
-/* Engineering - Red */
 .eng-calculate-btn {
   background: linear-gradient(135deg, #ef4444, #dc2626);
   box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
@@ -1296,7 +1397,284 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
 }
 
 /* ============================================
-   SIGNATURE SPACE (Footer Above)
+   HELP SIDEBAR
+   ============================================ */
+.help-sidebar {
+  background: var(--bg-card);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--border-medium);
+  border-radius: 24px;
+  padding: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: fit-content;
+  max-height: 700px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+  .help-sidebar {
+    max-height: none;
+    margin-top: 16px;
+  }
+}
+
+.help-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.08), rgba(168, 85, 247, 0.08));
+}
+
+.help-title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+.help-toggle-btn {
+  background: rgba(6, 182, 212, 0.15);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  color: #06b6d4;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.help-toggle-btn:hover {
+  background: rgba(6, 182, 212, 0.25);
+}
+
+@media (min-width: 1025px) {
+  .help-toggle-btn {
+    display: none;
+  }
+}
+
+.help-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  max-height: 500px;
+}
+
+.help-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.help-content::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.3);
+  border-radius: 4px;
+}
+
+.help-default {
+  text-align: center;
+  animation: fadeInUp 0.5s ease;
+}
+
+.help-welcome-icon {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  animation: pointBounce 2s infinite;
+}
+
+@keyframes pointBounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-10px); }
+}
+
+.help-welcome-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #06b6d4;
+  margin-bottom: 12px;
+}
+
+.help-welcome-text {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.help-tip-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  text-align: left;
+}
+
+.help-tip-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.help-tip-text {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.help-dynamic {
+  animation: fadeInUp 0.3s ease;
+}
+
+.help-dynamic.hidden {
+  display: none;
+}
+
+.help-btn-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #06b6d4;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.help-btn-icon {
+  font-size: 1.5rem;
+}
+
+.help-section {
+  margin-bottom: 16px;
+}
+
+.help-section-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.help-section-text {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.help-formula {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 14px;
+  border-radius: 10px;
+  border-left: 3px solid #06b6d4;
+  color: #67e8f9;
+  margin-top: 6px;
+}
+
+body.light-mode .help-formula {
+  background: rgba(15, 23, 42, 0.05);
+  color: #0284c7;
+}
+
+.help-example-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: #22d3ee;
+  padding: 6px 10px;
+  margin-bottom: 4px;
+  border-radius: 8px;
+  background: rgba(6, 182, 212, 0.06);
+  border: 1px solid rgba(6, 182, 212, 0.15);
+}
+
+.help-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  font-size: 0.78rem;
+  color: #fcd34d;
+  line-height: 1.5;
+}
+
+.help-note-icon {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
+.help-quick-ref {
+  padding: 16px 20px;
+  border-top: 1px solid var(--border-subtle);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.help-quick-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #a855f7;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.help-quick-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.help-quick-list li {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  padding: 4px 0;
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.help-quick-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #06b6d4;
+  font-weight: 700;
+}
+
+.help-quick-list strong {
+  color: #22d3ee;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .help-sidebar {
+    order: 3;
+  }
+
+  .help-content.collapsed {
+    max-height: 0;
+    padding: 0 20px;
+    overflow: hidden;
+  }
+
+  .help-quick-ref.collapsed {
+    display: none;
+  }
+}
+
+/* ============================================
+   SIGNATURE SPACE
    ============================================ */
 .signature-space {
   background: linear-gradient(180deg, transparent, rgba(6, 182, 212, 0.05));
@@ -1382,7 +1760,7 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
 }
 
 /* ============================================
-   FOOTER — Gradient Purple
+   FOOTER
    ============================================ */
 .main-footer {
   width: 100%;
@@ -1426,63 +1804,6 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
 .footer-copyright {
   font-size: 0.7rem;
   color: rgba(248, 250, 252, 0.5);
-}
-
-/* ============================================
-   RESPONSIVE (Mobile)
-   ============================================ */
-@media (max-width: 768px) {
-  .history-panel { max-height: 400px; }
-  .history-list { max-height: 300px; }
-}
-
-@media (max-width: 480px) {
-  .btn {
-    padding: 12px 4px;
-    font-size: 0.8rem;
-    min-height: 44px;
-    border-radius: 10px;
-  }
-  .btn-number { font-size: 1rem; }
-  .btn-operator { font-size: 1.1rem; }
-  .btn-equals { font-size: 1.1rem; }
-  .btn-function { font-size: 0.75rem; }
-  .btn-memory { font-size: 0.7rem; }
-  .buttons-grid { gap: 6px; }
-  .watermark-text { font-size: 1.5rem; }
-  #current-input { font-size: 1.75rem; }
-  .display-screen { min-height: 90px; }
-  .btn[data-tooltip]:hover::after { display: none; }
-  .header-btn span { display: none; }
-  .age-display,
-  .profit-amount,
-  .area-display,
-  .time-display,
-  .eng-display { font-size: 1.2rem; }
-  .age-detail-value { font-size: 0.85rem; }
-  .age-details-grid { gap: 8px; }
-  .age-detail-card { padding: 10px 8px; }
-}
-
-/* ============================================
-   ACCESSIBILITY
-   ============================================ */
-.btn:focus-visible,
-.control-btn:focus-visible,
-.header-btn:focus-visible,
-.category-btn:focus-visible,
-.age-calculate-btn:focus-visible,
-.age-reset-btn:focus-visible {
-  outline: 2px solid #06b6d4;
-  outline-offset: 2px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
 }
 
 /* ============================================
@@ -1553,7 +1874,6 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
   box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.15);
 }
 
-/* Metal Selector */
 .metal-selector {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1609,7 +1929,6 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
   font-weight: 600;
 }
 
-/* Calculate Button */
 .gold-calculate-btn {
   width: 100%;
   padding: 18px;
@@ -1636,7 +1955,6 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
   transform: scale(0.98);
 }
 
-/* Result Section */
 .gold-result {
   margin-top: 24px;
   padding-top: 24px;
@@ -1735,7 +2053,6 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
   word-break: break-word;
 }
 
-/* Secondary Buttons */
 .gold-secondary-btn {
   flex: 1;
   padding: 12px;
@@ -1759,7 +2076,6 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
   transform: scale(0.98);
 }
 
-/* Info Section */
 .gold-info-section {
   margin-top: 24px;
   padding: 20px;
@@ -1768,7 +2084,6 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Mobile */
 @media (max-width: 480px) {
   .gold-total { font-size: 1.4rem; }
   .gold-detail-value { font-size: 0.75rem; }
@@ -1776,22 +2091,6 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
   .gold-detail-card { padding: 10px 6px; }
   .metal-btn { padding: 10px 6px; }
   .metal-name { font-size: 0.75rem; }
-}
-
-/* ============================================
-   PRINT BUTTON (Header)
-   ============================================ */
-.print-btn {
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(245, 158, 11, 0.15)) !important;
-  border-color: rgba(255, 215, 0, 0.4) !important;
-  color: #fcd34d !important;
-}
-
-.print-btn:hover {
-  background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(245, 158, 11, 0.3)) !important;
-  border-color: rgba(255, 215, 0, 0.7) !important;
-  color: #ffffff !important;
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4) !important;
 }
 
 /* ============================================
@@ -2115,7 +2414,7 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
 }
 
 /* ============================================
-   PRINT STYLES (Combined)
+   PRINT STYLES
    ============================================ */
 @media print {
   body * {
@@ -2179,4 +2478,60 @@ body.light-mode .age-input::-webkit-calendar-picker-indicator {
   .print-modal-footer { flex-direction: column; }
   .print-btn-primary,
   .print-btn-secondary { width: 100%; }
+}
+
+/* ============================================
+   RESPONSIVE (Mobile)
+   ============================================ */
+@media (max-width: 768px) {
+  .history-panel { max-height: 400px; }
+  .history-list { max-height: 300px; }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    padding: 12px 4px;
+    font-size: 0.8rem;
+    min-height: 44px;
+    border-radius: 10px;
+  }
+  .btn-number { font-size: 1rem; }
+  .btn-operator { font-size: 1.1rem; }
+  .btn-equals { font-size: 1.1rem; }
+  .btn-function { font-size: 0.75rem; }
+  .btn-memory { font-size: 0.7rem; }
+  .buttons-grid { gap: 6px; }
+  .watermark-text { font-size: 1.5rem; }
+  #current-input { font-size: 1.75rem; }
+  .display-screen { min-height: 90px; }
+  .header-btn span { display: none; }
+  .age-display,
+  .profit-amount,
+  .area-display,
+  .time-display,
+  .eng-display { font-size: 1.2rem; }
+  .age-detail-value { font-size: 0.85rem; }
+  .age-details-grid { gap: 8px; }
+  .age-detail-card { padding: 10px 8px; }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+.btn:focus-visible,
+.control-btn:focus-visible,
+.header-btn:focus-visible,
+.category-btn:focus-visible,
+.age-calculate-btn:focus-visible,
+.age-reset-btn:focus-visible {
+  outline: 2px solid #06b6d4;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

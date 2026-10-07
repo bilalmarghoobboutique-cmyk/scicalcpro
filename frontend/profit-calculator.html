@@ -4,44 +4,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   
-  <!-- SEO Meta Tags -->
-  <title>Profit Calculator — Calculate Profit & Loss | SciCalcPro</title>
-  <meta name="description" content="Free online profit calculator. Calculate profit, loss, margin & markup instantly. By Bilal Marghoob Creations." />
-  <meta name="author" content="Bilal Marghoob" />
-  <meta name="keywords" content="profit calculator, loss calculator, margin calculator, markup calculator, business calculator" />
+  <meta name="google-site-verification" content="YURRl7lFPPVBzQPZig0p3ehPlBPsKFwkNoMg5zPHobw" />
   
-  <!-- Open Graph -->
-  <meta property="og:title" content="Profit Calculator — SciCalcPro" />
-  <meta property="og:description" content="Calculate profit, loss, margin & markup instantly." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GT9PMPYBPF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GT9PMPYBPF');
+  </script>
+  
+  <!-- SEO Meta Tags -->
+  <title>Free Profit Calculator Online — Calculate Profit, Loss, Margin & Markup | SciCalcPro</title>
+  <meta name="description" content="Free online profit calculator. Enter cost price and selling price to calculate profit, loss, profit %, markup %, margin %. Includes printable receipt. By Bilal Marghoob Creations." />
+  <meta name="author" content="Bilal Marghoob" />
+  <meta name="keywords" content="profit calculator, loss calculator, margin calculator, markup calculator, business calculator, cost price selling price calculator, profit percentage calculator, free profit calculator online" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  
+  <meta property="og:title" content="Free Profit Calculator Online — Calculate Profit & Loss" />
+  <meta property="og:description" content="Calculate profit, loss, margin & markup instantly. Free online tool." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scicalcpro.vercel.app/profit-calculator.html" />
+  <meta property="og:site_name" content="SciCalcPro" />
   
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Profit Calculator — SciCalcPro" />
+  <meta name="twitter:title" content="Free Profit Calculator — SciCalcPro" />
   <meta name="twitter:description" content="Calculate profit, loss, margin & markup instantly." />
   
-  <!-- Canonical -->
   <link rel="canonical" href="https://scicalcpro.vercel.app/profit-calculator.html" />
-  
-  <!-- Theme Color -->
   <meta name="theme-color" content="#0b1020" />
   
-  <!-- JSON-LD Schema -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  
+  <!-- JSON-LD Schema — WebApplication -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Profit Calculator — SciCalcPro",
+    "name": "Free Profit Calculator — SciCalcPro",
     "url": "https://scicalcpro.vercel.app/profit-calculator.html",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Any",
+    "description": "Free online profit calculator. Calculate profit, loss, margin, and markup from cost and selling price.",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "author": { "@type": "Organization", "name": "Bilal Marghoob Creations" }
   }
   </script>
-   
-</head>
+  
+  <!-- JSON-LD Schema — FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate profit?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Profit = Selling Price − Cost Price. Enter both values in the calculator and click Calculate Profit."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between profit margin and markup?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Profit margin is profit divided by selling price (as %). Markup is profit divided by cost price (as %)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is break-even price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Break-even price is the price at which you have no profit or loss. It equals the cost price."
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scicalcpro.vercel.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Profit Calculator", "item": "https://scicalcpro.vercel.app/profit-calculator.html" }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div id="app">
@@ -57,6 +114,9 @@
           </div>
         </a>
         <div class="header-actions">
+          <button id="print-btn" class="header-btn print-btn" title="Print Result">
+            🖨️ <span class="hidden md:inline">Print</span>
+          </button>
           <button id="theme-toggle" class="header-btn" title="Theme">
             🌙 <span class="hidden md:inline">Dark</span>
           </button>
@@ -91,19 +151,15 @@
           <span class="category-icon">⚙️</span>
           <span class="category-label">Engineering Calculator</span>
         </a>
-            <a href="/engineering-calculator.html" class="category-btn">
-      <span class="category-icon">⚙️</span>
-      <span class="category-label">Engineering Calculator</span>
-    </a>
-    <a href="/gold-silver-calculator.html" class="category-btn">
-      <span class="category-icon">🥇</span>
-      <span class="category-label">Gold & Silver Calculator</span>
-    </a>
+        <a href="/gold-silver-calculator.html" class="category-btn">
+          <span class="category-icon">🥇</span>
+          <span class="category-label">Gold & Silver Calculator</span>
+        </a>
       </div>
     </nav>
 
-       <!-- ADSTERRA — NATIVE BANNER (TOP) -->
-    <div class="ad-container">
+    <!-- TOP AD -->
+    <div class="ad-container top-ad">
       <div class="adsterra-container">
         <script async="async" data-cfasync="false" src="https://pl31696942.profitableratecpmnetwork.com/1231798f5c81f7799c5539c3737443e1/invoke.js"></script>
         <div id="container-1231798f5c81f7799c5539c3737443e1"></div>
@@ -111,107 +167,203 @@
     </div>
 
     <!-- MAIN CONTENT -->
-    <main class="flex-1 flex items-start md:items-center justify-center p-3 md:p-6">
-      <div class="w-full max-w-2xl mx-auto">
+    <main class="flex-1 flex items-start justify-center p-3 md:p-6">
+      
+      <div class="w-full max-w-7xl flex flex-col lg:flex-row gap-4 md:gap-6 items-start justify-center">
         
-        <div class="text-center mb-6">
-          <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-2">
-            💰 Profit Calculator
-          </h2>
-          <p class="text-white/60 text-sm">Calculate profit, loss, margin & markup instantly</p>
-        </div>
+        <!-- LEFT SIDEBAR AD -->
+        <aside class="ad-sidebar-left hidden xl:block">
+          <div class="adsterra-container adsterra-sidebar">
+            <script>
+              atOptions = {
+                'key' : 'fa9aee6dbab5586a91dc29c5418ff86a',
+                'format' : 'iframe',
+                'height' : 300,
+                'width' : 160,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highrevenueformat.com/fa9aee6dbab5586a91dc29c5418ff86a/invoke.js"></script>
+          </div>
+        </aside>
 
-        <div class="glass-calculator rounded-3xl p-6 md:p-8 relative overflow-hidden">
+        <!-- CENTER — CALCULATOR -->
+        <div class="w-full max-w-2xl mx-auto flex-1">
           
-          <div class="watermark" aria-hidden="true">
-            <div class="watermark-text">Profit Calculator</div>
+          <div class="text-center mb-6">
+            <h1 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-2">
+              💰 Free Profit Calculator Online
+            </h1>
+            <p class="text-white/60 text-sm">Calculate profit, loss, margin & markup instantly</p>
           </div>
 
-          <div class="relative z-10">
+          <div class="glass-calculator rounded-3xl p-6 md:p-8 relative overflow-hidden">
             
-            <div class="mb-4">
-              <label class="block text-sm font-semibold text-white/80 mb-2">
-                💵 Cost Price (CP)
-              </label>
-              <input type="number" id="cost-price" class="age-input" placeholder="Enter cost price" step="0.01" />
+            <div class="watermark" aria-hidden="true">
+              <div class="watermark-text">Profit Calculator</div>
             </div>
 
-            <div class="mb-6">
-              <label class="block text-sm font-semibold text-white/80 mb-2">
-                🏷️ Selling Price (SP)
-              </label>
-              <input type="number" id="selling-price" class="age-input" placeholder="Enter selling price" step="0.01" />
-            </div>
-
-            <button id="calculate-profit" class="profit-calculate-btn">
-              ✨ Calculate Profit
-            </button>
-
-            <div id="profit-result" class="age-result hidden">
+            <div class="relative z-10">
               
-              <div id="profit-status-banner" class="profit-status-banner">
-                <div id="profit-status-icon" class="profit-status-icon">📈</div>
-                <div id="profit-status-text" class="profit-status-text">Profit</div>
+              <!-- Name Field -->
+              <div class="mb-4" data-help="name-input">
+                <label class="block text-sm font-semibold text-white/80 mb-2">
+                  👤 Your Name <span class="text-white/40 font-normal">(optional)</span>
+                </label>
+                <input type="text" id="name-input" class="age-input" placeholder="Enter your name for personalized result" maxlength="30" />
               </div>
 
-              <div class="age-main-result">
-                <div class="text-xs text-white/50 mb-1 uppercase tracking-wider">Profit / Loss Amount</div>
-                <div id="profit-amount" class="profit-amount">0</div>
+              <!-- Cost Price -->
+              <div class="mb-4" data-help="cost-price">
+                <label class="block text-sm font-semibold text-white/80 mb-2">
+                  💵 Cost Price (CP) <span class="text-rose-400">*</span>
+                </label>
+                <input type="number" id="cost-price" class="age-input" placeholder="Enter cost price" step="0.01" required />
               </div>
 
-              <div class="age-details-grid">
-                <div class="age-detail-card">
-                  <div class="age-detail-icon">📊</div>
-                  <div class="age-detail-label">Profit %</div>
-                  <div id="profit-percent" class="age-detail-value">0%</div>
-                </div>
-                <div class="age-detail-card">
-                  <div class="age-detail-icon">📈</div>
-                  <div class="age-detail-label">Markup %</div>
-                  <div id="markup-percent" class="age-detail-value">0%</div>
-                </div>
-                <div class="age-detail-card">
-                  <div class="age-detail-icon">💵</div>
-                  <div class="age-detail-label">Margin %</div>
-                  <div id="margin-percent" class="age-detail-value">0%</div>
-                </div>
-                <div class="age-detail-card">
-                  <div class="age-detail-icon">🧾</div>
-                  <div class="age-detail-label">Total Revenue</div>
-                  <div id="total-revenue" class="age-detail-value">0</div>
-                </div>
-                <div class="age-detail-card">
-                  <div class="age-detail-icon">💰</div>
-                  <div class="age-detail-label">Total Cost</div>
-                  <div id="total-cost" class="age-detail-value">0</div>
-                </div>
-                <div class="age-detail-card">
-                  <div class="age-detail-icon">⚖️</div>
-                  <div class="age-detail-label">Break-Even Price</div>
-                  <div id="breakeven" class="age-detail-value">0</div>
-                </div>
+              <!-- Selling Price -->
+              <div class="mb-6" data-help="selling-price">
+                <label class="block text-sm font-semibold text-white/80 mb-2">
+                  🏷️ Selling Price (SP) <span class="text-rose-400">*</span>
+                </label>
+                <input type="number" id="selling-price" class="age-input" placeholder="Enter selling price" step="0.01" required />
               </div>
 
-              <button id="reset-profit" class="age-reset-btn">
-                🔄 Calculate Again
+              <button id="calculate-profit" class="profit-calculate-btn" data-help="calculate-profit">
+                ✨ Calculate Profit
               </button>
 
+              <div id="profit-result" class="age-result hidden">
+                
+                <div id="profit-status-banner" class="profit-status-banner">
+                  <div id="profit-status-icon" class="profit-status-icon">📈</div>
+                  <div id="profit-status-text" class="profit-status-text">Profit</div>
+                </div>
+
+                <div class="age-main-result">
+                  <div class="text-xs text-white/50 mb-1 uppercase tracking-wider" id="result-greeting">Profit / Loss Amount</div>
+                  <div id="profit-amount" class="profit-amount">0</div>
+                </div>
+
+                <div class="age-details-grid">
+                  <div class="age-detail-card">
+                    <div class="age-detail-icon">📊</div>
+                    <div class="age-detail-label">Profit %</div>
+                    <div id="profit-percent" class="age-detail-value">0%</div>
+                  </div>
+                  <div class="age-detail-card">
+                    <div class="age-detail-icon">📈</div>
+                    <div class="age-detail-label">Markup %</div>
+                    <div id="markup-percent" class="age-detail-value">0%</div>
+                  </div>
+                  <div class="age-detail-card">
+                    <div class="age-detail-icon">💵</div>
+                    <div class="age-detail-label">Margin %</div>
+                    <div id="margin-percent" class="age-detail-value">0%</div>
+                  </div>
+                  <div class="age-detail-card">
+                    <div class="age-detail-icon">🧾</div>
+                    <div class="age-detail-label">Total Revenue</div>
+                    <div id="total-revenue" class="age-detail-value">0</div>
+                  </div>
+                  <div class="age-detail-card">
+                    <div class="age-detail-icon">💰</div>
+                    <div class="age-detail-label">Total Cost</div>
+                    <div id="total-cost" class="age-detail-value">0</div>
+                  </div>
+                  <div class="age-detail-card">
+                    <div class="age-detail-icon">⚖️</div>
+                    <div class="age-detail-label">Break-Even Price</div>
+                    <div id="breakeven" class="age-detail-value">0</div>
+                  </div>
+                </div>
+
+                <div class="flex gap-2 mt-4">
+                  <button id="print-result-btn" class="age-reset-btn" style="background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #1a1a1a; font-weight: 700;">
+                    🖨️ Print Result
+                  </button>
+                  <button id="reset-profit" class="age-reset-btn" data-help="reset-profit">
+                    🔄 Calculate Again
+                  </button>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="brand-stamp-corner" aria-hidden="true">
+              <div class="stamp-text">BILAL MARGHOOB</div>
+              <div class="stamp-subtext">C R E A T I O N S</div>
             </div>
           </div>
 
-          <div class="brand-stamp-corner" aria-hidden="true">
-            <div class="stamp-text">BILAL MARGHOOB</div>
-            <div class="stamp-subtext">C R E A T I O N S</div>
+          <!-- SEO Content -->
+          <div class="gold-info-section">
+            <h2 class="text-lg font-bold text-white/90 mb-3">📖 How to Use This Profit Calculator</h2>
+            <ol class="text-sm text-white/70 space-y-2 list-decimal list-inside mb-4">
+              <li><strong>Enter your name</strong> (optional) for a personalized result</li>
+              <li>Enter the <strong>Cost Price (CP)</strong> — what you paid</li>
+              <li>Enter the <strong>Selling Price (SP)</strong> — what you sold for</li>
+              <li>Click <strong>"Calculate Profit"</strong></li>
+              <li>View profit/loss amount, percentages, margin, and markup</li>
+              <li>Click <strong>Print</strong> for a professional receipt</li>
+            </ol>
+
+            <h2 class="text-lg font-bold text-white/90 mb-3 mt-6">✨ Features</h2>
+            <ul class="text-sm text-white/70 space-y-1 list-disc list-inside">
+              <li>Profit and loss amount</li>
+              <li>Profit percentage</li>
+              <li>Markup percentage</li>
+              <li>Profit margin percentage</li>
+              <li>Total revenue and total cost</li>
+              <li>Break-even price</li>
+              <li>Optional name for personalized results</li>
+              <li>Print or save as PDF</li>
+            </ul>
           </div>
+
         </div>
 
-        <!-- IN-CONTENT AD -->
-        <div class="ad-container">
-          <div class="ad-placeholder">
-            <div class="ad-placeholder-label">📢 Advertisement</div>
-            <div class="ad-placeholder-size">Responsive — In-Content</div>
+        <!-- RIGHT SIDEBAR — GUIDE -->
+        <aside id="help-sidebar" class="help-sidebar w-full lg:w-80 lg:max-w-xs">
+          
+          <div class="help-header">
+            <h2 class="help-title">📖 Button Guide</h2>
+            <button id="help-toggle" class="help-toggle-btn lg:hidden" title="Toggle Guide">
+              ▼
+            </button>
           </div>
-        </div>
+
+          <div id="help-content" class="help-content">
+            
+            <div class="help-default" id="help-default">
+              <div class="help-welcome-icon">👆</div>
+              <h3 class="help-welcome-title">Hover Over Any Field</h3>
+              <p class="help-welcome-text">
+                Point at or tap any input or button to see its complete guide.
+              </p>
+              <div class="help-tip-box">
+                <div class="help-tip-icon">💡</div>
+                <p class="help-tip-text">
+                  Enter cost and selling price to calculate profit, margin, and markup.
+                </p>
+              </div>
+            </div>
+
+            <div class="help-dynamic hidden" id="help-dynamic"></div>
+
+          </div>
+
+          <div class="help-quick-ref">
+            <h3 class="help-quick-title">⚡ Quick Tips</h3>
+            <ul class="help-quick-list">
+              <li>Name is <strong>optional</strong></li>
+              <li>Cost & Selling <strong>required</strong></li>
+              <li>Use <strong>decimals</strong> for paisa/cents</li>
+              <li>Press <strong>Print</strong> for receipt</li>
+            </ul>
+          </div>
+
+        </aside>
 
       </div>
     </main>
@@ -241,8 +393,8 @@
       </div>
     </div>
 
-       <!-- ADSTERRA — SOCIAL BAR -->
-    <div class="ad-container">
+    <!-- BOTTOM AD -->
+    <div class="ad-container bottom-ad">
       <div class="adsterra-container">
         <script src="https://pl31696944.profitableratecpmnetwork.com/fe/01/0c/fe010c8a854cd79a68323ffcfeb95386.js"></script>
       </div>
@@ -265,6 +417,93 @@
         </div>
       </div>
     </footer>
+  </div>
+
+  <!-- PRINT MODAL -->
+  <div id="print-modal" class="print-modal hidden">
+    <div class="print-modal-overlay" id="print-modal-overlay"></div>
+    <div class="print-modal-content">
+      
+      <div class="print-modal-header">
+        <h3 class="text-lg font-bold text-white">🖨️ Print Preview</h3>
+        <button id="print-modal-close" class="print-modal-close">✕</button>
+      </div>
+
+      <div class="print-modal-body">
+        <div id="receipt-content" class="receipt">
+          
+          <div class="receipt-header">
+            <div class="receipt-logo">
+              <span class="receipt-logo-icon">🧮</span>
+              <div>
+                <div class="receipt-logo-title">SciCalcPro</div>
+                <div class="receipt-logo-subtitle">Scientific Calculator Pro</div>
+              </div>
+            </div>
+            <div class="receipt-title">💰 Profit Calculator Receipt</div>
+            <div class="receipt-meta">
+              <div>Date: <span id="receipt-date">—</span></div>
+              <div>Time: <span id="receipt-time">—</span></div>
+              <div>Receipt #: <span id="receipt-number">—</span></div>
+            </div>
+          </div>
+
+          <div class="receipt-divider"></div>
+
+          <div class="receipt-section">
+            <div class="receipt-section-title">👤 Details</div>
+            <table class="receipt-table">
+              <tr><td>Name</td><td id="receipt-name">—</td></tr>
+              <tr><td>Cost Price (CP)</td><td id="receipt-cost">—</td></tr>
+              <tr><td>Selling Price (SP)</td><td id="receipt-sell">—</td></tr>
+            </table>
+          </div>
+
+          <div class="receipt-divider"></div>
+
+          <div class="receipt-section">
+            <div class="receipt-section-title">📊 Result</div>
+            <table class="receipt-table">
+              <tr><td>Status</td><td id="receipt-status">—</td></tr>
+              <tr><td>Profit / Loss</td><td id="receipt-amount">—</td></tr>
+              <tr><td>Profit %</td><td id="receipt-percent">—</td></tr>
+              <tr><td>Markup %</td><td id="receipt-markup">—</td></tr>
+              <tr><td>Margin %</td><td id="receipt-margin">—</td></tr>
+              <tr><td>Total Revenue</td><td id="receipt-revenue">—</td></tr>
+              <tr><td>Total Cost</td><td id="receipt-cost-total">—</td></tr>
+              <tr><td>Break-Even</td><td id="receipt-breakeven">—</td></tr>
+            </table>
+          </div>
+
+          <div class="receipt-divider"></div>
+
+          <div class="receipt-footer">
+            <div class="receipt-footer-left">
+              <div class="receipt-brand">✨ BILAL MARGHOOB CREATIONS</div>
+              <div class="receipt-contact">📧 bilalmarghoobboutique@gmail.com</div>
+              <div class="receipt-contact">💬 +92 326 650 1314</div>
+              <div class="receipt-contact">🌐 scicalcpro.vercel.app</div>
+            </div>
+            <div class="receipt-qr">
+              <div id="qrcode"></div>
+              <div class="receipt-qr-label">Scan me</div>
+            </div>
+          </div>
+
+          <div class="receipt-copyright">
+            © 2026 Bilal Marghoob Creations. All rights reserved.
+          </div>
+
+        </div>
+      </div>
+
+      <div class="print-modal-footer">
+        <button id="print-action" class="print-btn-primary">🖨️ Print</button>
+        <button id="pdf-action" class="print-btn-secondary">📄 Save PDF</button>
+        <button id="share-action" class="print-btn-secondary">💬 Share</button>
+      </div>
+
+    </div>
   </div>
   
   <script type="module" src="/src/profit-calculator.js"></script>

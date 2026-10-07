@@ -4,44 +4,110 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   
-  <!-- SEO Meta Tags -->
-  <title>Area Calculator — Calculate Area of Any Shape | SciCalcPro</title>
-  <meta name="description" content="Free online area calculator. Calculate area of circle, rectangle, triangle, square & more. By Bilal Marghoob Creations." />
-  <meta name="author" content="Bilal Marghoob" />
-  <meta name="keywords" content="area calculator, circle area, rectangle area, triangle area, square area, geometry calculator" />
+  <meta name="google-site-verification" content="YURRl7lFPPVBzQPZig0p3ehPlBPsKFwkNoMg5zPHobw" />
   
-  <!-- Open Graph -->
-  <meta property="og:title" content="Area Calculator — SciCalcPro" />
-  <meta property="og:description" content="Calculate area of circle, rectangle, triangle, square & more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GT9PMPYBPF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GT9PMPYBPF');
+  </script>
+  
+  <!-- SEO Meta Tags -->
+  <title>Free Area Calculator Online — Circle, Rectangle, Triangle, Square | SciCalcPro</title>
+  <meta name="description" content="Free online area calculator. Calculate area of circle, rectangle, triangle, and square instantly. Includes perimeter and formula. Printable receipt. By Bilal Marghoob Creations." />
+  <meta name="author" content="Bilal Marghoob" />
+  <meta name="keywords" content="area calculator, circle area calculator, rectangle area calculator, triangle area calculator, square area calculator, geometry calculator, free area calculator online" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  
+  <meta property="og:title" content="Free Area Calculator Online — Any Shape | SciCalcPro" />
+  <meta property="og:description" content="Calculate area of circle, rectangle, triangle, square instantly." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scicalcpro.vercel.app/area-calculator.html" />
+  <meta property="og:site_name" content="SciCalcPro" />
   
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Area Calculator — SciCalcPro" />
-  <meta name="twitter:description" content="Calculate area of circle, rectangle, triangle, square & more." />
+  <meta name="twitter:title" content="Free Area Calculator — SciCalcPro" />
+  <meta name="twitter:description" content="Calculate area of any shape instantly." />
   
-  <!-- Canonical -->
   <link rel="canonical" href="https://scicalcpro.vercel.app/area-calculator.html" />
-  
-  <!-- Theme Color -->
   <meta name="theme-color" content="#0b1020" />
   
-  <!-- JSON-LD Schema -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  
+  <!-- JSON-LD Schema — WebApplication -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Area Calculator — SciCalcPro",
+    "name": "Free Area Calculator — SciCalcPro",
     "url": "https://scicalcpro.vercel.app/area-calculator.html",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "Any",
+    "description": "Free online area calculator for circle, rectangle, triangle, and square.",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "author": { "@type": "Organization", "name": "Bilal Marghoob Creations" }
   }
   </script>
-    
-</head>
+  
+  <!-- JSON-LD Schema — FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I calculate the area of a circle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Area of circle = π × r². Enter the radius and click Calculate Area."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I calculate the area of a rectangle?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Area of rectangle = Length × Width. Enter both values."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the formula for triangle area?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Area of triangle = ½ × base × height."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the area of a square?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Area of square = side × side = side²."
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <!-- JSON-LD Schema — BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scicalcpro.vercel.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Area Calculator", "item": "https://scicalcpro.vercel.app/area-calculator.html" }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div id="app">
@@ -57,6 +123,9 @@
           </div>
         </a>
         <div class="header-actions">
+          <button id="print-btn" class="header-btn print-btn" title="Print Result">
+            🖨️ <span class="hidden md:inline">Print</span>
+          </button>
           <button id="theme-toggle" class="header-btn" title="Theme">
             🌙 <span class="hidden md:inline">Dark</span>
           </button>
@@ -91,19 +160,15 @@
           <span class="category-icon">⚙️</span>
           <span class="category-label">Engineering Calculator</span>
         </a>
-            <a href="/engineering-calculator.html" class="category-btn">
-      <span class="category-icon">⚙️</span>
-      <span class="category-label">Engineering Calculator</span>
-    </a>
-    <a href="/gold-silver-calculator.html" class="category-btn">
-      <span class="category-icon">🥇</span>
-      <span class="category-label">Gold & Silver Calculator</span>
-    </a>
+        <a href="/gold-silver-calculator.html" class="category-btn">
+          <span class="category-icon">🥇</span>
+          <span class="category-label">Gold & Silver Calculator</span>
+        </a>
       </div>
     </nav>
 
-       <!-- ADSTERRA — NATIVE BANNER (TOP) -->
-    <div class="ad-container">
+    <!-- TOP AD -->
+    <div class="ad-container top-ad">
       <div class="adsterra-container">
         <script async="async" data-cfasync="false" src="https://pl31696942.profitableratecpmnetwork.com/1231798f5c81f7799c5539c3737443e1/invoke.js"></script>
         <div id="container-1231798f5c81f7799c5539c3737443e1"></div>
@@ -111,141 +176,229 @@
     </div>
 
     <!-- MAIN CONTENT -->
-    <main class="flex-1 flex items-start md:items-center justify-center p-3 md:p-6">
-      <div class="w-full max-w-2xl mx-auto">
+    <main class="flex-1 flex items-start justify-center p-3 md:p-6">
+      
+      <div class="w-full max-w-7xl flex flex-col lg:flex-row gap-4 md:gap-6 items-start justify-center">
         
-        <div class="text-center mb-6">
-          <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent mb-2">
-            📐 Area Calculator
-          </h2>
-          <p class="text-white/60 text-sm">Calculate area of any shape instantly</p>
-        </div>
+        <!-- LEFT SIDEBAR AD -->
+        <aside class="ad-sidebar-left hidden xl:block">
+          <div class="adsterra-container adsterra-sidebar">
+            <script>
+              atOptions = {
+                'key' : 'fa9aee6dbab5586a91dc29c5418ff86a',
+                'format' : 'iframe',
+                'height' : 300,
+                'width' : 160,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highrevenueformat.com/fa9aee6dbab5586a91dc29c5418ff86a/invoke.js"></script>
+          </div>
+        </aside>
 
-        <div class="glass-calculator rounded-3xl p-6 md:p-8 relative overflow-hidden">
+        <!-- CENTER — CALCULATOR -->
+        <div class="w-full max-w-2xl mx-auto flex-1">
           
-          <div class="watermark" aria-hidden="true">
-            <div class="watermark-text">Area Calculator</div>
+          <div class="text-center mb-6">
+            <h1 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-orange-400 to-amber-400 bg-clip-text text-transparent mb-2">
+              📐 Free Area Calculator Online
+            </h1>
+            <p class="text-white/60 text-sm">Calculate area of any shape instantly</p>
           </div>
 
-          <div class="relative z-10">
+          <div class="glass-calculator rounded-3xl p-6 md:p-8 relative overflow-hidden">
             
-            <!-- Shape Selector -->
-            <div class="mb-6">
-              <label class="block text-sm font-semibold text-white/80 mb-2">
-                📐 Select Shape
-              </label>
-              <div class="shape-selector">
-                <button class="shape-btn active" data-shape="rectangle">
-                  <span class="shape-icon">▭</span>
-                  <span class="shape-name">Rectangle</span>
-                </button>
-                <button class="shape-btn" data-shape="circle">
-                  <span class="shape-icon">⭕</span>
-                  <span class="shape-name">Circle</span>
-                </button>
-                <button class="shape-btn" data-shape="triangle">
-                  <span class="shape-icon">🔺</span>
-                  <span class="shape-name">Triangle</span>
-                </button>
-                <button class="shape-btn" data-shape="square">
-                  <span class="shape-icon">◼️</span>
-                  <span class="shape-name">Square</span>
-                </button>
-              </div>
+            <div class="watermark" aria-hidden="true">
+              <div class="watermark-text">Area Calculator</div>
             </div>
 
-            <!-- Dynamic Inputs -->
-            <div id="shape-inputs">
-              <!-- Rectangle -->
-              <div class="shape-input-group" data-shape="rectangle">
-                <div class="mb-4">
-                  <label class="block text-sm font-semibold text-white/80 mb-2">📏 Length</label>
-                  <input type="number" id="rect-length" class="age-input" placeholder="Enter length" step="0.01" />
-                </div>
-                <div class="mb-4">
-                  <label class="block text-sm font-semibold text-white/80 mb-2">📏 Width</label>
-                  <input type="number" id="rect-width" class="age-input" placeholder="Enter width" step="0.01" />
-                </div>
-              </div>
-
-              <!-- Circle -->
-              <div class="shape-input-group hidden" data-shape="circle">
-                <div class="mb-4">
-                  <label class="block text-sm font-semibold text-white/80 mb-2">⭕ Radius</label>
-                  <input type="number" id="circle-radius" class="age-input" placeholder="Enter radius" step="0.01" />
-                </div>
-              </div>
-
-              <!-- Triangle -->
-              <div class="shape-input-group hidden" data-shape="triangle">
-                <div class="mb-4">
-                  <label class="block text-sm font-semibold text-white/80 mb-2">📏 Base</label>
-                  <input type="number" id="tri-base" class="age-input" placeholder="Enter base" step="0.01" />
-                </div>
-                <div class="mb-4">
-                  <label class="block text-sm font-semibold text-white/80 mb-2">📏 Height</label>
-                  <input type="number" id="tri-height" class="age-input" placeholder="Enter height" step="0.01" />
-                </div>
-              </div>
-
-              <!-- Square -->
-              <div class="shape-input-group hidden" data-shape="square">
-                <div class="mb-4">
-                  <label class="block text-sm font-semibold text-white/80 mb-2">◼️ Side</label>
-                  <input type="number" id="square-side" class="age-input" placeholder="Enter side length" step="0.01" />
-                </div>
-              </div>
-            </div>
-
-            <button id="calculate-area" class="area-calculate-btn">
-              ✨ Calculate Area
-            </button>
-
-            <div id="area-result" class="age-result hidden">
+            <div class="relative z-10">
               
-              <div class="age-main-result">
-                <div class="text-xs text-white/50 mb-1 uppercase tracking-wider">Area</div>
-                <div id="area-display" class="area-display">0</div>
+              <!-- Name Field -->
+              <div class="mb-4" data-help="name-input">
+                <label class="block text-sm font-semibold text-white/80 mb-2">
+                  👤 Your Name <span class="text-white/40 font-normal">(optional)</span>
+                </label>
+                <input type="text" id="name-input" class="age-input" placeholder="Enter your name for personalized result" maxlength="30" />
               </div>
 
-              <div class="age-details-grid">
-                <div class="age-detail-card">
-                  <div class="age-detail-icon">📐</div>
-                  <div class="age-detail-label">Shape</div>
-                  <div id="shape-name-display" class="age-detail-value">Rectangle</div>
-                </div>
-                <div class="age-detail-card">
-                  <div class="age-detail-icon">🔢</div>
-                  <div class="age-detail-label">Perimeter</div>
-                  <div id="perimeter-display" class="age-detail-value">0</div>
-                </div>
-                <div class="age-detail-card">
-                  <div class="age-detail-icon">📏</div>
-                  <div class="age-detail-label">Formula</div>
-                  <div id="formula-display" class="age-detail-value">L × W</div>
+              <!-- Shape Selector -->
+              <div class="mb-6" data-help="shape-selector">
+                <label class="block text-sm font-semibold text-white/80 mb-2">
+                  📐 Select Shape <span class="text-rose-400">*</span>
+                </label>
+                <div class="shape-selector">
+                  <button class="shape-btn active" data-shape="rectangle">
+                    <span class="shape-icon">▭</span>
+                    <span class="shape-name">Rectangle</span>
+                  </button>
+                  <button class="shape-btn" data-shape="circle">
+                    <span class="shape-icon">⭕</span>
+                    <span class="shape-name">Circle</span>
+                  </button>
+                  <button class="shape-btn" data-shape="triangle">
+                    <span class="shape-icon">🔺</span>
+                    <span class="shape-name">Triangle</span>
+                  </button>
+                  <button class="shape-btn" data-shape="square">
+                    <span class="shape-icon">◼️</span>
+                    <span class="shape-name">Square</span>
+                  </button>
                 </div>
               </div>
 
-              <button id="reset-area" class="age-reset-btn">
-                🔄 Calculate Again
+              <!-- Dynamic Inputs -->
+              <div id="shape-inputs">
+                <!-- Rectangle -->
+                <div class="shape-input-group" data-shape="rectangle">
+                  <div class="mb-4" data-help="rect-length">
+                    <label class="block text-sm font-semibold text-white/80 mb-2">📏 Length</label>
+                    <input type="number" id="rect-length" class="age-input" placeholder="Enter length" step="0.01" />
+                  </div>
+                  <div class="mb-4" data-help="rect-width">
+                    <label class="block text-sm font-semibold text-white/80 mb-2">📏 Width</label>
+                    <input type="number" id="rect-width" class="age-input" placeholder="Enter width" step="0.01" />
+                  </div>
+                </div>
+
+                <!-- Circle -->
+                <div class="shape-input-group hidden" data-shape="circle">
+                  <div class="mb-4" data-help="circle-radius">
+                    <label class="block text-sm font-semibold text-white/80 mb-2">⭕ Radius</label>
+                    <input type="number" id="circle-radius" class="age-input" placeholder="Enter radius" step="0.01" />
+                  </div>
+                </div>
+
+                <!-- Triangle -->
+                <div class="shape-input-group hidden" data-shape="triangle">
+                  <div class="mb-4" data-help="tri-base">
+                    <label class="block text-sm font-semibold text-white/80 mb-2">📏 Base</label>
+                    <input type="number" id="tri-base" class="age-input" placeholder="Enter base" step="0.01" />
+                  </div>
+                  <div class="mb-4" data-help="tri-height">
+                    <label class="block text-sm font-semibold text-white/80 mb-2">📏 Height</label>
+                    <input type="number" id="tri-height" class="age-input" placeholder="Enter height" step="0.01" />
+                  </div>
+                </div>
+
+                <!-- Square -->
+                <div class="shape-input-group hidden" data-shape="square">
+                  <div class="mb-4" data-help="square-side">
+                    <label class="block text-sm font-semibold text-white/80 mb-2">◼️ Side</label>
+                    <input type="number" id="square-side" class="age-input" placeholder="Enter side length" step="0.01" />
+                  </div>
+                </div>
+              </div>
+
+              <button id="calculate-area" class="area-calculate-btn" data-help="calculate-area">
+                ✨ Calculate Area
               </button>
 
+              <div id="area-result" class="age-result hidden">
+                
+                <div class="age-main-result">
+                  <div class="text-xs text-white/50 mb-1 uppercase tracking-wider" id="result-greeting">Area</div>
+                  <div id="area-display" class="area-display">0</div>
+                </div>
+
+                <div class="age-details-grid">
+                  <div class="age-detail-card">
+                    <div class="age-detail-icon">📐</div>
+                    <div class="age-detail-label">Shape</div>
+                    <div id="shape-name-display" class="age-detail-value">Rectangle</div>
+                  </div>
+                  <div class="age-detail-card">
+                    <div class="age-detail-icon">🔢</div>
+                    <div class="age-detail-label">Perimeter</div>
+                    <div id="perimeter-display" class="age-detail-value">0</div>
+                  </div>
+                  <div class="age-detail-card">
+                    <div class="age-detail-icon">📏</div>
+                    <div class="age-detail-label">Formula</div>
+                    <div id="formula-display" class="age-detail-value">L × W</div>
+                  </div>
+                </div>
+
+                <div class="flex gap-2 mt-4">
+                  <button id="print-result-btn" class="age-reset-btn" style="background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #1a1a1a; font-weight: 700;">
+                    🖨️ Print Result
+                  </button>
+                  <button id="reset-area" class="age-reset-btn" data-help="reset-area">
+                    🔄 Calculate Again
+                  </button>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="brand-stamp-corner" aria-hidden="true">
+              <div class="stamp-text">BILAL MARGHOOB</div>
+              <div class="stamp-subtext">C R E A T I O N S</div>
             </div>
           </div>
 
-          <div class="brand-stamp-corner" aria-hidden="true">
-            <div class="stamp-text">BILAL MARGHOOB</div>
-            <div class="stamp-subtext">C R E A T I O N S</div>
+          <!-- SEO Content -->
+          <div class="gold-info-section">
+            <h2 class="text-lg font-bold text-white/90 mb-3">📖 How to Use This Area Calculator</h2>
+            <ol class="text-sm text-white/70 space-y-2 list-decimal list-inside mb-4">
+              <li><strong>Enter your name</strong> (optional)</li>
+              <li><strong>Select the shape</strong> — Rectangle, Circle, Triangle, or Square</li>
+              <li>Enter the required dimensions</li>
+              <li>Click <strong>"Calculate Area"</strong></li>
+              <li>View area, perimeter, and formula</li>
+              <li>Click <strong>Print</strong> for a receipt</li>
+            </ol>
+
+            <h2 class="text-lg font-bold text-white/90 mb-3 mt-6">📐 Formulas Used</h2>
+            <ul class="text-sm text-white/70 space-y-1 list-disc list-inside">
+              <li>Rectangle: Area = L × W, Perimeter = 2(L+W)</li>
+              <li>Circle: Area = πr², Perimeter = 2πr</li>
+              <li>Triangle: Area = ½ × b × h</li>
+              <li>Square: Area = s², Perimeter = 4s</li>
+            </ul>
           </div>
+
         </div>
 
-        <!-- IN-CONTENT AD -->
-        <div class="ad-container">
-          <div class="ad-placeholder">
-            <div class="ad-placeholder-label">📢 Advertisement</div>
-            <div class="ad-placeholder-size">Responsive — In-Content</div>
+        <!-- RIGHT SIDEBAR — GUIDE -->
+        <aside id="help-sidebar" class="help-sidebar w-full lg:w-80 lg:max-w-xs">
+          
+          <div class="help-header">
+            <h2 class="help-title">📖 Button Guide</h2>
+            <button id="help-toggle" class="help-toggle-btn lg:hidden" title="Toggle Guide">▼</button>
           </div>
-        </div>
+
+          <div id="help-content" class="help-content">
+            
+            <div class="help-default" id="help-default">
+              <div class="help-welcome-icon">👆</div>
+              <h3 class="help-welcome-title">Hover Over Any Field</h3>
+              <p class="help-welcome-text">
+                Point at or tap any input or shape to see its complete guide.
+              </p>
+              <div class="help-tip-box">
+                <div class="help-tip-icon">💡</div>
+                <p class="help-tip-text">
+                  Select a shape, enter dimensions, and calculate area instantly.
+                </p>
+              </div>
+            </div>
+
+            <div class="help-dynamic hidden" id="help-dynamic"></div>
+
+          </div>
+
+          <div class="help-quick-ref">
+            <h3 class="help-quick-title">⚡ Quick Tips</h3>
+            <ul class="help-quick-list">
+              <li>Name is <strong>optional</strong></li>
+              <li>Select the <strong>shape first</strong></li>
+              <li>Use <strong>decimals</strong> for accuracy</li>
+              <li>Press <strong>Print</strong> for receipt</li>
+            </ul>
+          </div>
+
+        </aside>
 
       </div>
     </main>
@@ -275,8 +428,8 @@
       </div>
     </div>
 
-       <!-- ADSTERRA — SOCIAL BAR -->
-    <div class="ad-container">
+    <!-- BOTTOM AD -->
+    <div class="ad-container bottom-ad">
       <div class="adsterra-container">
         <script src="https://pl31696944.profitableratecpmnetwork.com/fe/01/0c/fe010c8a854cd79a68323ffcfeb95386.js"></script>
       </div>
@@ -299,6 +452,87 @@
         </div>
       </div>
     </footer>
+  </div>
+
+  <!-- PRINT MODAL -->
+  <div id="print-modal" class="print-modal hidden">
+    <div class="print-modal-overlay" id="print-modal-overlay"></div>
+    <div class="print-modal-content">
+      
+      <div class="print-modal-header">
+        <h3 class="text-lg font-bold text-white">🖨️ Print Preview</h3>
+        <button id="print-modal-close" class="print-modal-close">✕</button>
+      </div>
+
+      <div class="print-modal-body">
+        <div id="receipt-content" class="receipt">
+          
+          <div class="receipt-header">
+            <div class="receipt-logo">
+              <span class="receipt-logo-icon">🧮</span>
+              <div>
+                <div class="receipt-logo-title">SciCalcPro</div>
+                <div class="receipt-logo-subtitle">Scientific Calculator Pro</div>
+              </div>
+            </div>
+            <div class="receipt-title">📐 Area Calculator Receipt</div>
+            <div class="receipt-meta">
+              <div>Date: <span id="receipt-date">—</span></div>
+              <div>Time: <span id="receipt-time">—</span></div>
+              <div>Receipt #: <span id="receipt-number">—</span></div>
+            </div>
+          </div>
+
+          <div class="receipt-divider"></div>
+
+          <div class="receipt-section">
+            <div class="receipt-section-title">👤 Details</div>
+            <table class="receipt-table">
+              <tr><td>Name</td><td id="receipt-name">—</td></tr>
+              <tr><td>Shape</td><td id="receipt-shape">—</td></tr>
+              <tr><td>Formula</td><td id="receipt-formula">—</td></tr>
+            </table>
+          </div>
+
+          <div class="receipt-divider"></div>
+
+          <div class="receipt-section">
+            <div class="receipt-section-title">📊 Result</div>
+            <table class="receipt-table">
+              <tr><td>Area</td><td id="receipt-area">—</td></tr>
+              <tr><td>Perimeter</td><td id="receipt-perimeter">—</td></tr>
+            </table>
+          </div>
+
+          <div class="receipt-divider"></div>
+
+          <div class="receipt-footer">
+            <div class="receipt-footer-left">
+              <div class="receipt-brand">✨ BILAL MARGHOOB CREATIONS</div>
+              <div class="receipt-contact">📧 bilalmarghoobboutique@gmail.com</div>
+              <div class="receipt-contact">💬 +92 326 650 1314</div>
+              <div class="receipt-contact">🌐 scicalcpro.vercel.app</div>
+            </div>
+            <div class="receipt-qr">
+              <div id="qrcode"></div>
+              <div class="receipt-qr-label">Scan me</div>
+            </div>
+          </div>
+
+          <div class="receipt-copyright">
+            © 2026 Bilal Marghoob Creations. All rights reserved.
+          </div>
+
+        </div>
+      </div>
+
+      <div class="print-modal-footer">
+        <button id="print-action" class="print-btn-primary">🖨️ Print</button>
+        <button id="pdf-action" class="print-btn-secondary">📄 Save PDF</button>
+        <button id="share-action" class="print-btn-secondary">💬 Share</button>
+      </div>
+
+    </div>
   </div>
   
   <script type="module" src="/src/area-calculator.js"></script>
