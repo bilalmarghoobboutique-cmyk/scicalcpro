@@ -1,4 +1,8 @@
 import './style.css'
+import { inject } from '@vercel/analytics'
+
+// Initialize Vercel Web Analytics
+inject()
 
 console.log('📝 Blog Article — SciCalcPro')
 console.log('👨‍💻 Bilal Marghoob Creations')
