@@ -10,6 +10,10 @@ import {
   setAngleMode,
   state
 } from './calculator.js'
+import { inject } from '@vercel/analytics'
+
+// Initialize Vercel Web Analytics
+inject()
 
 console.log('🧮 SciCalcPro — Calculator loaded!')
 console.log('👨‍💻 Bilal Marghoob Creations')
