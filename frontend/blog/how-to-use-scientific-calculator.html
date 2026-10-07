@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  
+  <meta name="google-site-verification" content="YURRl7lFPPVBzQPZig0p3ehPlBPsKFwkNoMg5zPHobw" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GT9PMPYBPF"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-GT9PMPYBPF');
+  </script>
+  
+  <title>How to Use a Scientific Calculator: Complete Beginner's Guide (2026)</title>
+  <meta name="description" content="Complete beginner's guide to using a scientific calculator. Learn sin, cos, tan, log, factorial, memory functions, and more with step-by-step examples." />
+  <meta name="author" content="Bilal Marghoob" />
+  <meta name="keywords" content="how to use scientific calculator, scientific calculator guide, sin cos tan calculator, log calculator guide, scientific calculator tutorial" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  
+  <meta property="og:title" content="How to Use a Scientific Calculator: Complete Beginner's Guide" />
+  <meta property="og:description" content="Step-by-step tutorial with examples for every button." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://scicalcpro.vercel.app/blog/how-to-use-scientific-calculator.html" />
+  <meta property="og:site_name" content="SciCalcPro" />
+  
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How to Use a Scientific Calculator — SciCalcPro" />
+  <meta name="twitter:description" content="Complete beginner's guide with step-by-step examples." />
+  
+  <link rel="canonical" href="https://scicalcpro.vercel.app/blog/how-to-use-scientific-calculator.html" />
+  <meta name="theme-color" content="#0b1020" />
+  
+  <!-- JSON-LD Schema — Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "How to Use a Scientific Calculator: Complete Beginner's Guide",
+    "description": "Complete beginner's guide to using a scientific calculator with step-by-step examples.",
+    "author": {
+      "@type": "Person",
+      "name": "Bilal Marghoob"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Bilal Marghoob Creations",
+      "url": "https://scicalcpro.vercel.app"
+    },
+    "datePublished": "2026-10-08",
+    "dateModified": "2026-10-08",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://scicalcpro.vercel.app/blog/how-to-use-scientific-calculator.html"
+    }
+  }
+  </script>
+  
+  <!-- JSON-LD Schema — BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scicalcpro.vercel.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://scicalcpro.vercel.app/blog/" },
+      { "@type": "ListItem", "position": 3, "name": "How to Use Scientific Calculator", "item": "https://scicalcpro.vercel.app/blog/how-to-use-scientific-calculator.html" }
+    ]
+  }
+  </script>
+  
+  <!-- JSON-LD Schema — FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I use the sin button?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Press sin, enter the angle, close the bracket, then press equals. Example: sin(30) = 0.5 in DEG mode."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between log and ln?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "log is base 10 logarithm (log(100) = 2), while ln is natural logarithm with base e (ln(e) = 1)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I use memory buttons?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "M+ adds current value to memory, MR recalls memory, MC clears memory."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div id="app">
+    
+    <!-- HEADER -->
+    <header class="main-header">
+      <div class="header-content">
+        <a href="/" class="header-logo">
+          <span class="header-logo-icon">🧮</span>
+          <div>
+            <h1 class="header-logo-title">SciCalcPro</h1>
+            <p class="header-logo-subtitle">Scientific Calculator Pro</p>
+          </div>
+        </a>
+        <div class="header-actions">
+          <a href="/blog/" class="header-btn" title="Blog">
+            📝 <span class="hidden md:inline">Blog</span>
+          </a>
+          <button id="theme-toggle" class="header-btn" title="Theme">
+            🌙 <span class="hidden md:inline">Dark</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- CATEGORY NAVIGATION -->
+    <nav class="category-nav">
+      <div class="category-nav-content">
+        <a href="/" class="category-btn">
+          <span class="category-icon">🧮</span>
+          <span class="category-label">Scientific Calculator</span>
+        </a>
+        <a href="/age-calculator.html" class="category-btn">
+          <span class="category-icon">🎂</span>
+          <span class="category-label">Age Calculator</span>
+        </a>
+        <a href="/profit-calculator.html" class="category-btn">
+          <span class="category-icon">💰</span>
+          <span class="category-label">Profit Calculator</span>
+        </a>
+        <a href="/area-calculator.html" class="category-btn">
+          <span class="category-icon">📐</span>
+          <span class="category-label">Area Calculator</span>
+        </a>
+        <a href="/time-calculator.html" class="category-btn">
+          <span class="category-icon">⏰</span>
+          <span class="category-label">Time Calculator</span>
+        </a>
+        <a href="/engineering-calculator.html" class="category-btn">
+          <span class="category-icon">⚙️</span>
+          <span class="category-label">Engineering Calculator</span>
+        </a>
+        <a href="/gold-silver-calculator.html" class="category-btn">
+          <span class="category-icon">🥇</span>
+          <span class="category-label">Gold & Silver Calculator</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- TOP AD -->
+    <div class="ad-container top-ad">
+      <div class="adsterra-container">
+        <script async="async" data-cfasync="false" src="https://pl31696942.profitableratecpmnetwork.com/1231798f5c81f7799c5539c3737443e1/invoke.js"></script>
+        <div id="container-1231798f5c81f7799c5539c3737443e1"></div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-1 flex items-start justify-center p-3 md:p-6">
+      
+      <div class="w-full max-w-4xl mx-auto">
+        
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb">
+          <a href="/">Home</a> ›
+          <a href="/blog/">Blog</a> ›
+          <span>How to Use Scientific Calculator</span>
+        </nav>
+
+        <!-- Article Header -->
+        <article class="blog-article">
+          
+          <header class="article-header">
+            <div class="article-category-badge">🧮 Scientific Calculator</div>
+            <h1 class="article-h1">How to Use a Scientific Calculator: Complete Beginner's Guide</h1>
+            <div class="article-info">
+              <span>📅 08 October 2026</span>
+              <span>⏱️ 8 min read</span>
+              <span>👤 Bilal Marghoob</span>
+            </div>
+          </header>
+
+          <!-- IN-CONTENT AD -->
+          <div class="ad-container">
+            <div class="ad-placeholder">
+              <div class="ad-placeholder-label">📢 Advertisement</div>
+              <div class="ad-placeholder-size">Responsive — In-Content</div>
+            </div>
+          </div>
+
+          <!-- Article Content -->
+          <div class="article-content">
+            
+            <p class="lead">
+              A scientific calculator is one of the most powerful tools for students, engineers, and professionals. But for beginners, the dozens of buttons can be overwhelming. This complete guide will teach you how to use every function — from basic arithmetic to advanced trigonometry — with step-by-step examples.
+            </p>
+
+            <h2>Table of Contents</h2>
+            <ul class="toc">
+              <li><a href="#basics">1. The Basics: Numbers and Operators</a></li>
+              <li><a href="#trig">2. Trigonometric Functions (sin, cos, tan)</a></li>
+              <li><a href="#log">3. Logarithms (log, ln)</a></li>
+              <li><a href="#power">4. Power and Root Functions</a></li>
+              <li><a href="#factorial">5. Factorial and Reciprocal</a></li>
+              <li><a href="#memory">6. Memory Functions (MC, MR, M+)</a></li>
+              <li><a href="#angle">7. Angle Modes (DEG, RAD, GRAD)</a></li>
+              <li><a href="#tips">8. Pro Tips for Faster Calculation</a></li>
+            </ul>
+
+            <h2 id="basics">1. The Basics: Numbers and Operators</h2>
+            <p>
+              Every scientific calculator has the basic arithmetic operators you already know:
+            </p>
+            <ul>
+              <li><strong>+</strong> — Addition (jama)</li>
+              <li><strong>−</strong> — Subtraction (tafreeq)</li>
+              <li><strong>×</strong> — Multiplication (zarb)</li>
+              <li><strong>÷</strong> — Division (taqseem)</li>
+              <li><strong>=</strong> — Equals (result)</li>
+            </ul>
+            <p>
+              <strong>Example:</strong> To calculate <code>25 + 37</code>, press <code>2</code> <code>5</code> <code>+</code> <code>3</code> <code>7</code> <code>=</code>. Result: <strong>62</strong>.
+            </p>
+            <p>
+              The <strong>AC</strong> button clears everything. The <strong>C</strong> button clears only the current input. The <strong>⌫</strong> button (backspace) deletes the last digit.
+            </p>
+
+            <h2 id="trig">2. Trigonometric Functions (sin, cos, tan)</h2>
+            <p>
+              Trigonometric functions are used to calculate angles and sides of triangles. They're essential for physics, engineering, and advanced math.
+            </p>
+            <h3>Sine (sin)</h3>
+            <p>The sine of an angle is the ratio of the opposite side to the hypotenuse.</p>
+            <p><strong>Example:</strong> <code>sin(30)</code> = <strong>0.5</strong> (in DEG mode)</p>
+            <p><strong>How to use:</strong> Press <code>sin</code>, type <code>30</code>, press <code>)</code>, then <code>=</code>.</p>
+
+            <h3>Cosine (cos)</h3>
+            <p>The cosine of an angle is the ratio of the adjacent side to the hypotenuse.</p>
+            <p><strong>Example:</strong> <code>cos(60)</code> = <strong>0.5</strong> (in DEG mode)</p>
+
+            <h3>Tangent (tan)</h3>
+            <p>The tangent of an angle is the ratio of sine to cosine.</p>
+            <p><strong>Example:</strong> <code>tan(45)</code> = <strong>1</strong> (in DEG mode)</p>
+            <p><strong>Note:</strong> <code>tan(90)</code> is undefined.</p>
+
+            <h2 id="log">3. Logarithms (log, ln)</h2>
+            <p>
+              Logarithms are used in chemistry (pH), physics (decibels), and finance (compound interest).
+            </p>
+            <h3>Log base 10 (log)</h3>
+            <p>Answers the question: "10 to what power gives this number?"</p>
+            <p><strong>Examples:</strong></p>
+            <ul>
+              <li><code>log(100)</code> = <strong>2</strong></li>
+              <li><code>log(1000)</code> = <strong>3</strong></li>
+              <li><code>log(10)</code> = <strong>1</strong></li>
+            </ul>
+            <h3>Natural log (ln)</h3>
+            <p>Uses base <strong>e</strong> (2.71828...). Used in exponential growth and decay.</p>
+            <p><strong>Examples:</strong></p>
+            <ul>
+              <li><code>ln(e)</code> = <strong>1</strong></li>
+              <li><code>ln(1)</code> = <strong>0</strong></li>
+              <li><code>ln(10)</code> ≈ <strong>2.302</strong></li>
+            </ul>
+
+            <h2 id="power">4. Power and Root Functions</h2>
+            <h3>Square (x²)</h3>
+            <p>Multiplies a number by itself.</p>
+            <p><strong>Example:</strong> <code>5²</code> = <strong>25</strong></p>
+
+            <h3>Power (x^y)</h3>
+            <p>Raises x to the power y.</p>
+            <p><strong>Example:</strong> <code>2^3</code> = <strong>8</strong></p>
+
+            <h3>Square Root (√)</h3>
+            <p>Finds the value that, when squared, gives the original number.</p>
+            <p><strong>Example:</strong> <code>√16</code> = <strong>4</strong></p>
+
+            <h2 id="factorial">5. Factorial and Reciprocal</h2>
+            <h3>Factorial (x!)</h3>
+            <p>Multiplies the number by all positive integers below it.</p>
+            <p><strong>Examples:</strong></p>
+            <ul>
+              <li><code>5!</code> = 5 × 4 × 3 × 2 × 1 = <strong>120</strong></li>
+              <li><code>4!</code> = <strong>24</strong></li>
+              <li><code>3!</code> = <strong>6</strong></li>
+            </ul>
+            <h3>Reciprocal (1/x)</h3>
+            <p>Divides 1 by the number.</p>
+            <p><strong>Example:</strong> <code>1/4</code> = <strong>0.25</strong></p>
+
+            <h2 id="memory">6. Memory Functions (MC, MR, M+)</h2>
+            <p>
+              Memory buttons let you store values for later use — perfect for multi-step calculations.
+            </p>
+            <ul>
+              <li><strong>M+</strong> — Adds current value to memory</li>
+              <li><strong>MR</strong> — Recalls the stored value</li>
+              <li><strong>MC</strong> — Clears memory</li>
+            </ul>
+            <p><strong>Example:</strong> To calculate <code>25 + 35 + 45</code>:</p>
+            <ol>
+              <li>Type <code>25</code>, press <code>M+</code></li>
+              <li>Type <code>35</code>, press <code>M+</code></li>
+              <li>Type <code>45</code>, press <code>M+</code></li>
+              <li>Press <code>MR</code> → <strong>105</strong></li>
+            </ol>
+
+            <h2 id="angle">7. Angle Modes (DEG, RAD, GRAD)</h2>
+            <p>
+              The angle mode determines how trigonometric functions interpret angles:
+            </p>
+            <ul>
+              <li><strong>DEG</strong> — Degrees (0 to 360°). Most common.</li>
+              <li><strong>RAD</strong> — Radians (0 to 2π). Used in advanced math.</li>
+              <li><strong>GRAD</strong> — Gradians (0 to 400). Rarely used.</li>
+            </ul>
+            <p>
+              <strong>Important:</strong> Always check the mode before calculating. <code>sin(30)</code> in DEG = 0.5, but in RAD it's very different.
+            </p>
+
+            <h2 id="tips">8. Pro Tips for Faster Calculation</h2>
+            <ol>
+              <li><strong>Use keyboard shortcuts</strong> — Our online calculator supports full keyboard input.</li>
+              <li><strong>Check your angle mode</strong> — Wrong mode = wrong answer.</li>
+              <li><strong>Use memory for repeated values</strong> — Save time in long calculations.</li>
+              <li><strong>Close your brackets</strong> — Unclosed brackets cause errors.</li>
+              <li><strong>Use AC to start fresh</strong> — Don't carry over old calculations.</li>
+              <li><strong>Print your results</strong> — Our calculator lets you print receipts for records.</li>
+            </ol>
+
+            <h2>Conclusion</h2>
+            <p>
+              A scientific calculator is a powerful tool. Once you understand the basics — sin, cos, tan, log, ln, factorial — you can handle almost any calculation.
+            </p>
+            <p>
+              <strong>Try our free online scientific calculator</strong> — it has all these functions plus a built-in guide that shows you how to use each button. No download, no signup required.
+            </p>
+            <p style="text-align: center; margin-top: 24px;">
+              <a href="/" class="cta-btn-large">🧮 Try Scientific Calculator →</a>
+            </p>
+
+          </div>
+
+          <!-- Article Footer -->
+          <footer class="article-footer">
+            <div class="article-share">
+              <span>Share this article:</span>
+              <a href="https://wa.me/?text=How%20to%20Use%20a%20Scientific%20Calculator%20—%20https://scicalcpro.vercel.app/blog/how-to-use-scientific-calculator.html" target="_blank" class="share-btn">💬 WhatsApp</a>
+              <a href="https://twitter.com/intent/tweet?text=How%20to%20Use%20a%20Scientific%20Calculator&url=https://scicalcpro.vercel.app/blog/how-to-use-scientific-calculator.html" target="_blank" class="share-btn">🐦 Twitter</a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://scicalcpro.vercel.app/blog/how-to-use-scientific-calculator.html" target="_blank" class="share-btn">📘 Facebook</a>
+            </div>
+          </footer>
+
+        </article>
+
+        <!-- Related Articles -->
+        <section class="related-articles">
+          <h2 class="text-2xl font-bold text-white/90 mb-4">📚 Related Articles</h2>
+          <div class="article-grid">
+            <a href="/blog/" class="article-card">
+              <div class="article-icon">📐</div>
+              <div class="article-category">Guide</div>
+              <h3 class="article-title">DEG vs RAD: Complete Guide</h3>
+              <p class="article-excerpt">Understand the difference between angle modes.</p>
+            </a>
+            <a href="/blog/" class="article-card">
+              <div class="article-icon">💡</div>
+              <div class="article-category">Tips</div>
+              <h3 class="article-title">10 Calculator Tricks Every Student Should Know</h3>
+              <p class="article-excerpt">Master time-saving calculator tricks.</p>
+            </a>
+            <a href="/blog/" class="article-card">
+              <div class="article-icon">🎂</div>
+              <div class="article-category">Age Calculator</div>
+              <h3 class="article-title">How to Calculate Your Exact Age</h3>
+              <p class="article-excerpt">Learn age calculation with next birthday countdown.</p>
+            </a>
+          </div>
+        </section>
+
+        <!-- Back to Blog -->
+        <div class="text-center mt-8">
+          <a href="/blog/" class="cta-btn">← Back to Blog</a>
+        </div>
+
+        <!-- IN-CONTENT AD -->
+        <div class="ad-container">
+          <div class="ad-placeholder">
+            <div class="ad-placeholder-label">📢 Advertisement</div>
+            <div class="ad-placeholder-size">Responsive — In-Content</div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- SIGNATURE SPACE -->
+    <div class="signature-space">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="brand-signature mb-3">
+          <div class="signature-line"></div>
+          <div class="signature-text">
+            <span class="signature-crafted">✨ Crafted with precision by</span>
+            <span class="signature-brand">BILAL MARGHOOB CREATIONS</span>
+          </div>
+          <div class="signature-line"></div>
+        </div>
+        <div class="contact-info flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
+          <a href="mailto:bilalmarghoobboutique@gmail.com" class="contact-item">
+            <span class="contact-icon">📧</span>
+            <span class="contact-text">bilalmarghoobboutique@gmail.com</span>
+          </a>
+          <span class="hidden md:inline text-white/20">|</span>
+          <a href="https://wa.me/923266501314" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-icon">💬</span>
+            <span class="contact-text">+92 326 650 1314</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM AD -->
+    <div class="ad-container bottom-ad">
+      <div class="adsterra-container">
+        <script src="https://pl31696944.profitableratecpmnetwork.com/fe/01/0c/fe010c8a854cd79a68323ffcfeb95386.js"></script>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="/" class="footer-link">Home</a>
+          <a href="/blog/" class="footer-link">Blog</a>
+          <a href="/age-calculator.html" class="footer-link">Age Calculator</a>
+          <a href="/profit-calculator.html" class="footer-link">Profit Calculator</a>
+          <a href="/area-calculator.html" class="footer-link">Area Calculator</a>
+          <a href="/time-calculator.html" class="footer-link">Time Calculator</a>
+          <a href="/engineering-calculator.html" class="footer-link">Engineering Calculator</a>
+          <a href="/gold-silver-calculator.html" class="footer-link">Gold & Silver Calculator</a>
+        </div>
+        <div class="footer-copyright">
+          © 2026 <strong>Bilal Marghoob Creations</strong>. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+  <script type="module" src="/src/blog-article.js"></script>
+</body>
+</html>

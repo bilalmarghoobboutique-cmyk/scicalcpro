@@ -12,6 +12,9 @@ export default defineConfig({
         time: resolve(__dirname, 'time-calculator.html'),
         engineering: resolve(__dirname, 'engineering-calculator.html'),
         gold: resolve(__dirname, 'gold-silver-calculator.html'),
+        blog: resolve(__dirname, 'blog/index.html'),
+        blogArticle1: resolve(__dirname, 'blog/how-to-use-scientific-calculator.html'),
+        blogArticle2: resolve(__dirname, 'blog/deg-vs-rad.html'),
       }
     }
   }
