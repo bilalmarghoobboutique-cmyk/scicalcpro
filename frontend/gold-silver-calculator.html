@@ -4,33 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   
-  <!-- SEO Meta Tags -->
-  <title>Gold & Silver Calculator — Live Price Calculator | SciCalcPro</title>
-  <meta name="description" content="Free online gold & silver calculator. Calculate gold & silver prices in any country, any currency, any weight unit. By Bilal Marghoob Creations." />
-  <meta name="author" content="Bilal Marghoob" />
-  <meta name="keywords" content="gold calculator, silver calculator, gold price calculator, gold rate today, silver rate, gold jewelry calculator" />
+  <meta name="google-site-verification" content="YURRl7lFPPVBzQPZig0p3ehPlBPsKFwkNoMg5zPHobw" />
   
-  <!-- Open Graph -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <title>Gold & Silver Calculator — Ratti, Masha, Tola, Gram, Ounce, KG | SciCalcPro</title>
+  <meta name="description" content="Free online gold & silver calculator with Ratti, Masha, Tola, Gram, Ounce, KG. Calculate gold prices in any country, any currency. By Bilal Marghoob Creations." />
+  <meta name="author" content="Bilal Marghoob" />
+  <meta name="keywords" content="gold calculator, silver calculator, gold price calculator, ratti calculator, masha calculator, tola calculator, gold rate today, silver rate" />
+  
   <meta property="og:title" content="Gold & Silver Calculator — SciCalcPro" />
-  <meta property="og:description" content="Calculate gold & silver prices in any country, any currency, any weight unit." />
+  <meta property="og:description" content="Calculate gold & silver prices in Ratti, Masha, Tola, Gram, Ounce, KG." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scicalcpro.vercel.app/gold-silver-calculator.html" />
   
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Gold & Silver Calculator — SciCalcPro" />
-  <meta name="twitter:description" content="Calculate gold & silver prices in any country, any currency, any weight unit." />
+  <meta name="twitter:description" content="Calculate gold & silver prices in Ratti, Masha, Tola, Gram, Ounce, KG." />
   
-  <!-- Canonical -->
   <link rel="canonical" href="https://scicalcpro.vercel.app/gold-silver-calculator.html" />
   
-  <!-- Theme Color -->
-  <meta name="theme-color" content="#0b1020" />
+  <meta name="theme-color" content="#000000" />
   
-  <!-- QR Code Library -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="SciCalcPro" />
+  
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
   
-  <!-- JSON-LD Schema -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,562 +48,1958 @@
     "author": { "@type": "Organization", "name": "Bilal Marghoob Creations" }
   }
   </script>
-   
-</head>
+  
+  <style>
+    /* ============================================ */
+    /* RESET */
+    /* ============================================ */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    
+    body {
+      background: #000000;
+      background-image: 
+        radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(192, 192, 192, 0.05) 0%, transparent 50%);
+      background-attachment: fixed;
+      color: #f8fafc;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    /* ============================================ */
+    /* HEADER */
+    /* ============================================ */
+    .main-header {
+      width: 100%;
+      padding: 12px 16px;
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+      border-bottom: 2px solid;
+      border-image: linear-gradient(90deg, transparent, #FFD700, #C0C0C0, #FFD700, transparent) 1;
+      box-shadow: 0 4px 30px rgba(255, 215, 0, 0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    @media (min-width: 768px) {
+      .main-header { padding: 14px 24px; }
+    }
+    
+    .header-inner {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      max-width: 1200px;
+      margin: 0 auto !important;
+      gap: 12px;
+      width: 100%;
+    }
+    
+    /* Logo */
+    .logo-link {
+      display: inline-flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 10px !important;
+      text-decoration: none !important;
+      flex-shrink: 0 !important;
+    }
+    
+    .logo-icon {
+      display: inline-block !important;
+      font-size: 2rem !important;
+      line-height: 1 !important;
+      flex-shrink: 0 !important;
+      filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.6));
+    }
+    
+    .logo-text {
+      display: inline-flex !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: center !important;
+      line-height: 1.1 !important;
+      gap: 2px !important;
+    }
+    
+    .logo-title {
+      display: block !important;
+      font-size: 1.4rem !important;
+      font-weight: 800 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1.1 !important;
+      font-family: 'Playfair Display', serif !important;
+      letter-spacing: 0.5px !important;
+      background: linear-gradient(135deg, #FFD700 0%, #FFED4E 25%, #C0C0C0 50%, #FFD700 75%, #B8860B 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+      color: #FFD700;
+    }
+    
+    .logo-subtitle {
+      display: block !important;
+      font-size: 0.7rem !important;
+      color: rgba(192, 192, 192, 0.7) !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      line-height: 1.1 !important;
+      font-weight: 400 !important;
+    }
+    
+    @media (min-width: 768px) {
+      .logo-icon { font-size: 2.4rem !important; }
+      .logo-title { font-size: 1.7rem !important; }
+      .logo-subtitle { font-size: 0.75rem !important; }
+    }
+    
+    /* Header Buttons */
+    .header-buttons {
+      display: inline-flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 8px !important;
+      flex-shrink: 0 !important;
+    }
+    
+    .hdr-btn {
+      display: inline-flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 6px !important;
+      padding: 8px 14px !important;
+      border-radius: 10px !important;
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.08), rgba(192, 192, 192, 0.08)) !important;
+      border: 1px solid rgba(255, 215, 0, 0.3) !important;
+      color: #FFD700 !important;
+      font-size: 0.85rem !important;
+      font-weight: 600 !important;
+      cursor: pointer !important;
+      transition: all 0.3s ease;
+      text-decoration: none !important;
+      white-space: nowrap !important;
+      font-family: 'Inter', sans-serif !important;
+      line-height: 1 !important;
+    }
+    
+    .hdr-btn:hover {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(192, 192, 192, 0.15)) !important;
+      border-color: #FFD700 !important;
+      color: #FFED4E !important;
+      box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+      transform: translateY(-1px);
+    }
+    
+    .hdr-btn-print {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(184, 134, 11, 0.1)) !important;
+      border-color: rgba(255, 215, 0, 0.4) !important;
+    }
+    
+    @media (max-width: 640px) {
+      .logo-icon { font-size: 1.6rem !important; }
+      .logo-title { font-size: 1.05rem !important; }
+      .logo-subtitle { display: none !important; }
+      
+      .hdr-btn {
+        padding: 8px 10px !important;
+        font-size: 1rem !important;
+      }
+      
+      .hdr-btn .btn-label {
+        display: none !important;
+      }
+    }
+    
+    /* ============================================ */
+    /* CATEGORY NAV */
+    /* ============================================ */
+    .cat-nav {
+      width: 100%;
+      padding: 10px 12px;
+      background: rgba(0, 0, 0, 0.95);
+      border-bottom: 1px solid rgba(255, 215, 0, 0.15);
+      overflow-x: auto;
+      position: sticky;
+      top: 63px;
+      z-index: 90;
+      scrollbar-width: none;
+    }
+    
+    .cat-nav::-webkit-scrollbar { display: none; }
+    
+    .cat-nav-inner {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 1200px;
+      margin: 0 auto;
+      min-width: max-content;
+    }
+    
+    .cat-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: rgba(255, 215, 0, 0.04);
+      border: 1px solid rgba(255, 215, 0, 0.12);
+      color: #C0C0C0;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+    
+    .cat-btn:hover {
+      background: rgba(255, 215, 0, 0.12);
+      border-color: rgba(255, 215, 0, 0.5);
+      color: #FFD700;
+      transform: translateY(-2px);
+    }
+    
+    .cat-btn.active {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(192, 192, 192, 0.2));
+      border-color: #FFD700;
+      color: #FFD700;
+      box-shadow: 0 4px 25px rgba(255, 215, 0, 0.4);
+    }
+    
+    @media (max-width: 640px) {
+      .cat-btn { padding: 6px 10px; }
+    }
+    
+    /* ============================================ */
+    /* MAIN */
+    /* ============================================ */
+    main {
+      flex: 1;
+      width: 100%;
+      padding: 1.5rem 1rem;
+    }
+    
+    .wrap {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    /* ============================================ */
+    /* HERO */
+    /* ============================================ */
+    .hero {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FFD700 0%, #FFED4E 30%, #C0C0C0 60%, #FFD700 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+      line-height: 1.2;
+    }
+    
+    @media (min-width: 768px) {
+      .hero-title { font-size: 3rem; }
+    }
+    
+    .hero-sub {
+      color: rgba(255, 215, 0, 0.7);
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    
+    @media (min-width: 768px) {
+      .hero-sub { font-size: 0.9rem; }
+    }
+    
+    /* ============================================ */
+    /* CARD */
+    /* ============================================ */
+    .card {
+      background: linear-gradient(135deg, rgba(10, 10, 10, 0.98) 0%, rgba(20, 20, 20, 0.98) 100%);
+      border: 1.5px solid;
+      border-image: linear-gradient(135deg, #FFD700 0%, #C0C0C0 50%, #FFD700 100%) 1;
+      border-radius: 20px;
+      box-shadow: 0 25px 60px -15px rgba(255, 215, 0, 0.25);
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    @media (min-width: 768px) {
+      .card { padding: 2rem; }
+    }
+    
+    /* ============================================ */
+    /* SECTION TITLE */
+    /* ============================================ */
+    .sec-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #FFD700;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    }
+    
+    .sec-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #FFD700, #B8860B);
+      color: #000000;
+      font-size: 0.75rem;
+      font-weight: 800;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+      flex-shrink: 0;
+    }
+    
+    /* ============================================ */
+    /* FORM SECTION */
+    /* ============================================ */
+    .form-sec {
+      margin-bottom: 1.5rem;
+      padding: 1.25rem;
+      background: rgba(255, 215, 0, 0.02);
+      border: 1px solid rgba(255, 215, 0, 0.1);
+      border-radius: 14px;
+    }
+    
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    @media (min-width: 768px) {
+      .grid-2 { grid-template-columns: 1fr 1fr; }
+    }
+    
+    .lbl {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgba(255, 215, 0, 0.85);
+      margin-bottom: 8px;
+      letter-spacing: 0.3px;
+    }
+    
+    /* ============================================ */
+    /* INPUTS & SELECTS */
+    /* ============================================ */
+    .inp,
+    .inp-sm,
+    .sel {
+      width: 100%;
+      padding: 12px 14px;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1.5px solid rgba(255, 215, 0, 0.25);
+      border-radius: 10px;
+      color: #FFD700;
+      font-size: 0.95rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      outline: none;
+      transition: all 0.25s ease;
+    }
+    
+    .inp-sm {
+      padding: 10px 12px;
+      font-size: 0.85rem;
+    }
+    
+    .inp::placeholder,
+    .inp-sm::placeholder {
+      color: rgba(255, 215, 0, 0.3);
+      font-weight: 400;
+    }
+    
+    .inp:focus,
+    .inp-sm:focus,
+    .sel:focus {
+      border-color: #FFD700;
+      background: rgba(255, 215, 0, 0.05);
+      box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.15), 0 0 20px rgba(255, 215, 0, 0.2);
+    }
+    
+    .sel {
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFD700' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 20px;
+      padding-right: 36px;
+    }
+    
+    .sel option {
+      background: #1a1a1a;
+      color: #FFD700;
+    }
+    
+    /* ============================================ */
+    /* METAL SELECTOR */
+    /* ============================================ */
+    .metal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    
+    @media (min-width: 640px) {
+      .metal-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    
+    .metal-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 12px 8px;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(26, 26, 26, 0.6));
+      border: 1.5px solid rgba(255, 215, 0, 0.2);
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+    
+    .metal-btn:hover {
+      border-color: rgba(255, 215, 0, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
+    }
+    
+    .metal-btn.active {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(192, 192, 192, 0.15));
+      border-color: #FFD700;
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.4), inset 0 0 15px rgba(255, 215, 0, 0.1);
+    }
+    
+    .metal-icon {
+      font-size: 1.5rem;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    }
+    
+    .metal-name {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #FFD700;
+    }
+    
+    .metal-purity {
+      font-size: 0.65rem;
+      color: rgba(192, 192, 192, 0.7);
+      font-weight: 500;
+    }
+    
+    /* ============================================ */
+    /* RATE GRID */
+    /* ============================================ */
+    .rate-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    
+    @media (min-width: 640px) {
+      .rate-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    
+    @media (min-width: 1024px) {
+      .rate-grid { grid-template-columns: repeat(6, 1fr); }
+    }
+    
+    .rate-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    
+    .rate-field label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: rgba(255, 215, 0, 0.75);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    
+    .badge {
+      font-size: 0.6rem;
+      padding: 1px 5px;
+      background: rgba(255, 215, 0, 0.15);
+      border-radius: 4px;
+      color: #FFD700;
+      font-weight: 700;
+    }
+    
+    /* ============================================ */
+    /* WEIGHT UNIT SELECTOR */
+    /* ============================================ */
+    .unit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+    
+    @media (min-width: 640px) {
+      .unit-grid { grid-template-columns: repeat(6, 1fr); }
+    }
+    
+    .unit-btn {
+      padding: 8px 6px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 1.5px solid rgba(255, 215, 0, 0.2);
+      border-radius: 8px;
+      color: #C0C0C0;
+      font-size: 0.7rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-align: center;
+      font-family: inherit;
+    }
+    
+    .unit-btn:hover {
+      border-color: rgba(255, 215, 0, 0.5);
+      color: #FFD700;
+      transform: translateY(-1px);
+    }
+    
+    .unit-btn.active {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(192, 192, 192, 0.15));
+      border-color: #FFD700;
+      color: #FFD700;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+    
+    /* ============================================ */
+    /* CALCULATE BUTTON */
+    /* ============================================ */
+    .calc-btn {
+      width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, #FFD700 0%, #FFED4E 30%, #C0C0C0 70%, #B8860B 100%);
+      border: none;
+      border-radius: 14px;
+      color: #000000;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4);
+      margin-top: 1rem;
+      font-family: inherit;
+    }
+    
+    .calc-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6);
+    }
+    
+    .calc-btn:active {
+      transform: translateY(-1px);
+    }
+    
+    /* ============================================ */
+    /* RESULT */
+    /* ============================================ */
+    .result-wrap {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 2px solid rgba(255, 215, 0, 0.2);
+      display: none;
+    }
+    
+    .result-wrap.show {
+      display: block;
+      animation: fadeInUp 0.5s ease;
+    }
+    
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Big Total Card */
+    .total-card {
+      padding: 2rem 1.5rem;
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(192, 192, 192, 0.06));
+      border: 2px solid;
+      border-image: linear-gradient(135deg, #FFD700, #C0C0C0, #FFD700) 1;
+      border-radius: 18px;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    
+    .total-label {
+      font-size: 0.75rem;
+      color: rgba(255, 215, 0, 0.7);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+    
+    .total-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FFD700 0%, #FFED4E 50%, #FFD700 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+      word-break: break-all;
+      filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
+    }
+    
+    @media (min-width: 768px) {
+      .total-amount { font-size: 3rem; }
+    }
+    
+    .total-detail {
+      font-size: 0.8rem;
+      color: rgba(192, 192, 192, 0.7);
+      margin-top: 0.5rem;
+    }
+    
+    /* Breakdown Title */
+    .breakdown-title {
+      font-family: 'Playfair Display', serif;
+      color: #FFD700;
+      font-size: 1.1rem;
+      margin: 1.5rem 0 1rem;
+      text-align: center;
+      letter-spacing: 0.5px;
+    }
+    
+    /* Detail Cards */
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+    
+    @media (min-width: 640px) {
+      .detail-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    
+    @media (min-width: 1024px) {
+      .detail-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    
+    .detail-card {
+      padding: 14px 10px;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(26, 26, 26, 0.6));
+      border: 1px solid rgba(255, 215, 0, 0.15);
+      border-radius: 12px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    
+    .detail-card:hover {
+      border-color: rgba(255, 215, 0, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15);
+    }
+    
+    .detail-icon {
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+    
+    .detail-lbl {
+      font-size: 0.65rem;
+      color: rgba(255, 215, 0, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    
+    .detail-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #FFD700;
+      word-break: break-all;
+      line-height: 1.3;
+    }
+    
+    /* ============================================ */
+    /* PRINT BUTTON — RESULT KE NEECHE */
+    /* ============================================ */
+    .print-section {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed rgba(255, 215, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    @media (min-width: 640px) {
+      .print-section {
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+    
+    .big-print-btn {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, #FFD700 0%, #FFED4E 50%, #B8860B 100%);
+      border: none;
+      border-radius: 14px;
+      color: #000000;
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5);
+      font-family: inherit;
+      width: 100%;
+    }
+    
+    @media (min-width: 640px) {
+      .big-print-btn { width: auto; min-width: 240px; }
+    }
+    
+    .big-print-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 45px rgba(255, 215, 0, 0.7);
+    }
+    
+    .big-print-btn:active {
+      transform: translateY(-1px);
+    }
+    
+    .sec-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 16px 24px;
+      background: rgba(255, 215, 0, 0.08);
+      border: 1.5px solid rgba(255, 215, 0, 0.3);
+      border-radius: 14px;
+      color: #FFD700;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: inherit;
+      width: 100%;
+    }
+    
+    @media (min-width: 640px) {
+      .sec-btn { width: auto; }
+    }
+    
+    .sec-btn:hover {
+      background: rgba(255, 215, 0, 0.2);
+      border-color: #FFD700;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.25);
+    }
+    
+    /* ============================================ */
+    /* INFO SECTION */
+    /* ============================================ */
+    .info-sec {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(26, 26, 26, 0.6));
+      border: 1px solid rgba(255, 215, 0, 0.15);
+      border-radius: 16px;
+    }
+    
+    .info-sec h3 {
+      color: #FFD700;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+    
+    .info-sec ol {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      padding-left: 1.25rem;
+      color: rgba(192, 192, 192, 0.85);
+    }
+    
+    .info-sec strong { color: #FFD700; }
+    
+    /* Conversion Box */
+    .conv-box {
+      padding: 12px 14px;
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.06), rgba(192, 192, 192, 0.04));
+      border-left: 3px solid #FFD700;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    
+    .conv-box p {
+      font-size: 0.72rem;
+      color: rgba(255, 215, 0, 0.85);
+      line-height: 1.6;
+      margin: 0;
+    }
+    
+    /* ============================================ */
+    /* SIGNATURE */
+    /* ============================================ */
+    .sig-space {
+      padding: 24px 16px;
+      text-align: center;
+    }
+    
+    .sig-inner {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .sig-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    
+    .sig-line {
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #FFD700, transparent);
+    }
+    
+    .sig-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: center;
+    }
+    
+    .sig-crafted {
+      font-size: 0.7rem;
+      color: rgba(192, 192, 192, 0.6);
+    }
+    
+    .sig-brand {
+      font-size: 0.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #FFD700, #C0C0C0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 1.5px;
+    }
+    
+    .contact-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+    }
+    
+    @media (min-width: 768px) {
+      .contact-row { flex-direction: row; gap: 16px; }
+    }
+    
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: rgba(192, 192, 192, 0.7);
+      text-decoration: none;
+      font-size: 0.75rem;
+      transition: color 0.2s ease;
+    }
+    
+    .contact-link:hover { color: #FFD700; }
+    
+    /* ============================================ */
+    /* FOOTER */
+    /* ============================================ */
+    .main-footer {
+      width: 100%;
+      margin-top: auto;
+      padding: 32px 16px 24px;
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+      border-top: 2px solid;
+      border-image: linear-gradient(90deg, transparent, #FFD700, #C0C0C0, #FFD700, transparent) 1;
+    }
+    
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .footer-links {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: wrap !important;
+      justify-content: center !important;
+      align-items: center !important;
+      gap: 8px 20px !important;
+      margin-bottom: 20px !important;
+      padding-bottom: 20px !important;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.15) !important;
+    }
+    
+    .footer-links a {
+      display: inline-block !important;
+      color: #C0C0C0 !important;
+      text-decoration: none !important;
+      font-size: 0.85rem !important;
+      font-weight: 500 !important;
+      padding: 4px 0 !important;
+    }
+    
+    .footer-links a:hover {
+      color: #FFD700 !important;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+    
+    .footer-copy {
+      color: rgba(255, 215, 0, 0.8);
+      font-size: 0.8rem;
+    }
+    
+    .footer-copy strong {
+      color: #FFD700;
+    }
+    
+    @media (max-width: 640px) {
+      .main-footer { padding: 24px 12px 20px; }
+      .footer-links { gap: 6px 14px; }
+      .footer-links a { font-size: 0.75rem; }
+      .footer-copy { font-size: 0.7rem; }
+    }
+    
+    /* ============================================ */
+    /* MODAL */
+    /* ============================================ */
+    .modal {
+      position: fixed !important;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 9999;
+      display: none;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 16px;
+    }
+    
+    .modal.show {
+      display: flex !important;
+    }
+    
+    .modal-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+    }
+    
+    .modal-box {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      max-height: 90vh;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      border: 1.5px solid rgba(255, 215, 0, 0.4);
+      border-radius: 20px;
+      display: flex !important;
+      flex-direction: column !important;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    }
+    
+    .modal-head {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 16px 20px;
+      background: rgba(255, 215, 0, 0.05);
+      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+      flex-shrink: 0;
+    }
+    
+    .modal-head h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #FFD700;
+      margin: 0;
+    }
+    
+    .modal-close {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 215, 0, 0.1);
+      border: 1px solid rgba(255, 215, 0, 0.3);
+      border-radius: 8px;
+      color: #FFD700;
+      font-size: 1rem;
+      cursor: pointer;
+      flex-shrink: 0;
+      font-family: inherit;
+    }
+    
+    .modal-close:hover {
+      background: rgba(255, 215, 0, 0.25);
+      color: #ffffff;
+    }
+    
+    .modal-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      background: #ffffff;
+    }
+    
+    .modal-foot {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 10px;
+      padding: 14px 20px;
+      background: rgba(255, 215, 0, 0.05);
+      border-top: 1px solid rgba(255, 215, 0, 0.2);
+      flex-shrink: 0;
+      flex-wrap: wrap;
+    }
+    
+    .modal-btn-primary,
+    .modal-btn-sec {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      font-family: 'Inter', sans-serif;
+      white-space: nowrap;
+    }
+    
+    .modal-btn-primary {
+      background: linear-gradient(135deg, #FFD700, #B8860B);
+      color: #000000;
+    }
+    
+    .modal-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6);
+    }
+    
+    .modal-btn-sec {
+      background: rgba(192, 192, 192, 0.08);
+      border: 1px solid rgba(192, 192, 192, 0.3);
+      color: #C0C0C0;
+    }
+    
+    .modal-btn-sec:hover {
+      background: rgba(192, 192, 192, 0.15);
+      border-color: #FFD700;
+      color: #FFD700;
+    }
+    
+    @media (max-width: 480px) {
+      .modal-foot { flex-direction: column !important; }
+      .modal-btn-primary,
+      .modal-btn-sec { width: 100%; }
+    }
+    
+    /* ============================================ */
+    /* RECEIPT */
+    /* ============================================ */
+    .receipt {
+      background: #ffffff;
+      color: #1a1a1a;
+      padding: 20px;
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+    
+    .rc-head {
+      text-align: center;
+      padding-bottom: 12px;
+    }
+    
+    .rc-logo {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    
+    .rc-logo-icon { font-size: 1.8rem; }
+    
+    .rc-logo-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #1e1b4b;
+      line-height: 1.1;
+      text-align: left;
+    }
+    
+    .rc-logo-sub {
+      font-size: 0.65rem;
+      color: #666;
+      text-align: left;
+    }
+    
+    .rc-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #1e1b4b;
+      margin: 8px 0;
+      padding: 6px 12px;
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border-radius: 6px;
+      display: inline-block;
+    }
+    
+    .rc-meta {
+      display: flex !important;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      font-size: 0.7rem;
+      color: #666;
+      margin-top: 6px;
+    }
+    
+    .rc-div {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #FFD700, #C0C0C0, transparent);
+      margin: 12px 0;
+    }
+    
+    .rc-sec { margin: 12px 0; }
+    
+    .rc-sec-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #1e1b4b;
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .rc-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .rc-table tr {
+      border-bottom: 1px dashed #e5e7eb;
+    }
+    
+    .rc-table tr:last-child {
+      border-bottom: none;
+    }
+    
+    .rc-table td {
+      padding: 5px 0;
+      font-size: 0.75rem;
+    }
+    
+    .rc-table td:first-child {
+      color: #666;
+      text-align: left;
+    }
+    
+    .rc-table td:last-child {
+      color: #1a1a1a;
+      font-weight: 600;
+      text-align: right;
+    }
+    
+    .rc-total {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      margin-top: 8px;
+      padding: 10px 12px;
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: #92400e;
+    }
+    
+    .rc-foot {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 12px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    .rc-foot-left {
+      flex: 1;
+      text-align: left;
+    }
+    
+    .rc-brand {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: #1e1b4b;
+      margin-bottom: 4px;
+    }
+    
+    .rc-contact {
+      font-size: 0.65rem;
+      color: #666;
+      line-height: 1.5;
+    }
+    
+    .rc-qr {
+      text-align: center;
+      flex-shrink: 0;
+    }
+    
+    .rc-qr #qrcode {
+      display: inline-block;
+      padding: 4px;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+    }
+    
+    .rc-qr-label {
+      font-size: 0.6rem;
+      color: #666;
+      margin-top: 4px;
+    }
+    
+    .rc-copy {
+      text-align: center;
+      font-size: 0.65rem;
+      color: #999;
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid #e5e7eb;
+    }
+    
+    /* ============================================ */
+    /* UTILITIES */
+    /* ============================================ */
+    .mt-4 { margin-top: 1rem; }
+    .text-center { text-align: center; }
+  </style>
 </head>
 <body>
-  <div id="app">
-    
-    <!-- HEADER -->
-    <header class="main-header">
-      <div class="header-content">
-        <a href="/" class="header-logo">
-          <span class="header-logo-icon">🧮</span>
-          <div>
-            <h1 class="header-logo-title">SciCalcPro</h1>
-            <p class="header-logo-subtitle">Scientific Calculator Pro</p>
-          </div>
+  <!-- ============================================ -->
+  <!-- HEADER -->
+  <!-- ============================================ -->
+  <header class="main-header">
+    <div class="header-inner">
+      <a href="/" class="logo-link">
+        <span class="logo-icon">🧮</span>
+        <span class="logo-text">
+          <span class="logo-title">SciCalcPro</span>
+          <span class="logo-subtitle">Scientific Calculator Pro</span>
+        </span>
+      </a>
+      <div class="header-buttons">
+        <a href="/blog/" class="hdr-btn" title="Blog">
+          📝 <span class="btn-label">Blog</span>
         </a>
-        <div class="header-actions">
-          <button id="print-btn" class="header-btn print-btn" title="Print Result">
-            🖨️ <span class="hidden md:inline">Print</span>
-          </button>
-
-<a href="/blog/" class="header-btn" title="Blog">
-  📝 <span class="hidden md:inline">Blog</span>
-</a>
-
-          <button id="theme-toggle" class="header-btn" title="Theme">
-            🌙 <span class="hidden md:inline">Dark</span>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <!-- CATEGORY NAVIGATION -->
-    <nav class="category-nav">
-      <div class="category-nav-content">
-        <a href="/" class="category-btn">
-          <span class="category-icon">🧮</span>
-          <span class="category-label">Scientific Calculator</span>
-        </a>
-        <a href="/age-calculator.html" class="category-btn">
-          <span class="category-icon">🎂</span>
-          <span class="category-label">Age Calculator</span>
-        </a>
-        <a href="/profit-calculator.html" class="category-btn">
-          <span class="category-icon">💰</span>
-          <span class="category-label">Profit Calculator</span>
-        </a>
-        <a href="/area-calculator.html" class="category-btn">
-          <span class="category-icon">📐</span>
-          <span class="category-label">Area Calculator</span>
-        </a>
-        <a href="/time-calculator.html" class="category-btn">
-          <span class="category-icon">⏰</span>
-          <span class="category-label">Time Calculator</span>
-        </a>
-        <a href="/engineering-calculator.html" class="category-btn">
-          <span class="category-icon">⚙️</span>
-          <span class="category-label">Engineering Calculator</span>
-        </a>
-        <a href="/gold-silver-calculator.html" class="category-btn active">
-          <span class="category-icon">🥇</span>
-          <span class="category-label">Gold & Silver Calculator</span>
-        </a>
-      </div>
-    </nav>
-
-       <!-- ADSTERRA — NATIVE BANNER (TOP) -->
-    <div class="ad-container">
-      <div class="adsterra-container">
-        <script async="async" data-cfasync="false" src="https://pl31696942.profitableratecpmnetwork.com/1231798f5c81f7799c5539c3737443e1/invoke.js"></script>
-        <div id="container-1231798f5c81f7799c5539c3737443e1"></div>
+        <button id="theme-toggle" class="hdr-btn" title="Theme">
+          🌙 <span class="btn-label">Dark</span>
+        </button>
       </div>
     </div>
+  </header>
 
-    <!-- MAIN CONTENT -->
-    <main class="flex-1 flex items-start md:items-center justify-center p-3 md:p-6">
-      <div class="w-full max-w-3xl mx-auto">
+  <!-- CATEGORY NAV -->
+  <nav class="cat-nav">
+    <div class="cat-nav-inner">
+      <a href="/" class="cat-btn"><span>🧮</span> Scientific</a>
+      <a href="/age-calculator.html" class="cat-btn"><span>🎂</span> Age</a>
+      <a href="/profit-calculator.html" class="cat-btn"><span>💰</span> Profit</a>
+      <a href="/area-calculator.html" class="cat-btn"><span>📐</span> Area</a>
+      <a href="/time-calculator.html" class="cat-btn"><span>⏰</span> Time</a>
+      <a href="/engineering-calculator.html" class="cat-btn"><span>⚙️</span> Engineering</a>
+      <a href="/gold-silver-calculator.html" class="cat-btn active"><span>🥇</span> Gold & Silver</a>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+    <div class="wrap">
+      
+      <!-- HERO -->
+      <div class="hero">
+        <h1 class="hero-title">Gold & Silver Calculator</h1>
+        <p class="hero-sub">✨ Ratti • Masha • Tola • Gram • Ounce • KG ✨</p>
+      </div>
+
+      <!-- CARD -->
+      <div class="card">
         
-        <div class="text-center mb-6">
-          <h2 class="text-3xl md:text-4xl font-bold bg-gradient-to-r from-yellow-400 to-amber-500 bg-clip-text text-transparent mb-2">
-            🥇 Gold & Silver Calculator
-          </h2>
-          <p class="text-white/60 text-sm">Calculate gold & silver prices in any country, any currency, any unit</p>
+        <!-- Step 1: Country -->
+        <div class="form-sec">
+          <h3 class="sec-title"><span class="sec-num">1</span> Country & Currency</h3>
+          <div class="grid-2">
+            <div>
+              <label class="lbl">🌍 Country</label>
+              <select id="country" class="sel">
+                <option value="PKR|Pakistani Rupee|🇵🇰" selected>🇵🇰 Pakistan (PKR)</option>
+                <option value="INR|Indian Rupee|🇮🇳">🇮🇳 India (INR)</option>
+                <option value="AED|UAE Dirham|🇦🇪">🇦🇪 UAE (AED)</option>
+                <option value="SAR|Saudi Riyal|🇸🇦">🇸🇦 Saudi Arabia (SAR)</option>
+                <option value="USD|US Dollar|🇺🇸">🇺🇸 USA (USD)</option>
+                <option value="GBP|British Pound|🇬🇧">🇬🇧 UK (GBP)</option>
+                <option value="EUR|Euro|🇩🇪">🇩🇪 Germany (EUR)</option>
+                <option value="EUR|Euro|🇫🇷">🇫🇷 France (EUR)</option>
+                <option value="CAD|Canadian Dollar|🇨🇦">🇨🇦 Canada (CAD)</option>
+                <option value="AUD|Australian Dollar|🇦🇺">🇦🇺 Australia (AUD)</option>
+                <option value="BDT|Bangladeshi Taka|🇧🇩">🇧🇩 Bangladesh (BDT)</option>
+                <option value="LKR|Sri Lankan Rupee|🇱🇰">🇱🇰 Sri Lanka (LKR)</option>
+                <option value="AFN|Afghan Afghani|🇦🇫">🇦🇫 Afghanistan (AFN)</option>
+                <option value="IRR|Iranian Rial|🇮🇷">🇮🇷 Iran (IRR)</option>
+                <option value="IQD|Iraqi Dinar|🇮🇶">🇮🇶 Iraq (IQD)</option>
+                <option value="KWD|Kuwaiti Dinar|🇰🇼">🇰🇼 Kuwait (KWD)</option>
+                <option value="QAR|Qatari Riyal|🇶🇦">🇶🇦 Qatar (QAR)</option>
+                <option value="BHD|Bahraini Dinar|🇧🇭">🇧🇭 Bahrain (BHD)</option>
+                <option value="OMR|Omani Rial|🇴🇲">🇴🇲 Oman (OMR)</option>
+                <option value="TRY|Turkish Lira|🇹🇷">🇹🇷 Turkey (TRY)</option>
+                <option value="CNY|Chinese Yuan|🇨🇳">🇨🇳 China (CNY)</option>
+                <option value="JPY|Japanese Yen|🇯🇵">🇯🇵 Japan (JPY)</option>
+                <option value="MYR|Malaysian Ringgit|🇲🇾">🇲🇾 Malaysia (MYR)</option>
+                <option value="SGD|Singapore Dollar|🇸🇬">🇸🇬 Singapore (SGD)</option>
+                <option value="IDR|Indonesian Rupiah|🇮🇩">🇮🇩 Indonesia (IDR)</option>
+                <option value="THB|Thai Baht|🇹🇭">🇹🇭 Thailand (THB)</option>
+                <option value="CHF|Swiss Franc|🇨🇭">🇨🇭 Switzerland (CHF)</option>
+                <option value="ZAR|South African Rand|🇿🇦">🇿🇦 South Africa (ZAR)</option>
+                <option value="EGP|Egyptian Pound|🇪🇬">🇪🇬 Egypt (EGP)</option>
+                <option value="NZD|New Zealand Dollar|🇳🇿">🇳🇿 New Zealand (NZD)</option>
+              </select>
+            </div>
+            <div>
+              <label class="lbl">💱 Currency</label>
+              <input type="text" id="currency" class="inp" readonly value="PKR — Pakistani Rupee" />
+            </div>
+          </div>
         </div>
 
-        <div class="glass-calculator rounded-3xl p-6 md:p-8 relative overflow-hidden">
+        <!-- Step 2: Metal -->
+        <div class="form-sec">
+          <h3 class="sec-title"><span class="sec-num">2</span> Metal Type</h3>
+          <div class="metal-grid">
+            <button class="metal-btn active" data-purity="99.9"><span class="metal-icon">🥇</span><span class="metal-name">Gold 24K</span><span class="metal-purity">99.9%</span></button>
+            <button class="metal-btn" data-purity="91.6"><span class="metal-icon">🥇</span><span class="metal-name">Gold 22K</span><span class="metal-purity">91.6%</span></button>
+            <button class="metal-btn" data-purity="87.5"><span class="metal-icon">🥇</span><span class="metal-name">Gold 21K</span><span class="metal-purity">87.5%</span></button>
+            <button class="metal-btn" data-purity="75.0"><span class="metal-icon">🥇</span><span class="metal-name">Gold 18K</span><span class="metal-purity">75.0%</span></button>
+            <button class="metal-btn" data-purity="99.9"><span class="metal-icon">🥈</span><span class="metal-name">Silver 999</span><span class="metal-purity">99.9%</span></button>
+            <button class="metal-btn" data-purity="92.5"><span class="metal-icon">🥈</span><span class="metal-name">Silver 925</span><span class="metal-purity">92.5%</span></button>
+          </div>
+        </div>
+
+        <!-- Step 3: Rate -->
+        <div class="form-sec">
+          <h3 class="sec-title"><span class="sec-num">3</span> Rate (Any One Unit)</h3>
+          <p style="font-size:0.75rem;color:rgba(255,215,0,0.6);margin-bottom:0.75rem;text-align:center;">💡 Enter rate in ANY ONE unit — others auto-calculate</p>
+          <div class="rate-grid">
+            <div class="rate-field">
+              <label>⚖️ Ratti <span class="badge">Ratti</span></label>
+              <input type="number" id="rate-ratti" class="inp-sm" placeholder="0.00" step="0.01" />
+            </div>
+            <div class="rate-field">
+              <label>⚖️ Masha <span class="badge">Masha</span></label>
+              <input type="number" id="rate-masha" class="inp-sm" placeholder="0.00" step="0.01" />
+            </div>
+            <div class="rate-field">
+              <label>⚖️ Gram <span class="badge">g</span></label>
+              <input type="number" id="rate-gram" class="inp-sm" placeholder="0.00" step="0.01" />
+            </div>
+            <div class="rate-field">
+              <label>⚖️ Tola <span class="badge">Tola</span></label>
+              <input type="number" id="rate-tola" class="inp-sm" placeholder="0.00" step="0.01" />
+            </div>
+            <div class="rate-field">
+              <label>⚖️ Ounce <span class="badge">oz</span></label>
+              <input type="number" id="rate-ounce" class="inp-sm" placeholder="0.00" step="0.01" />
+            </div>
+            <div class="rate-field">
+              <label>⚖️ KG <span class="badge">kg</span></label>
+              <input type="number" id="rate-kg" class="inp-sm" placeholder="0.00" step="0.01" />
+            </div>
+          </div>
+          <div class="conv-box">
+            <p>💡 <strong>Conversion:</strong> 1 Tola = 12 Masha = 96 Ratti • 1 Masha = 8 Ratti • 1 Ratti = 0.1215 g • 1 Masha = 0.972 g • 1 Tola = 11.6638 g • 1 Ounce = 31.1035 g</p>
+          </div>
+        </div>
+
+        <!-- Step 4: Weight -->
+        <div class="form-sec">
+          <h3 class="sec-title"><span class="sec-num">4</span> Weight to Calculate</h3>
+          <div class="grid-2">
+            <div>
+              <label class="lbl">⚖️ Weight</label>
+              <input type="number" id="weight" class="inp" placeholder="Enter weight" step="0.001" />
+            </div>
+            <div>
+              <label class="lbl">📏 Unit</label>
+              <div class="unit-grid">
+                <button type="button" class="unit-btn active" data-unit="ratti">Ratti</button>
+                <button type="button" class="unit-btn" data-unit="masha">Masha</button>
+                <button type="button" class="unit-btn" data-unit="gram">Gram</button>
+                <button type="button" class="unit-btn" data-unit="tola">Tola</button>
+                <button type="button" class="unit-btn" data-unit="ounce">Ounce</button>
+                <button type="button" class="unit-btn" data-unit="kg">KG</button>
+              </div>
+              <input type="hidden" id="weight-unit" value="ratti" />
+            </div>
+          </div>
+          <div class="grid-2 mt-4">
+            <div>
+              <label class="lbl">🔨 Making Charges %</label>
+              <input type="number" id="making" class="inp" placeholder="0" step="0.01" value="0" />
+            </div>
+            <div>
+              <label class="lbl">💵 Tax %</label>
+              <input type="number" id="tax" class="inp" placeholder="0" step="0.01" value="0" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Calculate Button -->
+        <button id="calc-btn" class="calc-btn">✨ Calculate Price</button>
+
+        <!-- RESULT -->
+        <div id="result" class="result-wrap">
           
-          <div class="watermark" aria-hidden="true">
-            <div class="watermark-text">Gold & Silver</div>
+          <div class="total-card">
+            <div class="total-label">Total Price</div>
+            <div id="total-amount" class="total-amount">0.00</div>
+            <div id="total-detail" class="total-detail">—</div>
           </div>
 
-          <div class="relative z-10">
-            
-            <!-- Step 1: Country & Currency -->
-            <div class="gold-section">
-              <h3 class="gold-section-title">🌍 Step 1: Select Country & Currency</h3>
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-sm font-semibold text-white/80 mb-2">
-                    🌍 Country
-                  </label>
-                  <select id="country-select" class="gold-select">
-                    <option value="">-- Select Country --</option>
-                    <option value="PK|PKR|Pakistani Rupee|🇵🇰" selected>🇵🇰 Pakistan (PKR)</option>
-                    <option value="IN|INR|Indian Rupee|🇮🇳">🇮🇳 India (INR)</option>
-                    <option value="AE|AED|UAE Dirham|🇦🇪">🇦🇪 UAE (AED)</option>
-                    <option value="SA|SAR|Saudi Riyal|🇸🇦">🇸🇦 Saudi Arabia (SAR)</option>
-                    <option value="US|USD|US Dollar|🇺🇸">🇺🇸 USA (USD)</option>
-                    <option value="GB|GBP|British Pound|🇬🇧">🇬🇧 UK (GBP)</option>
-                    <option value="DE|EUR|Euro|🇩🇪">🇩🇪 Germany (EUR)</option>
-                    <option value="FR|EUR|Euro|🇫🇷">🇫🇷 France (EUR)</option>
-                    <option value="IT|EUR|Euro|🇮🇹">🇮🇹 Italy (EUR)</option>
-                    <option value="ES|EUR|Euro|🇪🇸">🇪🇸 Spain (EUR)</option>
-                    <option value="CA|CAD|Canadian Dollar|🇨🇦">🇨🇦 Canada (CAD)</option>
-                    <option value="AU|AUD|Australian Dollar|🇦🇺">🇦🇺 Australia (AUD)</option>
-                    <option value="BD|BDT|Bangladeshi Taka|🇧🇩">🇧🇩 Bangladesh (BDT)</option>
-                    <option value="LK|LKR|Sri Lankan Rupee|🇱🇰">🇱🇰 Sri Lanka (LKR)</option>
-                    <option value="NP|NPR|Nepalese Rupee|🇳🇵">🇳🇵 Nepal (NPR)</option>
-                    <option value="AF|AFN|Afghan Afghani|🇦🇫">🇦🇫 Afghanistan (AFN)</option>
-                    <option value="IR|IRR|Iranian Rial|🇮🇷">🇮🇷 Iran (IRR)</option>
-                    <option value="IQ|IQD|Iraqi Dinar|🇮🇶">🇮🇶 Iraq (IQD)</option>
-                    <option value="KW|KWD|Kuwaiti Dinar|🇰🇼">🇰🇼 Kuwait (KWD)</option>
-                    <option value="QA|QAR|Qatari Riyal|🇶🇦">🇶🇦 Qatar (QAR)</option>
-                    <option value="BH|BHD|Bahraini Dinar|🇧🇭">🇧🇭 Bahrain (BHD)</option>
-                    <option value="OM|OMR|Omani Rial|🇴🇲">🇴🇲 Oman (OMR)</option>
-                    <option value="JO|JOD|Jordanian Dinar|🇯🇴">🇯🇴 Jordan (JOD)</option>
-                    <option value="LB|LBP|Lebanese Pound|🇱🇧">🇱🇧 Lebanon (LBP)</option>
-                    <option value="TR|TRY|Turkish Lira|🇹🇷">🇹🇷 Turkey (TRY)</option>
-                    <option value="CN|CNY|Chinese Yuan|🇨🇳">🇨🇳 China (CNY)</option>
-                    <option value="JP|JPY|Japanese Yen|🇯🇵">🇯🇵 Japan (JPY)</option>
-                    <option value="KR|KRW|South Korean Won|🇰🇷">🇰🇷 South Korea (KRW)</option>
-                    <option value="MY|MYR|Malaysian Ringgit|🇲🇾">🇲🇾 Malaysia (MYR)</option>
-                    <option value="SG|SGD|Singapore Dollar|🇸🇬">🇸🇬 Singapore (SGD)</option>
-                    <option value="ID|IDR|Indonesian Rupiah|🇮🇩">🇮🇩 Indonesia (IDR)</option>
-                    <option value="TH|THB|Thai Baht|🇹🇭">🇹🇭 Thailand (THB)</option>
-                    <option value="PH|PHP|Philippine Peso|🇵🇭">🇵🇭 Philippines (PHP)</option>
-                    <option value="CH|CHF|Swiss Franc|🇨🇭">🇨🇭 Switzerland (CHF)</option>
-                    <option value="SE|SEK|Swedish Krona|🇸🇪">🇸🇪 Sweden (SEK)</option>
-                    <option value="NO|NOK|Norwegian Krone|🇳🇴">🇳🇴 Norway (NOK)</option>
-                    <option value="RU|RUB|Russian Ruble|🇷🇺">🇷🇺 Russia (RUB)</option>
-                    <option value="MX|MXN|Mexican Peso|🇲🇽">🇲🇽 Mexico (MXN)</option>
-                    <option value="BR|BRL|Brazilian Real|🇧🇷">🇧🇷 Brazil (BRL)</option>
-                    <option value="AR|ARS|Argentine Peso|🇦🇷">🇦🇷 Argentina (ARS)</option>
-                    <option value="EG|EGP|Egyptian Pound|🇪🇬">🇪🇬 Egypt (EGP)</option>
-                    <option value="ZA|ZAR|South African Rand|🇿🇦">🇿🇦 South Africa (ZAR)</option>
-                    <option value="NG|NGN|Nigerian Naira|🇳🇬">🇳🇬 Nigeria (NGN)</option>
-                    <option value="KE|KES|Kenyan Shilling|🇰🇪">🇰🇪 Kenya (KES)</option>
-                    <option value="NZ|NZD|New Zealand Dollar|🇳🇿">🇳🇿 New Zealand (NZD)</option>
-                  </select>
-                </div>
+          <h4 class="breakdown-title">📊 Complete Breakdown</h4>
 
-                <div>
-                  <label class="block text-sm font-semibold text-white/80 mb-2">
-                    💱 Currency
-                  </label>
-                  <input type="text" id="currency-display" class="gold-input" readonly value="PKR — Pakistani Rupee" />
-                </div>
-              </div>
-            </div>
+          <div class="detail-grid">
+            <div class="detail-card"><div class="detail-icon">⚖️</div><div class="detail-lbl">Ratti</div><div id="r-ratti" class="detail-val">0</div></div>
+            <div class="detail-card"><div class="detail-icon">⚖️</div><div class="detail-lbl">Masha</div><div id="r-masha" class="detail-val">0</div></div>
+            <div class="detail-card"><div class="detail-icon">⚖️</div><div class="detail-lbl">Gram</div><div id="r-gram" class="detail-val">0</div></div>
+            <div class="detail-card"><div class="detail-icon">⚖️</div><div class="detail-lbl">Tola</div><div id="r-tola" class="detail-val">0</div></div>
+            <div class="detail-card"><div class="detail-icon">⚖️</div><div class="detail-lbl">Ounce</div><div id="r-ounce" class="detail-val">0</div></div>
+            <div class="detail-card"><div class="detail-icon">⚖️</div><div class="detail-lbl">KG</div><div id="r-kg" class="detail-val">0</div></div>
+            <div class="detail-card"><div class="detail-icon">💰</div><div class="detail-lbl">Rate/Ratti</div><div id="rr-ratti" class="detail-val">0</div></div>
+            <div class="detail-card"><div class="detail-icon">💰</div><div class="detail-lbl">Rate/Masha</div><div id="rr-masha" class="detail-val">0</div></div>
+            <div class="detail-card"><div class="detail-icon">💰</div><div class="detail-lbl">Rate/Gram</div><div id="rr-gram" class="detail-val">0</div></div>
+            <div class="detail-card"><div class="detail-icon">💰</div><div class="detail-lbl">Rate/Tola</div><div id="rr-tola" class="detail-val">0</div></div>
+            <div class="detail-card"><div class="detail-icon">💰</div><div class="detail-lbl">Rate/Ounce</div><div id="rr-ounce" class="detail-val">0</div></div>
+            <div class="detail-card"><div class="detail-icon">💰</div><div class="detail-lbl">Rate/KG</div><div id="rr-kg" class="detail-val">0</div></div>
+            <div class="detail-card"><div class="detail-icon">🏷️</div><div class="detail-lbl">Metal Price</div><div id="r-metal" class="detail-val">0</div></div>
+            <div class="detail-card"><div class="detail-icon">🔨</div><div class="detail-lbl">Making</div><div id="r-making" class="detail-val">0</div></div>
+            <div class="detail-card"><div class="detail-icon">💵</div><div class="detail-lbl">Tax</div><div id="r-tax" class="detail-val">0</div></div>
+          </div>
 
-            <!-- Step 2: Metal Type -->
-            <div class="gold-section">
-              <h3 class="gold-section-title">🥇 Step 2: Select Metal Type</h3>
-              
-              <div class="metal-selector">
-                <button class="metal-btn active" data-metal="gold24" data-purity="99.9">
-                  <span class="metal-icon">🥇</span>
-                  <span class="metal-name">Gold 24K</span>
-                  <span class="metal-purity">99.9%</span>
-                </button>
-                <button class="metal-btn" data-metal="gold22" data-purity="91.6">
-                  <span class="metal-icon">🥇</span>
-                  <span class="metal-name">Gold 22K</span>
-                  <span class="metal-purity">91.6%</span>
-                </button>
-                <button class="metal-btn" data-metal="gold21" data-purity="87.5">
-                  <span class="metal-icon">🥇</span>
-                  <span class="metal-name">Gold 21K</span>
-                  <span class="metal-purity">87.5%</span>
-                </button>
-                <button class="metal-btn" data-metal="gold18" data-purity="75.0">
-                  <span class="metal-icon">🥇</span>
-                  <span class="metal-name">Gold 18K</span>
-                  <span class="metal-purity">75.0%</span>
-                </button>
-                <button class="metal-btn" data-metal="silver999" data-purity="99.9">
-                  <span class="metal-icon">🥈</span>
-                  <span class="metal-name">Silver 999</span>
-                  <span class="metal-purity">99.9%</span>
-                </button>
-                <button class="metal-btn" data-metal="silver925" data-purity="92.5">
-                  <span class="metal-icon">🥈</span>
-                  <span class="metal-name">Silver 925</span>
-                  <span class="metal-purity">92.5%</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- Step 3: Rate Input -->
-            <div class="gold-section">
-              <h3 class="gold-section-title">💰 Step 3: Enter Rate (Any Unit)</h3>
-              <p class="text-xs text-white/50 mb-3">💡 Enter rate in ANY ONE unit — others will auto-calculate</p>
-              
-              <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                <div>
-                  <label class="block text-xs font-semibold text-white/70 mb-2">⚖️ Per Gram</label>
-                  <input type="number" id="rate-gram" class="gold-input-small" placeholder="0.00" step="0.01" />
-                </div>
-                <div>
-                  <label class="block text-xs font-semibold text-white/70 mb-2">⚖️ Per Tola</label>
-                  <input type="number" id="rate-tola" class="gold-input-small" placeholder="0.00" step="0.01" />
-                </div>
-                <div>
-                  <label class="block text-xs font-semibold text-white/70 mb-2">⚖️ Per Ounce</label>
-                  <input type="number" id="rate-ounce" class="gold-input-small" placeholder="0.00" step="0.01" />
-                </div>
-                <div>
-                  <label class="block text-xs font-semibold text-white/70 mb-2">⚖️ Per KG</label>
-                  <input type="number" id="rate-kg" class="gold-input-small" placeholder="0.00" step="0.01" />
-                </div>
-              </div>
-              <p class="text-xs text-white/40 mt-2">💡 1 Tola = 11.6638 grams • 1 Ounce = 31.1035 grams • 1 KG = 1000 grams</p>
-            </div>
-
-            <!-- Step 4: Weight Input -->
-            <div class="gold-section">
-              <h3 class="gold-section-title">⚖️ Step 4: Enter Weight to Calculate</h3>
-              
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label class="block text-sm font-semibold text-white/80 mb-2">⚖️ Weight</label>
-                  <input type="number" id="weight-input" class="gold-input" placeholder="Enter weight" step="0.001" />
-                </div>
-                <div>
-                  <label class="block text-sm font-semibold text-white/80 mb-2">📏 Unit</label>
-                  <select id="weight-unit" class="gold-select">
-                    <option value="gram" selected>Gram (g)</option>
-                    <option value="tola">Tola</option>
-                    <option value="ounce">Ounce (oz)</option>
-                    <option value="kg">Kilogram (kg)</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                <div>
-                  <label class="block text-sm font-semibold text-white/80 mb-2">🔨 Making Charges % (optional)</label>
-                  <input type="number" id="making-charges" class="gold-input" placeholder="0" step="0.01" value="0" />
-                </div>
-                <div>
-                  <label class="block text-sm font-semibold text-white/80 mb-2">💵 Tax % (optional)</label>
-                  <input type="number" id="tax-percent" class="gold-input" placeholder="0" step="0.01" value="0" />
-                </div>
-              </div>
-            </div>
-
-            <!-- Calculate Button -->
-            <button id="calculate-gold" class="gold-calculate-btn">
-              ✨ Calculate Price
+          <!-- ✨ PRINT BUTTON — RESULT KE BILKUL NEECHE -->
+          <div class="print-section">
+            <button id="print-result-btn" class="big-print-btn">
+              🖨️ Print This Result
             </button>
-
-            <!-- Result -->
-            <div id="gold-result" class="gold-result hidden">
-              
-              <div class="gold-main-result">
-                <div class="text-xs text-white/50 mb-1 uppercase tracking-wider">Total Price</div>
-                <div id="total-price" class="gold-total">0.00</div>
-                <div id="total-price-detail" class="text-xs text-white/60 mt-2">0 grams × 0.00 per gram</div>
-              </div>
-
-              <h4 class="text-sm font-bold text-white/80 mb-3 mt-6">📊 Breakdown</h4>
-              
-              <div class="gold-details-grid">
-                <div class="gold-detail-card">
-                  <div class="gold-detail-icon">⚖️</div>
-                  <div class="gold-detail-label">Weight (g)</div>
-                  <div id="result-weight-grams" class="gold-detail-value">0</div>
-                </div>
-                <div class="gold-detail-card">
-                  <div class="gold-detail-icon">⚖️</div>
-                  <div class="gold-detail-label">Weight (Tola)</div>
-                  <div id="result-weight-tola" class="gold-detail-value">0</div>
-                </div>
-                <div class="gold-detail-card">
-                  <div class="gold-detail-icon">⚖️</div>
-                  <div class="gold-detail-label">Weight (Ounce)</div>
-                  <div id="result-weight-ounce" class="gold-detail-value">0</div>
-                </div>
-                <div class="gold-detail-card">
-                  <div class="gold-detail-icon">💰</div>
-                  <div class="gold-detail-label">Rate per Gram</div>
-                  <div id="result-rate-gram" class="gold-detail-value">0</div>
-                </div>
-                <div class="gold-detail-card">
-                  <div class="gold-detail-icon">💰</div>
-                  <div class="gold-detail-label">Rate per Tola</div>
-                  <div id="result-rate-tola" class="gold-detail-value">0</div>
-                </div>
-                <div class="gold-detail-card">
-                  <div class="gold-detail-icon">💰</div>
-                  <div class="gold-detail-label">Rate per Ounce</div>
-                  <div id="result-rate-ounce" class="gold-detail-value">0</div>
-                </div>
-                <div class="gold-detail-card">
-                  <div class="gold-detail-icon">🏷️</div>
-                  <div class="gold-detail-label">Metal Price</div>
-                  <div id="result-metal-price" class="gold-detail-value">0</div>
-                </div>
-                <div class="gold-detail-card">
-                  <div class="gold-detail-icon">🔨</div>
-                  <div class="gold-detail-label">Making Charges</div>
-                  <div id="result-making" class="gold-detail-value">0</div>
-                </div>
-                <div class="gold-detail-card">
-                  <div class="gold-detail-icon">💵</div>
-                  <div class="gold-detail-label">Tax</div>
-                  <div id="result-tax" class="gold-detail-value">0</div>
-                </div>
-              </div>
-
-              <div class="flex gap-2 mt-4">
-                <button id="copy-result" class="gold-secondary-btn">📋 Copy Result</button>
-                <button id="reset-gold" class="gold-secondary-btn">🔄 Reset</button>
-              </div>
-            </div>
+            <button id="reset-btn" class="sec-btn">
+              🔄 Reset
+            </button>
           </div>
 
-          <div class="brand-stamp-corner" aria-hidden="true">
-            <div class="stamp-text">BILAL MARGHOOB</div>
-            <div class="stamp-subtext">C R E A T I O N S</div>
-          </div>
         </div>
-
-        <!-- Info Section -->
-        <div class="gold-info-section">
-          <h3 class="text-lg font-bold text-white/90 mb-3">💡 How to Use This Calculator</h3>
-          <ol class="text-sm text-white/60 space-y-2 list-decimal list-inside">
-            <li>Select your country from the dropdown (currency will auto-change)</li>
-            <li>Choose metal type (Gold 24K, 22K, 21K, 18K or Silver 999, 925)</li>
-            <li>Enter the current rate in ANY unit — others will auto-calculate</li>
-            <li>Enter the weight you want to calculate</li>
-            <li>Optionally add making charges and tax</li>
-            <li>Click "Calculate Price" to get the total</li>
-            <li>Click "🖨️ Print" in header to save/print receipt</li>
-          </ol>
-        </div>
-
-        <!-- IN-CONTENT AD -->
-        <div class="ad-container">
-          <div class="ad-placeholder">
-            <div class="ad-placeholder-label">📢 Advertisement</div>
-            <div class="ad-placeholder-size">Responsive — In-Content</div>
-          </div>
-        </div>
-
       </div>
-    </main>
 
-    <!-- ============================================
-         PRINT MODAL
-         ============================================ -->
-    <div id="print-modal" class="print-modal hidden">
-      <div class="print-modal-overlay" id="print-modal-overlay"></div>
-      <div class="print-modal-content">
-        
-        <div class="print-modal-header">
-          <h3 class="text-lg font-bold text-white">🖨️ Print Preview</h3>
-          <button id="print-modal-close" class="print-modal-close">✕</button>
-        </div>
+      <!-- INFO SECTION -->
+      <div class="info-sec">
+        <h3>💡 How to Use This Calculator</h3>
+        <ol>
+          <li>Select your country (currency auto-changes)</li>
+          <li>Choose metal type (Gold 24K/22K/21K/18K or Silver 999/925)</li>
+          <li>Enter the current rate in <strong>ANY ONE unit</strong> — Ratti, Masha, Gram, Tola, Ounce, or KG</li>
+          <li>Enter the weight you want to calculate</li>
+          <li>Select the weight unit — Ratti, Masha, Gram, Tola, Ounce, or KG</li>
+          <li>Optionally add making charges and tax</li>
+          <li>Click "Calculate Price" for the total</li>
+          <li>Click "🖨️ Print This Result" to print or save PDF</li>
+        </ol>
+      </div>
 
-        <div class="print-modal-body">
-          <!-- Receipt -->
-          <div id="receipt-content" class="receipt">
-            
-            <!-- Receipt Header -->
-            <div class="receipt-header">
-              <div class="receipt-logo">
-                <span class="receipt-logo-icon">🧮</span>
-                <div>
-                  <div class="receipt-logo-title">SciCalcPro</div>
-                  <div class="receipt-logo-subtitle">Scientific Calculator Pro</div>
-                </div>
-              </div>
-              <div class="receipt-title">🥇 Gold & Silver Receipt</div>
-              <div class="receipt-meta">
-                <div>Date: <span id="receipt-date">—</span></div>
-                <div>Time: <span id="receipt-time">—</span></div>
-                <div>Receipt #: <span id="receipt-number">—</span></div>
-              </div>
-            </div>
+    </div>
+  </main>
 
-            <!-- Divider -->
-            <div class="receipt-divider"></div>
-
-            <!-- Calculation Details -->
-            <div class="receipt-section">
-              <div class="receipt-section-title">📋 Calculation Details</div>
-              <table class="receipt-table">
-                <tr>
-                  <td>🌍 Country</td>
-                  <td id="receipt-country">—</td>
-                </tr>
-                <tr>
-                  <td>🥇 Metal Type</td>
-                  <td id="receipt-metal">—</td>
-                </tr>
-                <tr>
-                  <td>⚖️ Weight</td>
-                  <td id="receipt-weight">—</td>
-                </tr>
-                <tr>
-                  <td>💰 Rate (per gram)</td>
-                  <td id="receipt-rate">—</td>
-                </tr>
-              </table>
-            </div>
-
-            <!-- Divider -->
-            <div class="receipt-divider"></div>
-
-            <!-- Price Breakdown -->
-            <div class="receipt-section">
-              <div class="receipt-section-title">💵 Price Breakdown</div>
-              <table class="receipt-table">
-                <tr>
-                  <td>🏷️ Metal Price</td>
-                  <td id="receipt-metal-price">—</td>
-                </tr>
-                <tr id="receipt-making-row">
-                  <td>🔨 Making Charges</td>
-                  <td id="receipt-making">—</td>
-                </tr>
-                <tr id="receipt-tax-row">
-                  <td>💵 Tax</td>
-                  <td id="receipt-tax">—</td>
-                </tr>
-              </table>
-              <div class="receipt-total">
-                <span>💰 TOTAL</span>
-                <span id="receipt-total">—</span>
+  <!-- ============================================ -->
+  <!-- PRINT MODAL -->
+  <!-- ============================================ -->
+  <div id="modal" class="modal">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-box">
+      <div class="modal-head">
+        <h3>🖨️ Print Preview</h3>
+        <button id="modal-close" class="modal-close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div id="receipt" class="receipt">
+          
+          <div class="rc-head">
+            <div class="rc-logo">
+              <span class="rc-logo-icon">🧮</span>
+              <div>
+                <div class="rc-logo-title">SciCalcPro</div>
+                <div class="rc-logo-sub">Scientific Calculator Pro</div>
               </div>
             </div>
-
-            <!-- Divider -->
-            <div class="receipt-divider"></div>
-
-            <!-- Rate in All Units -->
-            <div class="receipt-section">
-              <div class="receipt-section-title">📊 Rate in All Units</div>
-              <table class="receipt-table">
-                <tr>
-                  <td>Per Gram</td>
-                  <td id="receipt-rate-gram">—</td>
-                </tr>
-                <tr>
-                  <td>Per Tola</td>
-                  <td id="receipt-rate-tola">—</td>
-                </tr>
-                <tr>
-                  <td>Per Ounce</td>
-                  <td id="receipt-rate-ounce">—</td>
-                </tr>
-                <tr>
-                  <td>Per KG</td>
-                  <td id="receipt-rate-kg">—</td>
-                </tr>
-              </table>
+            <div class="rc-title">🥇 Gold & Silver Receipt</div>
+            <div class="rc-meta">
+              <div>Date: <span id="rc-date">—</span></div>
+              <div>Time: <span id="rc-time">—</span></div>
+              <div>Receipt #: <span id="rc-num">—</span></div>
             </div>
-
-            <!-- Divider -->
-            <div class="receipt-divider"></div>
-
-            <!-- Footer with QR Code -->
-            <div class="receipt-footer">
-              <div class="receipt-footer-left">
-                <div class="receipt-brand">✨ BILAL MARGHOOB CREATIONS</div>
-                <div class="receipt-contact">📧 bilalmarghoobboutique@gmail.com</div>
-                <div class="receipt-contact">💬 +92 326 650 1314</div>
-                <div class="receipt-contact">🌐 scicalcpro.vercel.app</div>
-              </div>
-              <div class="receipt-qr">
-                <div id="qrcode"></div>
-                <div class="receipt-qr-label">Scan me</div>
-              </div>
-            </div>
-
-            <!-- Copyright -->
-            <div class="receipt-copyright">
-              © 2026 Bilal Marghoob Creations. All rights reserved.
-            </div>
-
           </div>
-        </div>
 
-        <div class="print-modal-footer">
-          <button id="print-action" class="print-btn-primary">🖨️ Print</button>
-          <button id="pdf-action" class="print-btn-secondary">📄 Save PDF</button>
-          <button id="share-action" class="print-btn-secondary">💬 Share</button>
-        </div>
+          <div class="rc-div"></div>
 
+          <div class="rc-sec">
+            <div class="rc-sec-title">📋 Calculation Details</div>
+            <table class="rc-table">
+              <tr><td>🌍 Country</td><td id="rc-country">—</td></tr>
+              <tr><td>🥇 Metal Type</td><td id="rc-metal">—</td></tr>
+              <tr><td>⚖️ Weight</td><td id="rc-weight">—</td></tr>
+              <tr><td>💰 Rate (per gram)</td><td id="rc-rate">—</td></tr>
+            </table>
+          </div>
+
+          <div class="rc-div"></div>
+
+          <div class="rc-sec">
+            <div class="rc-sec-title">💵 Price Breakdown</div>
+            <table class="rc-table">
+              <tr><td>🏷️ Metal Price</td><td id="rc-metal-price">—</td></tr>
+              <tr><td>🔨 Making Charges</td><td id="rc-making">—</td></tr>
+              <tr><td>💵 Tax</td><td id="rc-tax">—</td></tr>
+            </table>
+            <div class="rc-total">
+              <span>💰 TOTAL</span>
+              <span id="rc-total">—</span>
+            </div>
+          </div>
+
+          <div class="rc-div"></div>
+
+          <div class="rc-sec">
+            <div class="rc-sec-title">📊 Rate in All Units</div>
+            <table class="rc-table">
+              <tr><td>Per Ratti</td><td id="rc-r-ratti">—</td></tr>
+              <tr><td>Per Masha</td><td id="rc-r-masha">—</td></tr>
+              <tr><td>Per Gram</td><td id="rc-r-gram">—</td></tr>
+              <tr><td>Per Tola</td><td id="rc-r-tola">—</td></tr>
+              <tr><td>Per Ounce</td><td id="rc-r-ounce">—</td></tr>
+              <tr><td>Per KG</td><td id="rc-r-kg">—</td></tr>
+            </table>
+          </div>
+
+          <div class="rc-div"></div>
+
+          <div class="rc-foot">
+            <div class="rc-foot-left">
+              <div class="rc-brand">✨ BILAL MARGHOOB CREATIONS</div>
+              <div class="rc-contact">📧 bilalmarghoobboutique@gmail.com</div>
+              <div class="rc-contact">💬 +92 326 650 1314</div>
+              <div class="rc-contact">🌐 scicalcpro.vercel.app</div>
+            </div>
+            <div class="rc-qr">
+              <div id="qrcode"></div>
+              <div class="rc-qr-label">Scan me</div>
+            </div>
+          </div>
+
+          <div class="rc-copy">
+            © 2026 Bilal Marghoob Creations. All rights reserved.
+          </div>
+
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button id="do-print" class="modal-btn-primary">🖨️ Print</button>
+        <button id="do-pdf" class="modal-btn-sec">📄 Save PDF</button>
+        <button id="do-share" class="modal-btn-sec">💬 Share</button>
       </div>
     </div>
-
-    <!-- SIGNATURE SPACE -->
-    <div class="signature-space">
-      <div class="max-w-2xl mx-auto text-center">
-        <div class="brand-signature mb-3">
-          <div class="signature-line"></div>
-          <div class="signature-text">
-            <span class="signature-crafted">✨ Crafted with precision by</span>
-            <span class="signature-brand">BILAL MARGHOOB CREATIONS</span>
-          </div>
-          <div class="signature-line"></div>
-        </div>
-        <div class="contact-info flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
-          <a href="mailto:bilalmarghoobboutique@gmail.com" class="contact-item">
-            <span class="contact-icon">📧</span>
-            <span class="contact-text">bilalmarghoobboutique@gmail.com</span>
-          </a>
-          <span class="hidden md:inline text-white/20">|</span>
-          <a href="https://wa.me/923266501314" target="_blank" rel="noopener" class="contact-item">
-            <span class="contact-icon">💬</span>
-            <span class="contact-text">+92 326 650 1314</span>
-          </a>
-        </div>
-      </div>
-    </div>
-
-       <!-- ADSTERRA — SOCIAL BAR -->
-    <div class="ad-container">
-      <div class="adsterra-container">
-        <script src="https://pl31696944.profitableratecpmnetwork.com/fe/01/0c/fe010c8a854cd79a68323ffcfeb95386.js"></script>
-      </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="main-footer">
-      <div class="footer-content">
-        <div class="footer-links">
-          <a href="/" class="footer-link">Home</a>
-          <a href="/age-calculator.html" class="footer-link">Age Calculator</a>
-          <a href="/profit-calculator.html" class="footer-link">Profit Calculator</a>
-          <a href="/area-calculator.html" class="footer-link">Area Calculator</a>
-          <a href="/time-calculator.html" class="footer-link">Time Calculator</a>
-          <a href="/engineering-calculator.html" class="footer-link">Engineering Calculator</a>
-          <a href="/gold-silver-calculator.html" class="footer-link">Gold & Silver Calculator</a>
-          <a href="/blog/" class="footer-link">Blog</a>
-        </div>
-        <div class="footer-copyright">
-          © 2026 <strong>Bilal Marghoob Creations</strong>. All rights reserved.
-        </div>
-      </div>
-    </footer>
   </div>
-  
-  <script type="module" src="/src/gold-silver-calculator.js"></script>
+
+  <!-- SIGNATURE -->
+  <div class="sig-space">
+    <div class="sig-inner">
+      <div class="sig-row">
+        <div class="sig-line"></div>
+        <div class="sig-text">
+          <span class="sig-crafted">✨ Crafted with precision by</span>
+          <span class="sig-brand">BILAL MARGHOOB CREATIONS</span>
+        </div>
+        <div class="sig-line"></div>
+      </div>
+      <div class="contact-row">
+        <a href="mailto:bilalmarghoobboutique@gmail.com" class="contact-link">
+          <span>📧</span><span>bilalmarghoobboutique@gmail.com</span>
+        </a>
+        <a href="https://wa.me/923266501314" target="_blank" rel="noopener" class="contact-link">
+          <span>💬</span><span>+92 326 650 1314</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/age-calculator.html">Age Calculator</a>
+        <a href="/profit-calculator.html">Profit Calculator</a>
+        <a href="/area-calculator.html">Area Calculator</a>
+        <a href="/time-calculator.html">Time Calculator</a>
+        <a href="/engineering-calculator.html">Engineering Calculator</a>
+        <a href="/gold-silver-calculator.html">Gold & Silver Calculator</a>
+        <a href="/blog/">Blog</a>
+      </div>
+      <div class="footer-copy">
+        © 2026 <strong>Bilal Marghoob Creations</strong>. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script type="module">
+    // ============================================
+    // SERVICE WORKER (PWA)
+    // ============================================
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {})
+      })
+    }
+    
+    // ============================================
+    // CONVERSION CONSTANTS (grams)
+    // ============================================
+    const G = {
+      ratti: 0.1215,
+      masha: 0.972,
+      gram: 1,
+      tola: 11.6638,
+      ounce: 31.1035,
+      kg: 1000
+    }
+    
+    const UNITS = ['ratti', 'masha', 'gram', 'tola', 'ounce', 'kg']
+    
+    // State
+    let selectedPurity = 99.9
+    let selectedMetal = 'Gold 24K'
+    let selectedWeightUnit = 'ratti'
+    let currentCurrency = 'PKR'
+    let currentCountry = '🇵🇰 Pakistan (PKR)'
+    let lastResult = null
+    
+    // ============================================
+    // COUNTRY
+    // ============================================
+    const countrySel = document.getElementById('country')
+    const currencyInp = document.getElementById('currency')
+    
+    countrySel.addEventListener('change', (e) => {
+      const parts = e.target.value.split('|')
+      currentCurrency = parts[0]
+      currentCountry = e.target.options[e.target.selectedIndex].text
+      currencyInp.value = `${parts[0]} — ${parts[1]}`
+    })
+    
+    // ============================================
+    // METAL
+    // ============================================
+    document.querySelectorAll('.metal-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.metal-btn').forEach(b => b.classList.remove('active'))
+        btn.classList.add('active')
+        selectedPurity = parseFloat(btn.dataset.purity)
+        selectedMetal = btn.querySelector('.metal-name').textContent
+      })
+    })
+    
+    // ============================================
+    // WEIGHT UNIT
+    // ============================================
+    document.querySelectorAll('.unit-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('active'))
+        btn.classList.add('active')
+        selectedWeightUnit = btn.dataset.unit
+        document.getElementById('weight-unit').value = selectedWeightUnit
+      })
+    })
+    
+    // ============================================
+    // RATE AUTO-CALC
+    // ============================================
+    UNITS.forEach(u => {
+      const inp = document.getElementById('rate-' + u)
+      if (!inp) return
+      inp.addEventListener('input', (e) => {
+        const val = parseFloat(e.target.value)
+        if (!val || val <= 0) return
+        const ratePerGram = val / G[u]
+        UNITS.forEach(ou => {
+          if (ou === u) return
+          const other = document.getElementById('rate-' + ou)
+          if (other) other.value = (ratePerGram * G[ou]).toFixed(4)
+        })
+      })
+    })
+    
+    // ============================================
+    // CALCULATE
+    // ============================================
+    document.getElementById('calc-btn').addEventListener('click', () => {
+      // Find rate per gram
+      let ratePerGram = 0
+      UNITS.forEach(u => {
+        if (ratePerGram > 0) return
+        const v = parseFloat(document.getElementById('rate-' + u)?.value)
+        if (v > 0) ratePerGram = v / G[u]
+      })
+      
+      if (!ratePerGram) {
+        alert('❌ Please enter a rate in at least one unit (Ratti, Masha, Gram, Tola, Ounce, or KG)')
+        return
+      }
+      
+      const weightVal = parseFloat(document.getElementById('weight').value)
+      if (!weightVal || weightVal <= 0) {
+        alert('❌ Please enter a valid weight')
+        return
+      }
+      
+      const weightInGrams = weightVal * G[selectedWeightUnit]
+      const metalPrice = weightInGrams * ratePerGram
+      const makingPct = parseFloat(document.getElementById('making').value) || 0
+      const taxPct = parseFloat(document.getElementById('tax').value) || 0
+      const makingAmount = metalPrice * (makingPct / 100)
+      const subtotal = metalPrice + makingAmount
+      const taxAmount = subtotal * (taxPct / 100)
+      const total = subtotal + taxAmount
+      
+      // Save for receipt
+      lastResult = {
+        country: currentCountry,
+        currency: currentCurrency,
+        metal: `${selectedMetal} (${selectedPurity}%)`,
+        weight: `${weightVal} ${selectedWeightUnit}`,
+        weightInGrams: weightInGrams,
+        ratePerGram: ratePerGram,
+        metalPrice: metalPrice,
+        makingPct: makingPct,
+        makingAmount: makingAmount,
+        taxPct: taxPct,
+        taxAmount: taxAmount,
+        total: total
+      }
+      
+      // Update UI
+      document.getElementById('total-amount').textContent = `${currentCurrency} ${total.toFixed(2)}`
+      document.getElementById('total-detail').textContent = `${weightVal} ${selectedWeightUnit} × ${(ratePerGram * G[selectedWeightUnit]).toFixed(2)} per ${selectedWeightUnit}`
+      
+      document.getElementById('r-ratti').textContent = (weightInGrams / G.ratti).toFixed(4)
+      document.getElementById('r-masha').textContent = (weightInGrams / G.masha).toFixed(4)
+      document.getElementById('r-gram').textContent = weightInGrams.toFixed(4)
+      document.getElementById('r-tola').textContent = (weightInGrams / G.tola).toFixed(4)
+      document.getElementById('r-ounce').textContent = (weightInGrams / G.ounce).toFixed(4)
+      document.getElementById('r-kg').textContent = (weightInGrams / G.kg).toFixed(6)
+      
+      document.getElementById('rr-ratti').textContent = (ratePerGram * G.ratti).toFixed(4)
+      document.getElementById('rr-masha').textContent = (ratePerGram * G.masha).toFixed(4)
+      document.getElementById('rr-gram').textContent = ratePerGram.toFixed(4)
+      document.getElementById('rr-tola').textContent = (ratePerGram * G.tola).toFixed(4)
+      document.getElementById('rr-ounce').textContent = (ratePerGram * G.ounce).toFixed(4)
+      document.getElementById('rr-kg').textContent = (ratePerGram * G.kg).toFixed(2)
+      
+      document.getElementById('r-metal').textContent = `${currentCurrency} ${metalPrice.toFixed(2)}`
+      document.getElementById('r-making').textContent = `${currentCurrency} ${makingAmount.toFixed(2)}`
+      document.getElementById('r-tax').textContent = `${currentCurrency} ${taxAmount.toFixed(2)}`
+      
+      // Show result
+      document.getElementById('result').classList.add('show')
+      
+      setTimeout(() => {
+        document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }, 100)
+    })
+    
+    // ============================================
+    // RESET
+    // ============================================
+    document.getElementById('reset-btn').addEventListener('click', () => {
+      UNITS.forEach(u => {
+        const i = document.getElementById('rate-' + u)
+        if (i) i.value = ''
+      })
+      document.getElementById('weight').value = ''
+      document.getElementById('making').value = '0'
+      document.getElementById('tax').value = '0'
+      document.getElementById('result').classList.remove('show')
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    })
+    
+    // ============================================
+    // PRINT BUTTON (RESULT KE NEECHE WALA)
+    // ============================================
+    document.getElementById('print-result-btn').addEventListener('click', () => {
+      if (!lastResult) {
+        alert('Please calculate first')
+        return
+      }
+      
+      // Fill receipt
+      const now = new Date()
+      document.getElementById('rc-date').textContent = now.toLocaleDateString()
+      document.getElementById('rc-time').textContent = now.toLocaleTimeString()
+      document.getElementById('rc-num').textContent = 'G' + Date.now().toString().slice(-8)
+      
+      document.getElementById('rc-country').textContent = lastResult.country
+      document.getElementById('rc-metal').textContent = lastResult.metal
+      document.getElementById('rc-weight').textContent = lastResult.weight
+      document.getElementById('rc-rate').textContent = `${lastResult.currency} ${lastResult.ratePerGram.toFixed(4)}`
+      
+      document.getElementById('rc-metal-price').textContent = `${lastResult.currency} ${lastResult.metalPrice.toFixed(2)}`
+      document.getElementById('rc-making').textContent = `${lastResult.currency} ${lastResult.makingAmount.toFixed(2)}`
+      document.getElementById('rc-tax').textContent = `${lastResult.currency} ${lastResult.taxAmount.toFixed(2)}`
+      document.getElementById('rc-total').textContent = `${lastResult.currency} ${lastResult.total.toFixed(2)}`
+      
+      document.getElementById('rc-r-ratti').textContent = (lastResult.ratePerGram * G.ratti).toFixed(4)
+      document.getElementById('rc-r-masha').textContent = (lastResult.ratePerGram * G.masha).toFixed(4)
+      document.getElementById('rc-r-gram').textContent = lastResult.ratePerGram.toFixed(4)
+      document.getElementById('rc-r-tola').textContent = (lastResult.ratePerGram * G.tola).toFixed(4)
+      document.getElementById('rc-r-ounce').textContent = (lastResult.ratePerGram * G.ounce).toFixed(4)
+      document.getElementById('rc-r-kg').textContent = (lastResult.ratePerGram * G.kg).toFixed(2)
+      
+      // Generate QR
+      const qrDiv = document.getElementById('qrcode')
+      qrDiv.innerHTML = ''
+      if (window.QRCode) {
+        new QRCode(qrDiv, {
+          text: 'https://scicalcpro.vercel.app/gold-silver-calculator.html',
+          width: 70,
+          height: 70,
+          colorDark: '#1e1b4b',
+          colorLight: '#ffffff'
+        })
+      }
+      
+      // Show modal
+      document.getElementById('modal').classList.add('show')
+    })
+    
+    // ============================================
+    // MODAL CLOSE
+    // ============================================
+    document.getElementById('modal-close').addEventListener('click', () => {
+      document.getElementById('modal').classList.remove('show')
+    })
+    document.getElementById('modal-overlay').addEventListener('click', () => {
+      document.getElementById('modal').classList.remove('show')
+    })
+    
+    // ============================================
+    // PRINT ACTION
+    // ============================================
+    document.getElementById('do-print').addEventListener('click', () => {
+      window.print()
+    })
+    
+    document.getElementById('do-pdf').addEventListener('click', () => {
+      window.print()
+    })
+    
+    document.getElementById('do-share').addEventListener('click', async () => {
+      if (!lastResult) return
+      const text = `🥇 Gold & Silver Calculation\n━━━━━━━━━━━━━━━━━\nMetal: ${lastResult.metal}\nWeight: ${lastResult.weight}\nTotal: ${lastResult.currency} ${lastResult.total.toFixed(2)}\n\n✨ By Bilal Marghoob Creations`
+      if (navigator.share) {
+        try { await navigator.share({ title: 'Gold Calculation', text }) } catch(e) {}
+      } else {
+        navigator.clipboard.writeText(text).then(() => alert('✅ Copied!'))
+      }
+    })
+    
+    // ============================================
+    // THEME TOGGLE (simple)
+    // ============================================
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('light-mode')
+    })
+    
+    console.log('✅ Gold Calculator loaded')
+  </script>
 </body>
 </html>
