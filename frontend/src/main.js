@@ -29,6 +29,46 @@ if ('serviceWorker' in navigator) {
 }
 
 // ============================================
+// DOWNLOAD APP (PWA Install) — TOP LEVEL
+// ============================================
+let deferredPrompt = null
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault()
+  deferredPrompt = e
+  console.log('💡 PWA install prompt ready')
+})
+
+function handleDownloadClick() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt()
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === 'accepted') {
+        console.log('✅ User installed the app')
+      }
+      deferredPrompt = null
+    })
+  } else {
+    alert(
+      '💡 SciCalcPro is a Progressive Web App!\n\n' +
+      'To install:\n' +
+      '• On Android Chrome: Menu (⋮) → "Install app"\n' +
+      '• On iOS Safari: Share → "Add to Home Screen"\n' +
+      '• On Desktop Chrome: Address bar install icon\n\n' +
+      'Ye app aapke phone par install ho jayega aur offline bhi chalega!'
+    )
+  }
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const downloadBtn = document.getElementById('download-app-btn')
+  if (downloadBtn) downloadBtn.addEventListener('click', handleDownloadClick)
+
+  const downloadBigBtn = document.getElementById('download-app-big')
+  if (downloadBigBtn) downloadBigBtn.addEventListener('click', handleDownloadClick)
+})
+
+// ============================================
 // HELP DATA
 // ============================================
 const helpData = {
@@ -91,6 +131,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let waitingForOperand = false
   let lastWasEquals = false
 
+  // ============================================
+  // UPDATE DISPLAY
+  // ============================================
   function updateDisplay() {
     if (currentInput) currentInput.textContent = currentInputValue
     if (previousExpression) previousExpression.textContent = expression || '\u00A0'
@@ -100,6 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // ============================================
+  // RENDER HISTORY
+  // ============================================
   function renderHistory() {
     if (!historyList) return
     if (state.history.length === 0) {

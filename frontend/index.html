@@ -8,7 +8,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GT9PMPYBPF"></script>
   <script>
@@ -58,52 +58,13 @@
     "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "150" }
   }
   </script>
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How do I use the sin button on a scientific calculator?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Press sin, then enter the angle, then close the bracket. Example: sin(30) = 0.5. Make sure your calculator is in DEG mode for degrees or RAD mode for radians."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the difference between log and ln?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "log is base 10 logarithm (log(100) = 2), while ln is natural logarithm with base e (ln(e) = 1)."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I calculate factorial on a scientific calculator?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Enter the number, then press the x! button. Example: 5 x! = 120."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What does the DEG/RAD button do?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "DEG is for degrees (0-360°), RAD is for radians (0-2π), and GRAD is for gradians (0-400). Most calculations use DEG mode."
-        }
-      }
-    ]
-  }
-  </script>
 </head>
 <body data-page="home">
   <div id="app">
     
+    <!-- ============================================ -->
     <!-- HEADER -->
+    <!-- ============================================ -->
     <header class="main-header">
       <div class="header-content">
         <a href="/" class="header-logo">
@@ -114,20 +75,25 @@
           </div>
         </a>
         <div class="header-actions">
-          <a href="/blog/" class="header-btn" title="Blog">
-            📝 <span class="hidden md:inline">Blog</span>
+          <a href="/blog/" class="header-btn blog-btn" title="Blog">
+            📝 <span class="btn-label">Blog</span>
           </a>
           <button id="history-toggle" class="header-btn" title="History">
-            📜 <span class="hidden md:inline">History</span>
+            📜 <span class="btn-label">History</span>
           </button>
-          <button id="theme-toggle" class="header-btn" title="Theme">
-            🌙 <span class="hidden md:inline">Dark</span>
+          <button id="download-app-btn" class="header-btn download-btn" title="Download App">
+            ⬇️ <span class="btn-label">Download</span>
+          </button>
+          <button id="theme-toggle" class="header-btn theme-btn" title="Theme">
+            🌙 <span class="btn-label">Dark</span>
           </button>
         </div>
       </div>
     </header>
 
+    <!-- ============================================ -->
     <!-- CATEGORY NAVIGATION -->
+    <!-- ============================================ -->
     <nav class="category-nav">
       <div class="category-nav-content">
         <a href="/" class="category-btn active">
@@ -161,17 +127,33 @@
       </div>
     </nav>
 
+    <!-- ============================================ -->
     <!-- AD SLOT: TOP -->
+    <!-- ============================================ -->
     <div class="ad-slot ad-slot-top" id="ad-top">
+      <!-- ============================================ -->
       <!-- 👇 YAHAN APNA AD CODE PASTE KAREIN 👇 -->
+      <!-- Size: 728×90 (Desktop) / 320×50 (Mobile) -->
+      <!-- ============================================ -->
       
     </div>
 
+    <!-- ============================================ -->
     <!-- MAIN CONTENT -->
+    <!-- ============================================ -->
     <main class="flex-1 flex items-start md:items-center justify-center p-3 md:p-6">
       
       <div class="w-full max-w-7xl flex flex-col lg:flex-row gap-4 md:gap-6 items-start justify-center">
         
+        <!-- ============================================ -->
+        <!-- LEFT SIDEBAR AD SLOT -->
+        <!-- ============================================ -->
+        <aside class="ad-slot ad-slot-sidebar hidden xl:block" id="ad-sidebar">
+          <!-- 👇 YAHAN APNA AD CODE PASTE KAREIN 👇 -->
+          <!-- Size: 160×600 (Skyscraper) -->
+          
+        </aside>
+
         <!-- Calculator + History -->
         <div class="w-full max-w-5xl flex flex-col md:flex-row gap-4 md:gap-6 items-start justify-center flex-1">
           
@@ -282,7 +264,9 @@
 
         </div>
 
+        <!-- ============================================ -->
         <!-- SIDEBAR GUIDE PANEL -->
+        <!-- ============================================ -->
         <aside id="help-sidebar" class="help-sidebar w-full lg:w-80 lg:max-w-xs">
           
           <div class="help-header">
@@ -327,13 +311,26 @@
       </div>
     </main>
 
+    <!-- ============================================ -->
     <!-- AD SLOT: IN-CONTENT -->
+    <!-- ============================================ -->
     <div class="ad-slot ad-slot-content" id="ad-content">
       <!-- 👇 YAHAN APNA AD CODE PASTE KAREIN 👇 -->
       
     </div>
 
+    <!-- ============================================ -->
+    <!-- DOWNLOAD APP BUTTON (Big, Below Calculator) -->
+    <!-- ============================================ -->
+    <div class="max-w-2xl mx-auto px-4 mb-6">
+      <button id="download-app-big" class="download-btn">
+        Download SciCalcPro App
+      </button>
+    </div>
+
+    <!-- ============================================ -->
     <!-- SIGNATURE SPACE -->
+    <!-- ============================================ -->
     <div class="signature-space">
       <div class="max-w-2xl mx-auto text-center">
         <div class="brand-signature mb-3">
@@ -358,13 +355,17 @@
       </div>
     </div>
 
+    <!-- ============================================ -->
     <!-- AD SLOT: BOTTOM -->
+    <!-- ============================================ -->
     <div class="ad-slot ad-slot-bottom" id="ad-bottom">
       <!-- 👇 YAHAN APNA AD CODE PASTE KAREIN 👇 -->
       
     </div>
 
+    <!-- ============================================ -->
     <!-- FOOTER -->
+    <!-- ============================================ -->
     <footer class="main-footer">
       <div class="footer-content">
         <div class="footer-links">
