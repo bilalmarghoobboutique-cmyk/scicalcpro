@@ -1,12 +1,10 @@
 // ============================================
-// SciCalcPro — Calculator Logic
+// SciCalcPro — Calculator Logic (Pure JS, no mathjs)
 // Author: Bilal Marghoob Creations
 // ============================================
 
-import { evaluate, factorial, sqrt, log, log10 } from 'mathjs'
-
 // ============================================
-// CALCULATOR STATE
+// STATE
 // ============================================
 export const state = {
   currentInput: '0',
@@ -21,47 +19,33 @@ export const state = {
 // ============================================
 // DEG / RAD / GRAD CONVERSION
 // ============================================
-function toRadians(value, mode) {
-  if (mode === 'DEG') return (value * Math.PI) / 180
-  if (mode === 'GRAD') return (value * Math.PI) / 200
+function toRadians(value) {
+  if (state.angleMode === 'DEG') return (value * Math.PI) / 180
+  if (state.angleMode === 'GRAD') return (value * Math.PI) / 200
+  return value
+}
+
+function fromRadians(value) {
+  if (state.angleMode === 'DEG') return (value * 180) / Math.PI
+  if (state.angleMode === 'GRAD') return (value * 200) / Math.PI
   return value
 }
 
 // ============================================
-// CUSTOM FUNCTIONS FOR MATH.JS
+// FACTORIAL
 // ============================================
-const customScope = {
-  sin: (x) => Math.sin(toRadians(x, state.angleMode)),
-  cos: (x) => Math.cos(toRadians(x, state.angleMode)),
-  tan: (x) => Math.tan(toRadians(x, state.angleMode)),
-  asin: (x) => {
-    const result = Math.asin(x)
-    return state.angleMode === 'DEG' ? (result * 180) / Math.PI :
-           state.angleMode === 'GRAD' ? (result * 200) / Math.PI : result
-  },
-  acos: (x) => {
-    const result = Math.acos(x)
-    return state.angleMode === 'DEG' ? (result * 180) / Math.PI :
-           state.angleMode === 'GRAD' ? (result * 200) / Math.PI : result
-  },
-  atan: (x) => {
-    const result = Math.atan(x)
-    return state.angleMode === 'DEG' ? (result * 180) / Math.PI :
-           state.angleMode === 'GRAD' ? (result * 200) / Math.PI : result
-  },
-  sinh: Math.sinh,
-  cosh: Math.cosh,
-  tanh: Math.tanh,
-  log: log10,
-  ln: log,
-  sqrt: sqrt,
-  factorial: factorial,
-  pi: Math.PI,
-  e: Math.E
+function factorial(n) {
+  if (n < 0) return NaN
+  if (!Number.isInteger(n)) return NaN
+  if (n === 0 || n === 1) return 1
+  if (n > 170) return Infinity
+  let result = 1
+  for (let i = 2; i <= n; i++) result *= i
+  return result
 }
 
 // ============================================
-// EVALUATE EXPRESSION
+// SAFE EVALUATE EXPRESSION
 // ============================================
 export function calculate(expression) {
   try {
@@ -69,16 +53,60 @@ export function calculate(expression) {
       return { success: false, error: 'Empty expression' }
     }
 
-    let parsedExpr = expression
+    // Replace display symbols
+    let jsExpr = expression
       .replace(/×/g, '*')
       .replace(/÷/g, '/')
       .replace(/−/g, '-')
-      .replace(/π/g, 'pi')
-      .replace(/√/g, 'sqrt')
-      .replace(/x²/g, '^2')
-      .replace(/x³/g, '^3')
 
-    const result = evaluate(parsedExpr, customScope)
+    // Replace π and e
+    jsExpr = jsExpr.replace(/π/g, 'Math.PI')
+    jsExpr = jsExpr.replace(/(?<![a-zA-Z])e(?![a-zA-Z])/g, 'Math.E')
+
+    // Replace sqrt
+    jsExpr = jsExpr.replace(/√\(/g, 'Math.sqrt(')
+    jsExpr = jsExpr.replace(/√/g, 'Math.sqrt')
+
+    // Replace trig functions with angle-mode-aware wrappers
+    jsExpr = jsExpr.replace(/sin\(/g, '__sin(')
+    jsExpr = jsExpr.replace(/cos\(/g, '__cos(')
+    jsExpr = jsExpr.replace(/tan\(/g, '__tan(')
+    jsExpr = jsExpr.replace(/asin\(/g, '__asin(')
+    jsExpr = jsExpr.replace(/acos\(/g, '__acos(')
+    jsExpr = jsExpr.replace(/atan\(/g, '__atan(')
+
+    // Replace logs
+    jsExpr = jsExpr.replace(/log\(/g, 'Math.log10(')
+    jsExpr = jsExpr.replace(/ln\(/g, 'Math.log(')
+
+    // Factorial: convert N! to __fact(N)
+    jsExpr = jsExpr.replace(/(\d+(?:\.\d+)?)!/g, '__fact($1)')
+
+    // Power: replace ^ with **
+    jsExpr = jsExpr.replace(/\^/g, '**')
+
+    // Percentage: standalone % converts to /100
+    jsExpr = jsExpr.replace(/(\d+(?:\.\d+)?)%/g, '($1/100)')
+
+    // Create scoped helper functions
+    const scope = {
+      __sin: (x) => Math.sin(toRadians(x)),
+      __cos: (x) => Math.cos(toRadians(x)),
+      __tan: (x) => Math.tan(toRadians(x)),
+      __asin: (x) => fromRadians(Math.asin(x)),
+      __acos: (x) => fromRadians(Math.acos(x)),
+      __atan: (x) => fromRadians(Math.atan(x)),
+      __fact: factorial,
+      Math: Math
+    }
+
+    // Build safe evaluator using Function with isolated scope
+    const func = new Function(
+      ...Object.keys(scope),
+      '"use strict"; return (' + jsExpr + ');'
+    )
+
+    const result = func(...Object.values(scope))
 
     if (typeof result !== 'number' || !isFinite(result)) {
       return { success: false, error: 'Invalid result' }
@@ -178,4 +206,4 @@ export function getAngleMode() {
   return state.angleMode
 }
 
-console.log('✅ Calculator logic module loaded')
+console.log('✅ Calculator logic loaded (pure JS, no mathjs)')
