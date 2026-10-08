@@ -37,6 +37,13 @@
   <link rel="canonical" href="https://scicalcpro.vercel.app/" />
   <meta name="theme-color" content="#0b1020" />
   
+  <!-- PWA -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="SciCalcPro" />
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -93,7 +100,7 @@
   }
   </script>
 </head>
-<body>
+<body data-page="home">
   <div id="app">
     
     <!-- HEADER -->
@@ -107,11 +114,9 @@
           </div>
         </a>
         <div class="header-actions">
-
-<a href="/blog/" class="header-btn" title="Blog">
-  📝 <span class="hidden md:inline">Blog</span>
-</a>
-
+          <a href="/blog/" class="header-btn" title="Blog">
+            📝 <span class="hidden md:inline">Blog</span>
+          </a>
           <button id="history-toggle" class="header-btn" title="History">
             📜 <span class="hidden md:inline">History</span>
           </button>
@@ -156,12 +161,10 @@
       </div>
     </nav>
 
-    <!-- ✅ ADSTERRA — NATIVE BANNER (TOP) — SAFE (No popup) -->
-    <div class="ad-container">
-      <div class="adsterra-container">
-        <script async="async" data-cfasync="false" src="https://pl31696942.profitableratecpmnetwork.com/1231798f5c81f7799c5539c3737443e1/invoke.js"></script>
-        <div id="container-1231798f5c81f7799c5539c3737443e1"></div>
-      </div>
+    <!-- AD SLOT: TOP -->
+    <div class="ad-slot ad-slot-top" id="ad-top">
+      <!-- 👇 YAHAN APNA AD CODE PASTE KAREIN 👇 -->
+      
     </div>
 
     <!-- MAIN CONTENT -->
@@ -324,6 +327,12 @@
       </div>
     </main>
 
+    <!-- AD SLOT: IN-CONTENT -->
+    <div class="ad-slot ad-slot-content" id="ad-content">
+      <!-- 👇 YAHAN APNA AD CODE PASTE KAREIN 👇 -->
+      
+    </div>
+
     <!-- SIGNATURE SPACE -->
     <div class="signature-space">
       <div class="max-w-2xl mx-auto text-center">
@@ -349,7 +358,11 @@
       </div>
     </div>
 
-    <!-- ❌ SOCIAL BAR HATA DIYA — Ye click par naya tab kholta tha -->
+    <!-- AD SLOT: BOTTOM -->
+    <div class="ad-slot ad-slot-bottom" id="ad-bottom">
+      <!-- 👇 YAHAN APNA AD CODE PASTE KAREIN 👇 -->
+      
+    </div>
 
     <!-- FOOTER -->
     <footer class="main-footer">
