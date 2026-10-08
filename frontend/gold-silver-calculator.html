@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  
   <meta name="google-site-verification" content="YURRl7lFPPVBzQPZig0p3ehPlBPsKFwkNoMg5zPHobw" />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,21 +10,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   
   <title>Gold & Silver Calculator — Ratti, Masha, Tola, Gram, Ounce, KG | SciCalcPro</title>
-  <meta name="description" content="Free online gold & silver calculator with Ratti, Masha, Tola, Gram, Ounce, KG. Calculate gold prices in any country, any currency. By Bilal Marghoob Creations." />
+  <meta name="description" content="Free online gold & silver calculator with Ratti, Masha, Tola, Gram, Ounce, KG." />
   <meta name="author" content="Bilal Marghoob" />
-  <meta name="keywords" content="gold calculator, silver calculator, gold price calculator, ratti calculator, masha calculator, tola calculator, gold rate today, silver rate" />
+  <meta name="keywords" content="gold calculator, silver calculator, ratti calculator, masha calculator, tola calculator" />
   
   <meta property="og:title" content="Gold & Silver Calculator — SciCalcPro" />
   <meta property="og:description" content="Calculate gold & silver prices in Ratti, Masha, Tola, Gram, Ounce, KG." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scicalcpro.vercel.app/gold-silver-calculator.html" />
   
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Gold & Silver Calculator — SciCalcPro" />
-  <meta name="twitter:description" content="Calculate gold & silver prices in Ratti, Masha, Tola, Gram, Ounce, KG." />
-  
   <link rel="canonical" href="https://scicalcpro.vercel.app/gold-silver-calculator.html" />
-  
   <meta name="theme-color" content="#000000" />
   
   <link rel="manifest" href="/manifest.json" />
@@ -36,35 +30,9 @@
   
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
   
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Gold & Silver Calculator — SciCalcPro",
-    "url": "https://scicalcpro.vercel.app/gold-silver-calculator.html",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "author": { "@type": "Organization", "name": "Bilal Marghoob Creations" }
-  }
-  </script>
-  
   <style>
-    /* ============================================ */
-    /* RESET */
-    /* ============================================ */
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    html, body {
-      width: 100%;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-    
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; min-height: 100vh; overflow-x: hidden; }
     body {
       background: #000000;
       background-image: 
@@ -78,9 +46,6 @@
       min-height: 100vh;
     }
     
-    /* ============================================ */
-    /* HEADER */
-    /* ============================================ */
     .main-header {
       width: 100%;
       padding: 12px 16px;
@@ -92,10 +57,7 @@
       top: 0;
       z-index: 100;
     }
-    
-    @media (min-width: 768px) {
-      .main-header { padding: 14px 24px; }
-    }
+    @media (min-width: 768px) { .main-header { padding: 14px 24px; } }
     
     .header-inner {
       display: flex !important;
@@ -108,7 +70,6 @@
       width: 100%;
     }
     
-    /* Logo */
     .logo-link {
       display: inline-flex !important;
       flex-direction: row !important;
@@ -117,7 +78,6 @@
       text-decoration: none !important;
       flex-shrink: 0 !important;
     }
-    
     .logo-icon {
       display: inline-block !important;
       font-size: 2rem !important;
@@ -125,7 +85,6 @@
       flex-shrink: 0 !important;
       filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.6));
     }
-    
     .logo-text {
       display: inline-flex !important;
       flex-direction: column !important;
@@ -134,7 +93,6 @@
       line-height: 1.1 !important;
       gap: 2px !important;
     }
-    
     .logo-title {
       display: block !important;
       font-size: 1.4rem !important;
@@ -143,31 +101,24 @@
       padding: 0 !important;
       line-height: 1.1 !important;
       font-family: 'Playfair Display', serif !important;
-      letter-spacing: 0.5px !important;
-      background: linear-gradient(135deg, #FFD700 0%, #FFED4E 25%, #C0C0C0 50%, #FFD700 75%, #B8860B 100%) !important;
+      background: linear-gradient(135deg, #FFD700, #FFED4E, #C0C0C0, #FFD700, #B8860B) !important;
       -webkit-background-clip: text !important;
       -webkit-text-fill-color: transparent !important;
       background-clip: text !important;
-      color: #FFD700;
     }
-    
     .logo-subtitle {
       display: block !important;
       font-size: 0.7rem !important;
       color: rgba(192, 192, 192, 0.7) !important;
       margin: 0 !important;
-      padding: 0 !important;
       line-height: 1.1 !important;
-      font-weight: 400 !important;
     }
-    
     @media (min-width: 768px) {
       .logo-icon { font-size: 2.4rem !important; }
       .logo-title { font-size: 1.7rem !important; }
       .logo-subtitle { font-size: 0.75rem !important; }
     }
     
-    /* Header Buttons */
     .header-buttons {
       display: inline-flex !important;
       flex-direction: row !important;
@@ -175,7 +126,6 @@
       gap: 8px !important;
       flex-shrink: 0 !important;
     }
-    
     .hdr-btn {
       display: inline-flex !important;
       flex-direction: row !important;
@@ -196,7 +146,6 @@
       font-family: 'Inter', sans-serif !important;
       line-height: 1 !important;
     }
-    
     .hdr-btn:hover {
       background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(192, 192, 192, 0.15)) !important;
       border-color: #FFD700 !important;
@@ -204,30 +153,14 @@
       box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
       transform: translateY(-1px);
     }
-    
-    .hdr-btn-print {
-      background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(184, 134, 11, 0.1)) !important;
-      border-color: rgba(255, 215, 0, 0.4) !important;
-    }
-    
     @media (max-width: 640px) {
       .logo-icon { font-size: 1.6rem !important; }
       .logo-title { font-size: 1.05rem !important; }
       .logo-subtitle { display: none !important; }
-      
-      .hdr-btn {
-        padding: 8px 10px !important;
-        font-size: 1rem !important;
-      }
-      
-      .hdr-btn .btn-label {
-        display: none !important;
-      }
+      .hdr-btn { padding: 8px 10px !important; font-size: 1rem !important; }
+      .hdr-btn .btn-label { display: none !important; }
     }
     
-    /* ============================================ */
-    /* CATEGORY NAV */
-    /* ============================================ */
     .cat-nav {
       width: 100%;
       padding: 10px 12px;
@@ -239,9 +172,7 @@
       z-index: 90;
       scrollbar-width: none;
     }
-    
     .cat-nav::-webkit-scrollbar { display: none; }
-    
     .cat-nav-inner {
       display: flex;
       align-items: center;
@@ -250,7 +181,6 @@
       margin: 0 auto;
       min-width: max-content;
     }
-    
     .cat-btn {
       display: inline-flex;
       align-items: center;
@@ -268,48 +198,56 @@
       flex-shrink: 0;
       text-decoration: none;
     }
-    
     .cat-btn:hover {
       background: rgba(255, 215, 0, 0.12);
       border-color: rgba(255, 215, 0, 0.5);
       color: #FFD700;
       transform: translateY(-2px);
     }
-    
     .cat-btn.active {
       background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(192, 192, 192, 0.2));
       border-color: #FFD700;
       color: #FFD700;
       box-shadow: 0 4px 25px rgba(255, 215, 0, 0.4);
     }
+    @media (max-width: 640px) { .cat-btn { padding: 6px 10px; } }
     
-    @media (max-width: 640px) {
-      .cat-btn { padding: 6px 10px; }
+    .ad-slot {
+      width: 100%;
+      max-width: 728px;
+      margin: 12px auto;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: rgba(255, 215, 0, 0.02);
+      border: 1px dashed rgba(255, 215, 0, 0.15);
+      min-height: 90px;
+      position: relative;
     }
+    .ad-slot:empty { display: none; }
+    .ad-slot::before {
+      content: '📢 Ad Slot — Paste your ad code here';
+      position: absolute;
+      font-size: 0.7rem;
+      color: rgba(255, 215, 0, 0.2);
+      pointer-events: none;
+    }
+    .ad-slot:not(:empty)::before { display: none; }
     
-    /* ============================================ */
-    /* MAIN */
-    /* ============================================ */
     main {
       flex: 1;
       width: 100%;
       padding: 1.5rem 1rem;
     }
-    
     .wrap {
       width: 100%;
       max-width: 900px;
       margin: 0 auto;
     }
     
-    /* ============================================ */
-    /* HERO */
-    /* ============================================ */
-    .hero {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    
+    .hero { text-align: center; margin-bottom: 2rem; }
     .hero-title {
       font-family: 'Playfair Display', serif;
       font-size: 2rem;
@@ -320,46 +258,26 @@
       background-clip: text;
       margin-bottom: 0.5rem;
       filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
-      line-height: 1.2;
     }
-    
-    @media (min-width: 768px) {
-      .hero-title { font-size: 3rem; }
-    }
-    
+    @media (min-width: 768px) { .hero-title { font-size: 3rem; } }
     .hero-sub {
       color: rgba(255, 215, 0, 0.7);
       font-size: 0.8rem;
       letter-spacing: 1px;
       text-transform: uppercase;
-      font-weight: 500;
     }
     
-    @media (min-width: 768px) {
-      .hero-sub { font-size: 0.9rem; }
-    }
-    
-    /* ============================================ */
-    /* CARD */
-    /* ============================================ */
     .card {
-      background: linear-gradient(135deg, rgba(10, 10, 10, 0.98) 0%, rgba(20, 20, 20, 0.98) 100%);
+      background: linear-gradient(135deg, rgba(10, 10, 10, 0.98), rgba(20, 20, 20, 0.98));
       border: 1.5px solid;
-      border-image: linear-gradient(135deg, #FFD700 0%, #C0C0C0 50%, #FFD700 100%) 1;
+      border-image: linear-gradient(135deg, #FFD700, #C0C0C0, #FFD700) 1;
       border-radius: 20px;
       box-shadow: 0 25px 60px -15px rgba(255, 215, 0, 0.25);
       padding: 1.5rem;
       position: relative;
-      overflow: hidden;
     }
+    @media (min-width: 768px) { .card { padding: 2rem; } }
     
-    @media (min-width: 768px) {
-      .card { padding: 2rem; }
-    }
-    
-    /* ============================================ */
-    /* SECTION TITLE */
-    /* ============================================ */
     .sec-title {
       display: flex;
       align-items: center;
@@ -372,7 +290,6 @@
       padding-bottom: 0.75rem;
       border-bottom: 1px solid rgba(255, 215, 0, 0.2);
     }
-    
     .sec-num {
       display: inline-flex;
       align-items: center;
@@ -384,14 +301,10 @@
       color: #000000;
       font-size: 0.75rem;
       font-weight: 800;
-      font-family: 'Inter', sans-serif;
       box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
       flex-shrink: 0;
     }
     
-    /* ============================================ */
-    /* FORM SECTION */
-    /* ============================================ */
     .form-sec {
       margin-bottom: 1.5rem;
       padding: 1.25rem;
@@ -399,16 +312,12 @@
       border: 1px solid rgba(255, 215, 0, 0.1);
       border-radius: 14px;
     }
-    
     .grid-2 {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1rem;
     }
-    
-    @media (min-width: 768px) {
-      .grid-2 { grid-template-columns: 1fr 1fr; }
-    }
+    @media (min-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
     
     .lbl {
       display: block;
@@ -416,15 +325,9 @@
       font-weight: 600;
       color: rgba(255, 215, 0, 0.85);
       margin-bottom: 8px;
-      letter-spacing: 0.3px;
     }
     
-    /* ============================================ */
-    /* INPUTS & SELECTS */
-    /* ============================================ */
-    .inp,
-    .inp-sm,
-    .sel {
+    .inp, .inp-sm, .sel {
       width: 100%;
       padding: 12px 14px;
       background: rgba(0, 0, 0, 0.7);
@@ -437,55 +340,30 @@
       outline: none;
       transition: all 0.25s ease;
     }
-    
-    .inp-sm {
-      padding: 10px 12px;
-      font-size: 0.85rem;
-    }
-    
-    .inp::placeholder,
-    .inp-sm::placeholder {
-      color: rgba(255, 215, 0, 0.3);
-      font-weight: 400;
-    }
-    
-    .inp:focus,
-    .inp-sm:focus,
-    .sel:focus {
+    .inp-sm { padding: 10px 12px; font-size: 0.85rem; }
+    .inp::placeholder, .inp-sm::placeholder { color: rgba(255, 215, 0, 0.3); font-weight: 400; }
+    .inp:focus, .inp-sm:focus, .sel:focus {
       border-color: #FFD700;
       background: rgba(255, 215, 0, 0.05);
       box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.15), 0 0 20px rgba(255, 215, 0, 0.2);
     }
-    
     .sel {
       cursor: pointer;
       appearance: none;
-      -webkit-appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFD700' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: right 10px center;
       background-size: 20px;
       padding-right: 36px;
     }
+    .sel option { background: #1a1a1a; color: #FFD700; }
     
-    .sel option {
-      background: #1a1a1a;
-      color: #FFD700;
-    }
-    
-    /* ============================================ */
-    /* METAL SELECTOR */
-    /* ============================================ */
     .metal-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
-    
-    @media (min-width: 640px) {
-      .metal-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    
+    @media (min-width: 640px) { .metal-grid { grid-template-columns: repeat(3, 1fr); } }
     .metal-btn {
       display: flex;
       flex-direction: column;
@@ -499,59 +377,28 @@
       transition: all 0.3s ease;
       font-family: inherit;
     }
-    
     .metal-btn:hover {
       border-color: rgba(255, 215, 0, 0.5);
       transform: translateY(-2px);
       box-shadow: 0 8px 20px rgba(255, 215, 0, 0.2);
     }
-    
     .metal-btn.active {
       background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(192, 192, 192, 0.15));
       border-color: #FFD700;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.4), inset 0 0 15px rgba(255, 215, 0, 0.1);
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
     }
+    .metal-icon { font-size: 1.5rem; }
+    .metal-name { font-size: 0.75rem; font-weight: 700; color: #FFD700; }
+    .metal-purity { font-size: 0.65rem; color: rgba(192, 192, 192, 0.7); }
     
-    .metal-icon {
-      font-size: 1.5rem;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
-    }
-    
-    .metal-name {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #FFD700;
-    }
-    
-    .metal-purity {
-      font-size: 0.65rem;
-      color: rgba(192, 192, 192, 0.7);
-      font-weight: 500;
-    }
-    
-    /* ============================================ */
-    /* RATE GRID */
-    /* ============================================ */
     .rate-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
-    
-    @media (min-width: 640px) {
-      .rate-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    
-    @media (min-width: 1024px) {
-      .rate-grid { grid-template-columns: repeat(6, 1fr); }
-    }
-    
-    .rate-field {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    
+    @media (min-width: 640px) { .rate-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .rate-grid { grid-template-columns: repeat(6, 1fr); } }
+    .rate-field { display: flex; flex-direction: column; gap: 4px; }
     .rate-field label {
       font-size: 0.7rem;
       font-weight: 600;
@@ -560,7 +407,6 @@
       align-items: center;
       gap: 4px;
     }
-    
     .badge {
       font-size: 0.6rem;
       padding: 1px 5px;
@@ -570,19 +416,12 @@
       font-weight: 700;
     }
     
-    /* ============================================ */
-    /* WEIGHT UNIT SELECTOR */
-    /* ============================================ */
     .unit-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 6px;
     }
-    
-    @media (min-width: 640px) {
-      .unit-grid { grid-template-columns: repeat(6, 1fr); }
-    }
-    
+    @media (min-width: 640px) { .unit-grid { grid-template-columns: repeat(6, 1fr); } }
     .unit-btn {
       padding: 8px 6px;
       background: rgba(0, 0, 0, 0.5);
@@ -596,13 +435,11 @@
       text-align: center;
       font-family: inherit;
     }
-    
     .unit-btn:hover {
       border-color: rgba(255, 215, 0, 0.5);
       color: #FFD700;
       transform: translateY(-1px);
     }
-    
     .unit-btn.active {
       background: linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(192, 192, 192, 0.15));
       border-color: #FFD700;
@@ -610,9 +447,6 @@
       box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
     }
     
-    /* ============================================ */
-    /* CALCULATE BUTTON */
-    /* ============================================ */
     .calc-btn {
       width: 100%;
       padding: 18px;
@@ -630,37 +464,23 @@
       margin-top: 1rem;
       font-family: inherit;
     }
-    
     .calc-btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6);
     }
     
-    .calc-btn:active {
-      transform: translateY(-1px);
-    }
-    
-    /* ============================================ */
-    /* RESULT */
-    /* ============================================ */
     .result-wrap {
       margin-top: 2rem;
       padding-top: 2rem;
       border-top: 2px solid rgba(255, 215, 0, 0.2);
       display: none;
     }
-    
-    .result-wrap.show {
-      display: block;
-      animation: fadeInUp 0.5s ease;
-    }
-    
+    .result-wrap.show { display: block; animation: fadeInUp 0.5s ease; }
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
     
-    /* Big Total Card */
     .total-card {
       padding: 2rem 1.5rem;
       background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(192, 192, 192, 0.06));
@@ -670,7 +490,6 @@
       text-align: center;
       margin-bottom: 1.5rem;
     }
-    
     .total-label {
       font-size: 0.75rem;
       color: rgba(255, 215, 0, 0.7);
@@ -679,12 +498,11 @@
       letter-spacing: 2px;
       font-weight: 600;
     }
-    
     .total-amount {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #FFD700 0%, #FFED4E 50%, #FFD700 100%);
+      background: linear-gradient(135deg, #FFD700, #FFED4E, #FFD700);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -692,42 +510,24 @@
       word-break: break-all;
       filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
     }
+    @media (min-width: 768px) { .total-amount { font-size: 3rem; } }
+    .total-detail { font-size: 0.8rem; color: rgba(192, 192, 192, 0.7); margin-top: 0.5rem; }
     
-    @media (min-width: 768px) {
-      .total-amount { font-size: 3rem; }
-    }
-    
-    .total-detail {
-      font-size: 0.8rem;
-      color: rgba(192, 192, 192, 0.7);
-      margin-top: 0.5rem;
-    }
-    
-    /* Breakdown Title */
     .breakdown-title {
       font-family: 'Playfair Display', serif;
       color: #FFD700;
       font-size: 1.1rem;
       margin: 1.5rem 0 1rem;
       text-align: center;
-      letter-spacing: 0.5px;
     }
     
-    /* Detail Cards */
     .detail-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
-    
-    @media (min-width: 640px) {
-      .detail-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    
-    @media (min-width: 1024px) {
-      .detail-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-    
+    @media (min-width: 640px) { .detail-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .detail-grid { grid-template-columns: repeat(4, 1fr); } }
     .detail-card {
       padding: 14px 10px;
       background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(26, 26, 26, 0.6));
@@ -736,18 +536,12 @@
       text-align: center;
       transition: all 0.3s ease;
     }
-    
     .detail-card:hover {
       border-color: rgba(255, 215, 0, 0.4);
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15);
     }
-    
-    .detail-icon {
-      font-size: 1.3rem;
-      margin-bottom: 6px;
-    }
-    
+    .detail-icon { font-size: 1.3rem; margin-bottom: 6px; }
     .detail-lbl {
       font-size: 0.65rem;
       color: rgba(255, 215, 0, 0.7);
@@ -756,7 +550,6 @@
       font-weight: 600;
       margin-bottom: 4px;
     }
-    
     .detail-val {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.95rem;
@@ -766,9 +559,6 @@
       line-height: 1.3;
     }
     
-    /* ============================================ */
-    /* PRINT BUTTON — RESULT KE NEECHE */
-    /* ============================================ */
     .print-section {
       margin-top: 2rem;
       padding-top: 1.5rem;
@@ -777,22 +567,16 @@
       flex-direction: column;
       gap: 12px;
     }
-    
     @media (min-width: 640px) {
-      .print-section {
-        flex-direction: row;
-        justify-content: center;
-      }
+      .print-section { flex-direction: row; justify-content: center; }
     }
-    
     .big-print-btn {
       display: inline-flex;
-      flex-direction: row;
       align-items: center;
       justify-content: center;
       gap: 10px;
       padding: 16px 32px;
-      background: linear-gradient(135deg, #FFD700 0%, #FFED4E 50%, #B8860B 100%);
+      background: linear-gradient(135deg, #FFD700, #FFED4E, #B8860B);
       border: none;
       border-radius: 14px;
       color: #000000;
@@ -806,20 +590,11 @@
       font-family: inherit;
       width: 100%;
     }
-    
-    @media (min-width: 640px) {
-      .big-print-btn { width: auto; min-width: 240px; }
-    }
-    
+    @media (min-width: 640px) { .big-print-btn { width: auto; min-width: 240px; } }
     .big-print-btn:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 45px rgba(255, 215, 0, 0.7);
     }
-    
-    .big-print-btn:active {
-      transform: translateY(-1px);
-    }
-    
     .sec-btn {
       display: inline-flex;
       align-items: center;
@@ -837,21 +612,13 @@
       font-family: inherit;
       width: 100%;
     }
-    
-    @media (min-width: 640px) {
-      .sec-btn { width: auto; }
-    }
-    
+    @media (min-width: 640px) { .sec-btn { width: auto; } }
     .sec-btn:hover {
       background: rgba(255, 215, 0, 0.2);
       border-color: #FFD700;
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.25);
     }
     
-    /* ============================================ */
-    /* INFO SECTION */
-    /* ============================================ */
     .info-sec {
       margin-top: 1.5rem;
       padding: 1.5rem;
@@ -859,24 +626,20 @@
       border: 1px solid rgba(255, 215, 0, 0.15);
       border-radius: 16px;
     }
-    
     .info-sec h3 {
       color: #FFD700;
       font-family: 'Playfair Display', serif;
       font-size: 1.1rem;
       margin-bottom: 0.75rem;
     }
-    
     .info-sec ol {
       font-size: 0.85rem;
       line-height: 1.8;
       padding-left: 1.25rem;
       color: rgba(192, 192, 192, 0.85);
     }
-    
     .info-sec strong { color: #FFD700; }
     
-    /* Conversion Box */
     .conv-box {
       padding: 12px 14px;
       background: linear-gradient(135deg, rgba(255, 215, 0, 0.06), rgba(192, 192, 192, 0.04));
@@ -884,27 +647,10 @@
       border-radius: 8px;
       margin-top: 10px;
     }
+    .conv-box p { font-size: 0.72rem; color: rgba(255, 215, 0, 0.85); line-height: 1.6; margin: 0; }
     
-    .conv-box p {
-      font-size: 0.72rem;
-      color: rgba(255, 215, 0, 0.85);
-      line-height: 1.6;
-      margin: 0;
-    }
-    
-    /* ============================================ */
-    /* SIGNATURE */
-    /* ============================================ */
-    .sig-space {
-      padding: 24px 16px;
-      text-align: center;
-    }
-    
-    .sig-inner {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    
+    .sig-space { padding: 24px 16px; text-align: center; }
+    .sig-inner { max-width: 600px; margin: 0 auto; }
     .sig-row {
       display: flex;
       align-items: center;
@@ -912,26 +658,14 @@
       gap: 12px;
       margin-bottom: 12px;
     }
-    
     .sig-line {
       flex: 1;
       max-width: 80px;
       height: 1px;
       background: linear-gradient(90deg, transparent, #FFD700, transparent);
     }
-    
-    .sig-text {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      align-items: center;
-    }
-    
-    .sig-crafted {
-      font-size: 0.7rem;
-      color: rgba(192, 192, 192, 0.6);
-    }
-    
+    .sig-text { display: flex; flex-direction: column; gap: 4px; align-items: center; }
+    .sig-crafted { font-size: 0.7rem; color: rgba(192, 192, 192, 0.6); }
     .sig-brand {
       font-size: 0.8rem;
       font-weight: 800;
@@ -941,7 +675,6 @@
       background-clip: text;
       letter-spacing: 1.5px;
     }
-    
     .contact-row {
       display: flex;
       flex-direction: column;
@@ -949,11 +682,7 @@
       gap: 8px;
       justify-content: center;
     }
-    
-    @media (min-width: 768px) {
-      .contact-row { flex-direction: row; gap: 16px; }
-    }
-    
+    @media (min-width: 768px) { .contact-row { flex-direction: row; gap: 16px; } }
     .contact-link {
       display: inline-flex;
       align-items: center;
@@ -961,29 +690,18 @@
       color: rgba(192, 192, 192, 0.7);
       text-decoration: none;
       font-size: 0.75rem;
-      transition: color 0.2s ease;
     }
-    
     .contact-link:hover { color: #FFD700; }
     
-    /* ============================================ */
-    /* FOOTER */
-    /* ============================================ */
     .main-footer {
       width: 100%;
       margin-top: auto;
       padding: 32px 16px 24px;
-      background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+      background: linear-gradient(135deg, #000000, #1a1a1a, #000000);
       border-top: 2px solid;
       border-image: linear-gradient(90deg, transparent, #FFD700, #C0C0C0, #FFD700, transparent) 1;
     }
-    
-    .footer-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    
+    .footer-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
     .footer-links {
       display: flex !important;
       flex-direction: row !important;
@@ -995,30 +713,16 @@
       padding-bottom: 20px !important;
       border-bottom: 1px solid rgba(255, 215, 0, 0.15) !important;
     }
-    
     .footer-links a {
       display: inline-block !important;
       color: #C0C0C0 !important;
       text-decoration: none !important;
       font-size: 0.85rem !important;
-      font-weight: 500 !important;
       padding: 4px 0 !important;
     }
-    
-    .footer-links a:hover {
-      color: #FFD700 !important;
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-    }
-    
-    .footer-copy {
-      color: rgba(255, 215, 0, 0.8);
-      font-size: 0.8rem;
-    }
-    
-    .footer-copy strong {
-      color: #FFD700;
-    }
-    
+    .footer-links a:hover { color: #FFD700 !important; }
+    .footer-copy { color: rgba(255, 215, 0, 0.8); font-size: 0.8rem; }
+    .footer-copy strong { color: #FFD700; }
     @media (max-width: 640px) {
       .main-footer { padding: 24px 12px 20px; }
       .footer-links { gap: 6px 14px; }
@@ -1026,9 +730,6 @@
       .footer-copy { font-size: 0.7rem; }
     }
     
-    /* ============================================ */
-    /* MODAL */
-    /* ============================================ */
     .modal {
       position: fixed !important;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -1038,24 +739,19 @@
       justify-content: center !important;
       padding: 16px;
     }
-    
-    .modal.show {
-      display: flex !important;
-    }
-    
+    .modal.show { display: flex !important; }
     .modal-overlay {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(8px);
     }
-    
     .modal-box {
       position: relative;
       width: 100%;
       max-width: 520px;
       max-height: 90vh;
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
       border: 1.5px solid rgba(255, 215, 0, 0.4);
       border-radius: 20px;
       display: flex !important;
@@ -1063,7 +759,6 @@
       overflow: hidden;
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
     }
-    
     .modal-head {
       display: flex !important;
       flex-direction: row !important;
@@ -1074,14 +769,7 @@
       border-bottom: 1px solid rgba(255, 215, 0, 0.2);
       flex-shrink: 0;
     }
-    
-    .modal-head h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #FFD700;
-      margin: 0;
-    }
-    
+    .modal-head h3 { font-size: 1.05rem; font-weight: 700; color: #FFD700; margin: 0; }
     .modal-close {
       width: 32px;
       height: 32px;
@@ -1097,19 +785,13 @@
       flex-shrink: 0;
       font-family: inherit;
     }
-    
-    .modal-close:hover {
-      background: rgba(255, 215, 0, 0.25);
-      color: #ffffff;
-    }
-    
+    .modal-close:hover { background: rgba(255, 215, 0, 0.25); color: #ffffff; }
     .modal-body {
       flex: 1;
       overflow-y: auto;
       padding: 20px;
       background: #ffffff;
     }
-    
     .modal-foot {
       display: flex !important;
       flex-direction: row !important;
@@ -1122,9 +804,7 @@
       flex-shrink: 0;
       flex-wrap: wrap;
     }
-    
-    .modal-btn-primary,
-    .modal-btn-sec {
+    .modal-btn-primary, .modal-btn-sec {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -1138,53 +818,32 @@
       font-family: 'Inter', sans-serif;
       white-space: nowrap;
     }
-    
     .modal-btn-primary {
       background: linear-gradient(135deg, #FFD700, #B8860B);
       color: #000000;
     }
-    
-    .modal-btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6);
-    }
-    
+    .modal-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6); }
     .modal-btn-sec {
       background: rgba(192, 192, 192, 0.08);
       border: 1px solid rgba(192, 192, 192, 0.3);
       color: #C0C0C0;
     }
-    
-    .modal-btn-sec:hover {
-      background: rgba(192, 192, 192, 0.15);
-      border-color: #FFD700;
-      color: #FFD700;
-    }
-    
+    .modal-btn-sec:hover { background: rgba(192, 192, 192, 0.15); border-color: #FFD700; color: #FFD700; }
     @media (max-width: 480px) {
       .modal-foot { flex-direction: column !important; }
-      .modal-btn-primary,
-      .modal-btn-sec { width: 100%; }
+      .modal-btn-primary, .modal-btn-sec { width: 100%; }
     }
     
-    /* ============================================ */
-    /* RECEIPT */
-    /* ============================================ */
     .receipt {
       background: #ffffff;
       color: #1a1a1a;
-      padding: 20px;
+      padding: 24px;
       border-radius: 12px;
       font-family: 'Inter', sans-serif;
       font-size: 0.8rem;
       line-height: 1.5;
     }
-    
-    .rc-head {
-      text-align: center;
-      padding-bottom: 12px;
-    }
-    
+    .rc-head { text-align: center; padding-bottom: 12px; }
     .rc-logo {
       display: flex !important;
       align-items: center !important;
@@ -1192,23 +851,9 @@
       gap: 8px;
       margin-bottom: 8px;
     }
-    
     .rc-logo-icon { font-size: 1.8rem; }
-    
-    .rc-logo-title {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: #1e1b4b;
-      line-height: 1.1;
-      text-align: left;
-    }
-    
-    .rc-logo-sub {
-      font-size: 0.65rem;
-      color: #666;
-      text-align: left;
-    }
-    
+    .rc-logo-title { font-size: 1.1rem; font-weight: 800; color: #1e1b4b; line-height: 1.1; text-align: left; }
+    .rc-logo-sub { font-size: 0.65rem; color: #666; text-align: left; }
     .rc-title {
       font-size: 0.9rem;
       font-weight: 700;
@@ -1219,7 +864,6 @@
       border-radius: 6px;
       display: inline-block;
     }
-    
     .rc-meta {
       display: flex !important;
       flex-wrap: wrap;
@@ -1229,15 +873,12 @@
       color: #666;
       margin-top: 6px;
     }
-    
     .rc-div {
       height: 1px;
       background: linear-gradient(90deg, transparent, #FFD700, #C0C0C0, transparent);
       margin: 12px 0;
     }
-    
     .rc-sec { margin: 12px 0; }
-    
     .rc-sec-title {
       font-size: 0.75rem;
       font-weight: 700;
@@ -1246,36 +887,12 @@
       padding-bottom: 4px;
       border-bottom: 1px solid #e5e7eb;
     }
-    
-    .rc-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    
-    .rc-table tr {
-      border-bottom: 1px dashed #e5e7eb;
-    }
-    
-    .rc-table tr:last-child {
-      border-bottom: none;
-    }
-    
-    .rc-table td {
-      padding: 5px 0;
-      font-size: 0.75rem;
-    }
-    
-    .rc-table td:first-child {
-      color: #666;
-      text-align: left;
-    }
-    
-    .rc-table td:last-child {
-      color: #1a1a1a;
-      font-weight: 600;
-      text-align: right;
-    }
-    
+    .rc-table { width: 100%; border-collapse: collapse; }
+    .rc-table tr { border-bottom: 1px dashed #e5e7eb; }
+    .rc-table tr:last-child { border-bottom: none; }
+    .rc-table td { padding: 5px 0; font-size: 0.75rem; }
+    .rc-table td:first-child { color: #666; text-align: left; }
+    .rc-table td:last-child { color: #1a1a1a; font-weight: 600; text-align: right; }
     .rc-total {
       display: flex !important;
       align-items: center !important;
@@ -1288,7 +905,6 @@
       font-size: 0.9rem;
       color: #92400e;
     }
-    
     .rc-foot {
       display: flex !important;
       align-items: center !important;
@@ -1298,30 +914,10 @@
       padding-top: 12px;
       border-top: 1px solid #e5e7eb;
     }
-    
-    .rc-foot-left {
-      flex: 1;
-      text-align: left;
-    }
-    
-    .rc-brand {
-      font-size: 0.7rem;
-      font-weight: 800;
-      color: #1e1b4b;
-      margin-bottom: 4px;
-    }
-    
-    .rc-contact {
-      font-size: 0.65rem;
-      color: #666;
-      line-height: 1.5;
-    }
-    
-    .rc-qr {
-      text-align: center;
-      flex-shrink: 0;
-    }
-    
+    .rc-foot-left { flex: 1; text-align: left; }
+    .rc-brand { font-size: 0.7rem; font-weight: 800; color: #1e1b4b; margin-bottom: 4px; }
+    .rc-contact { font-size: 0.65rem; color: #666; line-height: 1.5; }
+    .rc-qr { text-align: center; flex-shrink: 0; }
     .rc-qr #qrcode {
       display: inline-block;
       padding: 4px;
@@ -1329,13 +925,7 @@
       border: 1px solid #e5e7eb;
       border-radius: 6px;
     }
-    
-    .rc-qr-label {
-      font-size: 0.6rem;
-      color: #666;
-      margin-top: 4px;
-    }
-    
+    .rc-qr-label { font-size: 0.6rem; color: #666; margin-top: 4px; }
     .rc-copy {
       text-align: center;
       font-size: 0.65rem;
@@ -1345,17 +935,10 @@
       border-top: 1px solid #e5e7eb;
     }
     
-    /* ============================================ */
-    /* UTILITIES */
-    /* ============================================ */
     .mt-4 { margin-top: 1rem; }
-    .text-center { text-align: center; }
   </style>
 </head>
 <body>
-  <!-- ============================================ -->
-  <!-- HEADER -->
-  <!-- ============================================ -->
   <header class="main-header">
     <div class="header-inner">
       <a href="/" class="logo-link">
@@ -1366,17 +949,12 @@
         </span>
       </a>
       <div class="header-buttons">
-        <a href="/blog/" class="hdr-btn" title="Blog">
-          📝 <span class="btn-label">Blog</span>
-        </a>
-        <button id="theme-toggle" class="hdr-btn" title="Theme">
-          🌙 <span class="btn-label">Dark</span>
-        </button>
+        <a href="/blog/" class="hdr-btn" title="Blog">📝 <span class="btn-label">Blog</span></a>
+        <button id="theme-toggle" class="hdr-btn" title="Theme">🌙 <span class="btn-label">Dark</span></button>
       </div>
     </div>
   </header>
 
-  <!-- CATEGORY NAV -->
   <nav class="cat-nav">
     <div class="cat-nav-inner">
       <a href="/" class="cat-btn"><span>🧮</span> Scientific</a>
@@ -1389,20 +967,18 @@
     </div>
   </nav>
 
-  <!-- MAIN -->
+  <div class="ad-slot ad-slot-top" id="ad-top"></div>
+
   <main>
     <div class="wrap">
       
-      <!-- HERO -->
       <div class="hero">
         <h1 class="hero-title">Gold & Silver Calculator</h1>
         <p class="hero-sub">✨ Ratti • Masha • Tola • Gram • Ounce • KG ✨</p>
       </div>
 
-      <!-- CARD -->
       <div class="card">
         
-        <!-- Step 1: Country -->
         <div class="form-sec">
           <h3 class="sec-title"><span class="sec-num">1</span> Country & Currency</h3>
           <div class="grid-2">
@@ -1416,7 +992,6 @@
                 <option value="USD|US Dollar|🇺🇸">🇺🇸 USA (USD)</option>
                 <option value="GBP|British Pound|🇬🇧">🇬🇧 UK (GBP)</option>
                 <option value="EUR|Euro|🇩🇪">🇩🇪 Germany (EUR)</option>
-                <option value="EUR|Euro|🇫🇷">🇫🇷 France (EUR)</option>
                 <option value="CAD|Canadian Dollar|🇨🇦">🇨🇦 Canada (CAD)</option>
                 <option value="AUD|Australian Dollar|🇦🇺">🇦🇺 Australia (AUD)</option>
                 <option value="BDT|Bangladeshi Taka|🇧🇩">🇧🇩 Bangladesh (BDT)</option>
@@ -1448,7 +1023,6 @@
           </div>
         </div>
 
-        <!-- Step 2: Metal -->
         <div class="form-sec">
           <h3 class="sec-title"><span class="sec-num">2</span> Metal Type</h3>
           <div class="metal-grid">
@@ -1461,42 +1035,22 @@
           </div>
         </div>
 
-        <!-- Step 3: Rate -->
         <div class="form-sec">
           <h3 class="sec-title"><span class="sec-num">3</span> Rate (Any One Unit)</h3>
           <p style="font-size:0.75rem;color:rgba(255,215,0,0.6);margin-bottom:0.75rem;text-align:center;">💡 Enter rate in ANY ONE unit — others auto-calculate</p>
           <div class="rate-grid">
-            <div class="rate-field">
-              <label>⚖️ Ratti <span class="badge">Ratti</span></label>
-              <input type="number" id="rate-ratti" class="inp-sm" placeholder="0.00" step="0.01" />
-            </div>
-            <div class="rate-field">
-              <label>⚖️ Masha <span class="badge">Masha</span></label>
-              <input type="number" id="rate-masha" class="inp-sm" placeholder="0.00" step="0.01" />
-            </div>
-            <div class="rate-field">
-              <label>⚖️ Gram <span class="badge">g</span></label>
-              <input type="number" id="rate-gram" class="inp-sm" placeholder="0.00" step="0.01" />
-            </div>
-            <div class="rate-field">
-              <label>⚖️ Tola <span class="badge">Tola</span></label>
-              <input type="number" id="rate-tola" class="inp-sm" placeholder="0.00" step="0.01" />
-            </div>
-            <div class="rate-field">
-              <label>⚖️ Ounce <span class="badge">oz</span></label>
-              <input type="number" id="rate-ounce" class="inp-sm" placeholder="0.00" step="0.01" />
-            </div>
-            <div class="rate-field">
-              <label>⚖️ KG <span class="badge">kg</span></label>
-              <input type="number" id="rate-kg" class="inp-sm" placeholder="0.00" step="0.01" />
-            </div>
+            <div class="rate-field"><label>⚖️ Ratti <span class="badge">Ratti</span></label><input type="number" id="rate-ratti" class="inp-sm" placeholder="0.00" step="0.01" /></div>
+            <div class="rate-field"><label>⚖️ Masha <span class="badge">Masha</span></label><input type="number" id="rate-masha" class="inp-sm" placeholder="0.00" step="0.01" /></div>
+            <div class="rate-field"><label>⚖️ Gram <span class="badge">g</span></label><input type="number" id="rate-gram" class="inp-sm" placeholder="0.00" step="0.01" /></div>
+            <div class="rate-field"><label>⚖️ Tola <span class="badge">Tola</span></label><input type="number" id="rate-tola" class="inp-sm" placeholder="0.00" step="0.01" /></div>
+            <div class="rate-field"><label>⚖️ Ounce <span class="badge">oz</span></label><input type="number" id="rate-ounce" class="inp-sm" placeholder="0.00" step="0.01" /></div>
+            <div class="rate-field"><label>⚖️ KG <span class="badge">kg</span></label><input type="number" id="rate-kg" class="inp-sm" placeholder="0.00" step="0.01" /></div>
           </div>
           <div class="conv-box">
             <p>💡 <strong>Conversion:</strong> 1 Tola = 12 Masha = 96 Ratti • 1 Masha = 8 Ratti • 1 Ratti = 0.1215 g • 1 Masha = 0.972 g • 1 Tola = 11.6638 g • 1 Ounce = 31.1035 g</p>
           </div>
         </div>
 
-        <!-- Step 4: Weight -->
         <div class="form-sec">
           <h3 class="sec-title"><span class="sec-num">4</span> Weight to Calculate</h3>
           <div class="grid-2">
@@ -1529,10 +1083,8 @@
           </div>
         </div>
 
-        <!-- Calculate Button -->
         <button id="calc-btn" class="calc-btn">✨ Calculate Price</button>
 
-        <!-- RESULT -->
         <div id="result" class="result-wrap">
           
           <div class="total-card">
@@ -1561,40 +1113,33 @@
             <div class="detail-card"><div class="detail-icon">💵</div><div class="detail-lbl">Tax</div><div id="r-tax" class="detail-val">0</div></div>
           </div>
 
-          <!-- ✨ PRINT BUTTON — RESULT KE BILKUL NEECHE -->
           <div class="print-section">
-            <button id="print-result-btn" class="big-print-btn">
-              🖨️ Print This Result
-            </button>
-            <button id="reset-btn" class="sec-btn">
-              🔄 Reset
-            </button>
+            <button id="print-result-btn" class="big-print-btn">🖨️ Print This Result</button>
+            <button id="reset-btn" class="sec-btn">🔄 Reset</button>
           </div>
-
         </div>
       </div>
 
-      <!-- INFO SECTION -->
       <div class="info-sec">
         <h3>💡 How to Use This Calculator</h3>
         <ol>
           <li>Select your country (currency auto-changes)</li>
           <li>Choose metal type (Gold 24K/22K/21K/18K or Silver 999/925)</li>
-          <li>Enter the current rate in <strong>ANY ONE unit</strong> — Ratti, Masha, Gram, Tola, Ounce, or KG</li>
+          <li>Enter the current rate in <strong>ANY ONE unit</strong></li>
           <li>Enter the weight you want to calculate</li>
-          <li>Select the weight unit — Ratti, Masha, Gram, Tola, Ounce, or KG</li>
+          <li>Select the weight unit</li>
           <li>Optionally add making charges and tax</li>
-          <li>Click "Calculate Price" for the total</li>
-          <li>Click "🖨️ Print This Result" to print or save PDF</li>
+          <li>Click "Calculate Price"</li>
+          <li>Click "🖨️ Print This Result" to print</li>
         </ol>
       </div>
-
     </div>
   </main>
 
-  <!-- ============================================ -->
-  <!-- PRINT MODAL -->
-  <!-- ============================================ -->
+  <div class="ad-slot ad-slot-content" id="ad-content"></div>
+
+  <div class="ad-slot ad-slot-bottom" id="ad-bottom"></div>
+
   <div id="modal" class="modal">
     <div class="modal-overlay" id="modal-overlay"></div>
     <div class="modal-box">
@@ -1677,10 +1222,7 @@
             </div>
           </div>
 
-          <div class="rc-copy">
-            © 2026 Bilal Marghoob Creations. All rights reserved.
-          </div>
-
+          <div class="rc-copy">© 2026 Bilal Marghoob Creations. All rights reserved.</div>
         </div>
       </div>
       <div class="modal-foot">
@@ -1691,7 +1233,6 @@
     </div>
   </div>
 
-  <!-- SIGNATURE -->
   <div class="sig-space">
     <div class="sig-inner">
       <div class="sig-row">
@@ -1713,7 +1254,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer class="main-footer">
     <div class="footer-inner">
       <div class="footer-links">
@@ -1732,20 +1272,20 @@
     </div>
   </footer>
 
-  <script type="module">
+  <script>
     // ============================================
-    // SERVICE WORKER (PWA)
+    // SERVICE WORKER
     // ============================================
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').catch(() => {})
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').catch(function() {})
       })
     }
     
     // ============================================
-    // CONVERSION CONSTANTS (grams)
+    // CONSTANTS
     // ============================================
-    const G = {
+    var G = {
       ratti: 0.1215,
       masha: 0.972,
       gram: 1,
@@ -1754,67 +1294,68 @@
       kg: 1000
     }
     
-    const UNITS = ['ratti', 'masha', 'gram', 'tola', 'ounce', 'kg']
+    var UNITS = ['ratti', 'masha', 'gram', 'tola', 'ounce', 'kg']
     
-    // State
-    let selectedPurity = 99.9
-    let selectedMetal = 'Gold 24K'
-    let selectedWeightUnit = 'ratti'
-    let currentCurrency = 'PKR'
-    let currentCountry = '🇵🇰 Pakistan (PKR)'
-    let lastResult = null
+    var selectedPurity = 99.9
+    var selectedMetal = 'Gold 24K'
+    var selectedWeightUnit = 'ratti'
+    var currentCurrency = 'PKR'
+    var currentCountry = '🇵🇰 Pakistan (PKR)'
+    var lastResult = null
     
     // ============================================
     // COUNTRY
     // ============================================
-    const countrySel = document.getElementById('country')
-    const currencyInp = document.getElementById('currency')
+    var countrySel = document.getElementById('country')
+    var currencyInp = document.getElementById('currency')
     
-    countrySel.addEventListener('change', (e) => {
-      const parts = e.target.value.split('|')
+    countrySel.addEventListener('change', function(e) {
+      var parts = e.target.value.split('|')
       currentCurrency = parts[0]
       currentCountry = e.target.options[e.target.selectedIndex].text
-      currencyInp.value = `${parts[0]} — ${parts[1]}`
+      currencyInp.value = parts[0] + ' — ' + parts[1]
     })
     
     // ============================================
     // METAL
     // ============================================
-    document.querySelectorAll('.metal-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.metal-btn').forEach(b => b.classList.remove('active'))
-        btn.classList.add('active')
-        selectedPurity = parseFloat(btn.dataset.purity)
-        selectedMetal = btn.querySelector('.metal-name').textContent
+    var metalBtns = document.querySelectorAll('.metal-btn')
+    for (var m = 0; m < metalBtns.length; m++) {
+      metalBtns[m].addEventListener('click', function() {
+        for (var k = 0; k < metalBtns.length; k++) metalBtns[k].classList.remove('active')
+        this.classList.add('active')
+        selectedPurity = parseFloat(this.dataset.purity)
+        selectedMetal = this.querySelector('.metal-name').textContent
       })
-    })
+    }
     
     // ============================================
     // WEIGHT UNIT
     // ============================================
-    document.querySelectorAll('.unit-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.unit-btn').forEach(b => b.classList.remove('active'))
-        btn.classList.add('active')
-        selectedWeightUnit = btn.dataset.unit
+    var unitBtns = document.querySelectorAll('.unit-btn')
+    for (var u = 0; u < unitBtns.length; u++) {
+      unitBtns[u].addEventListener('click', function() {
+        for (var k = 0; k < unitBtns.length; k++) unitBtns[k].classList.remove('active')
+        this.classList.add('active')
+        selectedWeightUnit = this.dataset.unit
         document.getElementById('weight-unit').value = selectedWeightUnit
       })
-    })
+    }
     
     // ============================================
     // RATE AUTO-CALC
     // ============================================
-    UNITS.forEach(u => {
-      const inp = document.getElementById('rate-' + u)
+    UNITS.forEach(function(unit) {
+      var inp = document.getElementById('rate-' + unit)
       if (!inp) return
-      inp.addEventListener('input', (e) => {
-        const val = parseFloat(e.target.value)
+      inp.addEventListener('input', function(e) {
+        var val = parseFloat(e.target.value)
         if (!val || val <= 0) return
-        const ratePerGram = val / G[u]
-        UNITS.forEach(ou => {
-          if (ou === u) return
-          const other = document.getElementById('rate-' + ou)
-          if (other) other.value = (ratePerGram * G[ou]).toFixed(4)
+        var ratePerGram = val / G[unit]
+        UNITS.forEach(function(otherUnit) {
+          if (otherUnit === unit) return
+          var other = document.getElementById('rate-' + otherUnit)
+          if (other) other.value = (ratePerGram * G[otherUnit]).toFixed(4)
         })
       })
     })
@@ -1822,41 +1363,40 @@
     // ============================================
     // CALCULATE
     // ============================================
-    document.getElementById('calc-btn').addEventListener('click', () => {
-      // Find rate per gram
-      let ratePerGram = 0
-      UNITS.forEach(u => {
+    document.getElementById('calc-btn').addEventListener('click', function() {
+      var ratePerGram = 0
+      UNITS.forEach(function(unit) {
         if (ratePerGram > 0) return
-        const v = parseFloat(document.getElementById('rate-' + u)?.value)
-        if (v > 0) ratePerGram = v / G[u]
+        var el = document.getElementById('rate-' + unit)
+        var v = el ? parseFloat(el.value) : 0
+        if (v > 0) ratePerGram = v / G[unit]
       })
       
       if (!ratePerGram) {
-        alert('❌ Please enter a rate in at least one unit (Ratti, Masha, Gram, Tola, Ounce, or KG)')
+        alert('❌ Please enter a rate in at least one unit')
         return
       }
       
-      const weightVal = parseFloat(document.getElementById('weight').value)
+      var weightVal = parseFloat(document.getElementById('weight').value)
       if (!weightVal || weightVal <= 0) {
         alert('❌ Please enter a valid weight')
         return
       }
       
-      const weightInGrams = weightVal * G[selectedWeightUnit]
-      const metalPrice = weightInGrams * ratePerGram
-      const makingPct = parseFloat(document.getElementById('making').value) || 0
-      const taxPct = parseFloat(document.getElementById('tax').value) || 0
-      const makingAmount = metalPrice * (makingPct / 100)
-      const subtotal = metalPrice + makingAmount
-      const taxAmount = subtotal * (taxPct / 100)
-      const total = subtotal + taxAmount
+      var weightInGrams = weightVal * G[selectedWeightUnit]
+      var metalPrice = weightInGrams * ratePerGram
+      var makingPct = parseFloat(document.getElementById('making').value) || 0
+      var taxPct = parseFloat(document.getElementById('tax').value) || 0
+      var makingAmount = metalPrice * (makingPct / 100)
+      var subtotal = metalPrice + makingAmount
+      var taxAmount = subtotal * (taxPct / 100)
+      var total = subtotal + taxAmount
       
-      // Save for receipt
       lastResult = {
         country: currentCountry,
         currency: currentCurrency,
-        metal: `${selectedMetal} (${selectedPurity}%)`,
-        weight: `${weightVal} ${selectedWeightUnit}`,
+        metal: selectedMetal + ' (' + selectedPurity + '%)',
+        weight: weightVal + ' ' + selectedWeightUnit,
         weightInGrams: weightInGrams,
         ratePerGram: ratePerGram,
         metalPrice: metalPrice,
@@ -1867,9 +1407,8 @@
         total: total
       }
       
-      // Update UI
-      document.getElementById('total-amount').textContent = `${currentCurrency} ${total.toFixed(2)}`
-      document.getElementById('total-detail').textContent = `${weightVal} ${selectedWeightUnit} × ${(ratePerGram * G[selectedWeightUnit]).toFixed(2)} per ${selectedWeightUnit}`
+      document.getElementById('total-amount').textContent = currentCurrency + ' ' + total.toFixed(2)
+      document.getElementById('total-detail').textContent = weightVal + ' ' + selectedWeightUnit + ' × ' + (ratePerGram * G[selectedWeightUnit]).toFixed(2) + ' per ' + selectedWeightUnit
       
       document.getElementById('r-ratti').textContent = (weightInGrams / G.ratti).toFixed(4)
       document.getElementById('r-masha').textContent = (weightInGrams / G.masha).toFixed(4)
@@ -1885,14 +1424,13 @@
       document.getElementById('rr-ounce').textContent = (ratePerGram * G.ounce).toFixed(4)
       document.getElementById('rr-kg').textContent = (ratePerGram * G.kg).toFixed(2)
       
-      document.getElementById('r-metal').textContent = `${currentCurrency} ${metalPrice.toFixed(2)}`
-      document.getElementById('r-making').textContent = `${currentCurrency} ${makingAmount.toFixed(2)}`
-      document.getElementById('r-tax').textContent = `${currentCurrency} ${taxAmount.toFixed(2)}`
+      document.getElementById('r-metal').textContent = currentCurrency + ' ' + metalPrice.toFixed(2)
+      document.getElementById('r-making').textContent = currentCurrency + ' ' + makingAmount.toFixed(2)
+      document.getElementById('r-tax').textContent = currentCurrency + ' ' + taxAmount.toFixed(2)
       
-      // Show result
       document.getElementById('result').classList.add('show')
       
-      setTimeout(() => {
+      setTimeout(function() {
         document.getElementById('result').scrollIntoView({ behavior: 'smooth', block: 'start' })
       }, 100)
     })
@@ -1900,9 +1438,9 @@
     // ============================================
     // RESET
     // ============================================
-    document.getElementById('reset-btn').addEventListener('click', () => {
-      UNITS.forEach(u => {
-        const i = document.getElementById('rate-' + u)
+    document.getElementById('reset-btn').addEventListener('click', function() {
+      UNITS.forEach(function(unit) {
+        var i = document.getElementById('rate-' + unit)
         if (i) i.value = ''
       })
       document.getElementById('weight').value = ''
@@ -1913,16 +1451,15 @@
     })
     
     // ============================================
-    // PRINT BUTTON (RESULT KE NEECHE WALA)
+    // PRINT BUTTON
     // ============================================
-    document.getElementById('print-result-btn').addEventListener('click', () => {
+    document.getElementById('print-result-btn').addEventListener('click', function() {
       if (!lastResult) {
         alert('Please calculate first')
         return
       }
       
-      // Fill receipt
-      const now = new Date()
+      var now = new Date()
       document.getElementById('rc-date').textContent = now.toLocaleDateString()
       document.getElementById('rc-time').textContent = now.toLocaleTimeString()
       document.getElementById('rc-num').textContent = 'G' + Date.now().toString().slice(-8)
@@ -1930,12 +1467,12 @@
       document.getElementById('rc-country').textContent = lastResult.country
       document.getElementById('rc-metal').textContent = lastResult.metal
       document.getElementById('rc-weight').textContent = lastResult.weight
-      document.getElementById('rc-rate').textContent = `${lastResult.currency} ${lastResult.ratePerGram.toFixed(4)}`
+      document.getElementById('rc-rate').textContent = lastResult.currency + ' ' + lastResult.ratePerGram.toFixed(4)
       
-      document.getElementById('rc-metal-price').textContent = `${lastResult.currency} ${lastResult.metalPrice.toFixed(2)}`
-      document.getElementById('rc-making').textContent = `${lastResult.currency} ${lastResult.makingAmount.toFixed(2)}`
-      document.getElementById('rc-tax').textContent = `${lastResult.currency} ${lastResult.taxAmount.toFixed(2)}`
-      document.getElementById('rc-total').textContent = `${lastResult.currency} ${lastResult.total.toFixed(2)}`
+      document.getElementById('rc-metal-price').textContent = lastResult.currency + ' ' + lastResult.metalPrice.toFixed(2)
+      document.getElementById('rc-making').textContent = lastResult.currency + ' ' + lastResult.makingAmount.toFixed(2)
+      document.getElementById('rc-tax').textContent = lastResult.currency + ' ' + lastResult.taxAmount.toFixed(2)
+      document.getElementById('rc-total').textContent = lastResult.currency + ' ' + lastResult.total.toFixed(2)
       
       document.getElementById('rc-r-ratti').textContent = (lastResult.ratePerGram * G.ratti).toFixed(4)
       document.getElementById('rc-r-masha').textContent = (lastResult.ratePerGram * G.masha).toFixed(4)
@@ -1944,8 +1481,7 @@
       document.getElementById('rc-r-ounce').textContent = (lastResult.ratePerGram * G.ounce).toFixed(4)
       document.getElementById('rc-r-kg').textContent = (lastResult.ratePerGram * G.kg).toFixed(2)
       
-      // Generate QR
-      const qrDiv = document.getElementById('qrcode')
+      var qrDiv = document.getElementById('qrcode')
       qrDiv.innerHTML = ''
       if (window.QRCode) {
         new QRCode(qrDiv, {
@@ -1957,45 +1493,38 @@
         })
       }
       
-      // Show modal
       document.getElementById('modal').classList.add('show')
     })
     
     // ============================================
     // MODAL CLOSE
     // ============================================
-    document.getElementById('modal-close').addEventListener('click', () => {
+    document.getElementById('modal-close').addEventListener('click', function() {
       document.getElementById('modal').classList.remove('show')
     })
-    document.getElementById('modal-overlay').addEventListener('click', () => {
+    document.getElementById('modal-overlay').addEventListener('click', function() {
       document.getElementById('modal').classList.remove('show')
     })
     
     // ============================================
-    // PRINT ACTION
+    // PRINT ACTIONS
     // ============================================
-    document.getElementById('do-print').addEventListener('click', () => {
-      window.print()
-    })
-    
-    document.getElementById('do-pdf').addEventListener('click', () => {
-      window.print()
-    })
-    
-    document.getElementById('do-share').addEventListener('click', async () => {
+    document.getElementById('do-print').addEventListener('click', function() { window.print() })
+    document.getElementById('do-pdf').addEventListener('click', function() { window.print() })
+    document.getElementById('do-share').addEventListener('click', function() {
       if (!lastResult) return
-      const text = `🥇 Gold & Silver Calculation\n━━━━━━━━━━━━━━━━━\nMetal: ${lastResult.metal}\nWeight: ${lastResult.weight}\nTotal: ${lastResult.currency} ${lastResult.total.toFixed(2)}\n\n✨ By Bilal Marghoob Creations`
+      var text = '🥇 Gold & Silver Calculation\n━━━━━━━━━━━━━━━━━\nMetal: ' + lastResult.metal + '\nWeight: ' + lastResult.weight + '\nTotal: ' + lastResult.currency + ' ' + lastResult.total.toFixed(2) + '\n\n✨ By Bilal Marghoob Creations'
       if (navigator.share) {
-        try { await navigator.share({ title: 'Gold Calculation', text }) } catch(e) {}
+        navigator.share({ title: 'Gold Calculation', text: text }).catch(function() {})
       } else {
-        navigator.clipboard.writeText(text).then(() => alert('✅ Copied!'))
+        navigator.clipboard.writeText(text).then(function() { alert('✅ Copied!') })
       }
     })
     
     // ============================================
-    // THEME TOGGLE (simple)
+    // THEME TOGGLE
     // ============================================
-    document.getElementById('theme-toggle').addEventListener('click', () => {
+    document.getElementById('theme-toggle').addEventListener('click', function() {
       document.body.classList.toggle('light-mode')
     })
     

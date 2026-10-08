@@ -3,13 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  
   <meta name="google-site-verification" content="YURRl7lFPPVBzQPZig0p3ehPlBPsKFwkNoMg5zPHobw" />
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GT9PMPYBPF"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,97 +14,18 @@
     gtag('js', new Date());
     gtag('config', 'G-GT9PMPYBPF');
   </script>
-  
-  <title>Free Time Calculator Online — Add & Subtract Hours, Minutes, Seconds | SciCalcPro</title>
-  <meta name="description" content="Free online time calculator. Add or subtract hours, minutes, seconds instantly with total time. Printable receipt. By Bilal Marghoob Creations." />
+  <title>Free Time Calculator Online — Add & Subtract Time | SciCalcPro</title>
+  <meta name="description" content="Free online time calculator. Add or subtract hours, minutes, seconds instantly." />
   <meta name="author" content="Bilal Marghoob" />
-  <meta name="keywords" content="time calculator, add time, subtract time, hours calculator, minutes calculator, seconds calculator, time addition, free time calculator online" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-  
-  <meta property="og:title" content="Free Time Calculator Online — Add & Subtract Time | SciCalcPro" />
-  <meta property="og:description" content="Add or subtract hours, minutes, seconds instantly." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://scicalcpro.vercel.app/time-calculator.html" />
-  <meta property="og:site_name" content="SciCalcPro" />
-  
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Free Time Calculator — SciCalcPro" />
-  <meta name="twitter:description" content="Add or subtract time instantly." />
-  
   <link rel="canonical" href="https://scicalcpro.vercel.app/time-calculator.html" />
   <meta name="theme-color" content="#0b1020" />
-  
-  <!-- PWA -->
   <link rel="manifest" href="/manifest.json" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="SciCalcPro" />
-  
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Free Time Calculator — SciCalcPro",
-    "url": "https://scicalcpro.vercel.app/time-calculator.html",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "Any",
-    "description": "Free online time calculator to add or subtract hours, minutes, and seconds.",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "author": { "@type": "Organization", "name": "Bilal Marghoob Creations" }
-  }
-  </script>
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How do I add time?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Select 'Add' mode, enter two times in hours, minutes, seconds, and click Calculate Time."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I subtract time?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, choose 'Subtract' mode. Time 1 must be greater than Time 2."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does the calculator handle seconds over 60?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, the calculator auto-converts. Example: 90 seconds = 1 minute 30 seconds."
-        }
-      }
-    ]
-  }
-  </script>
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scicalcpro.vercel.app/" },
-      { "@type": "ListItem", "position": 2, "name": "Time Calculator", "item": "https://scicalcpro.vercel.app/time-calculator.html" }
-    ]
-  }
-  </script>
 </head>
 <body data-page="time">
   <div id="app">
-    
-    <!-- HEADER -->
     <header class="main-header">
       <div class="header-content">
         <a href="/" class="header-logo">
@@ -118,71 +36,33 @@
           </div>
         </a>
         <div class="header-actions">
-          <button id="print-btn" class="header-btn print-btn" title="Print Result">
-            🖨️ <span class="hidden md:inline">Print</span>
-          </button>
-          <a href="/blog/" class="header-btn" title="Blog">
-            📝 <span class="hidden md:inline">Blog</span>
-          </a>
-          <button id="theme-toggle" class="header-btn" title="Theme">
-            🌙 <span class="hidden md:inline">Dark</span>
-          </button>
+          <button id="print-btn" class="header-btn print-btn" title="Print">🖨️ <span class="btn-label">Print</span></button>
+          <a href="/blog/" class="header-btn blog-btn" title="Blog">📝 <span class="btn-label">Blog</span></a>
+          <button id="download-app-btn" class="header-btn download-btn" title="Download">⬇️ <span class="btn-label">Download</span></button>
+          <button id="theme-toggle" class="header-btn theme-btn" title="Theme">🌙 <span class="btn-label">Dark</span></button>
         </div>
       </div>
     </header>
 
-    <!-- CATEGORY NAVIGATION -->
     <nav class="category-nav">
       <div class="category-nav-content">
-        <a href="/" class="category-btn">
-          <span class="category-icon">🧮</span>
-          <span class="category-label">Scientific Calculator</span>
-        </a>
-        <a href="/age-calculator.html" class="category-btn">
-          <span class="category-icon">🎂</span>
-          <span class="category-label">Age Calculator</span>
-        </a>
-        <a href="/profit-calculator.html" class="category-btn">
-          <span class="category-icon">💰</span>
-          <span class="category-label">Profit Calculator</span>
-        </a>
-        <a href="/area-calculator.html" class="category-btn">
-          <span class="category-icon">📐</span>
-          <span class="category-label">Area Calculator</span>
-        </a>
-        <a href="/time-calculator.html" class="category-btn active">
-          <span class="category-icon">⏰</span>
-          <span class="category-label">Time Calculator</span>
-        </a>
-        <a href="/engineering-calculator.html" class="category-btn">
-          <span class="category-icon">⚙️</span>
-          <span class="category-label">Engineering Calculator</span>
-        </a>
-        <a href="/gold-silver-calculator.html" class="category-btn">
-          <span class="category-icon">🥇</span>
-          <span class="category-label">Gold & Silver Calculator</span>
-        </a>
+        <a href="/" class="category-btn"><span class="category-icon">🧮</span><span class="category-label">Scientific</span></a>
+        <a href="/age-calculator.html" class="category-btn"><span class="category-icon">🎂</span><span class="category-label">Age</span></a>
+        <a href="/profit-calculator.html" class="category-btn"><span class="category-icon">💰</span><span class="category-label">Profit</span></a>
+        <a href="/area-calculator.html" class="category-btn"><span class="category-icon">📐</span><span class="category-label">Area</span></a>
+        <a href="/time-calculator.html" class="category-btn active"><span class="category-icon">⏰</span><span class="category-label">Time</span></a>
+        <a href="/engineering-calculator.html" class="category-btn"><span class="category-icon">⚙️</span><span class="category-label">Engineering</span></a>
+        <a href="/gold-silver-calculator.html" class="category-btn"><span class="category-icon">🥇</span><span class="category-label">Gold & Silver</span></a>
       </div>
     </nav>
 
-    <!-- AD SLOT: TOP -->
-    <div class="ad-slot ad-slot-top" id="ad-top">
-      <!-- 👇 YAHAN APNA AD CODE PASTE KAREIN 👇 -->
-      
-    </div>
+    <div class="ad-slot ad-slot-top" id="ad-top"></div>
 
-    <!-- MAIN CONTENT -->
     <main class="flex-1 flex items-start justify-center p-3 md:p-6">
-      
       <div class="w-full max-w-7xl flex flex-col lg:flex-row gap-4 md:gap-6 items-start justify-center">
         
-        <!-- LEFT SIDEBAR AD SLOT -->
-        <aside class="ad-slot ad-slot-sidebar hidden xl:block" id="ad-sidebar">
-          <!-- 👇 YAHAN APNA AD CODE PASTE KAREIN 👇 -->
-          
-        </aside>
+        <aside class="ad-slot ad-slot-sidebar hidden xl:block" id="ad-sidebar"></aside>
 
-        <!-- CENTER — CALCULATOR -->
         <div class="w-full max-w-2xl mx-auto flex-1">
           
           <div class="text-center mb-6">
@@ -193,21 +73,19 @@
           </div>
 
           <div class="glass-calculator rounded-3xl p-6 md:p-8 relative overflow-hidden">
-            
             <div class="watermark" aria-hidden="true">
               <div class="watermark-text">Time Calculator</div>
             </div>
 
             <div class="relative z-10">
-              
-              <div class="mb-4" data-help="name-input">
+              <div class="mb-4">
                 <label class="block text-sm font-semibold text-white/80 mb-2">
                   👤 Your Name <span class="text-white/40 font-normal">(optional)</span>
                 </label>
-                <input type="text" id="name-input" class="age-input" placeholder="Enter your name for personalized result" maxlength="30" />
+                <input type="text" id="name-input" class="age-input" placeholder="Enter your name" maxlength="30" />
               </div>
 
-              <div class="mb-6" data-help="mode-selector">
+              <div class="mb-6">
                 <label class="block text-sm font-semibold text-white/80 mb-2">
                   ➕ Operation <span class="text-rose-400">*</span>
                 </label>
@@ -217,7 +95,7 @@
                 </div>
               </div>
 
-              <div class="mb-4" data-help="time1-input">
+              <div class="mb-4">
                 <label class="block text-sm font-semibold text-white/80 mb-2">
                   🕐 Time 1 <span class="text-rose-400">*</span>
                 </label>
@@ -233,7 +111,7 @@
                 </div>
               </div>
 
-              <div class="mb-6" data-help="time2-input">
+              <div class="mb-6">
                 <label class="block text-sm font-semibold text-white/80 mb-2">
                   🕑 Time 2 <span class="text-rose-400">*</span>
                 </label>
@@ -249,44 +127,28 @@
                 </div>
               </div>
 
-              <button id="calculate-time" class="time-calculate-btn" data-help="calculate-time">
+              <button id="calculate-time" class="time-calculate-btn">
                 ✨ Calculate Time
               </button>
 
               <div id="time-result" class="age-result hidden">
-                
                 <div class="age-main-result">
                   <div class="text-xs text-white/50 mb-1 uppercase tracking-wider" id="result-greeting">Result</div>
                   <div id="time-display" class="time-display">00:00:00</div>
                 </div>
 
                 <div class="age-details-grid">
-                  <div class="age-detail-card">
-                    <div class="age-detail-icon">⏰</div>
-                    <div class="age-detail-label">Total Hours</div>
-                    <div id="result-hours" class="age-detail-value">0</div>
-                  </div>
-                  <div class="age-detail-card">
-                    <div class="age-detail-icon">⏱️</div>
-                    <div class="age-detail-label">Total Minutes</div>
-                    <div id="result-minutes" class="age-detail-value">0</div>
-                  </div>
-                  <div class="age-detail-card">
-                    <div class="age-detail-icon">⏲️</div>
-                    <div class="age-detail-label">Total Seconds</div>
-                    <div id="result-seconds" class="age-detail-value">0</div>
-                  </div>
+                  <div class="age-detail-card"><div class="age-detail-icon">⏰</div><div class="age-detail-label">Total Hours</div><div id="result-hours" class="age-detail-value">0</div></div>
+                  <div class="age-detail-card"><div class="age-detail-icon">⏱️</div><div class="age-detail-label">Total Minutes</div><div id="result-minutes" class="age-detail-value">0</div></div>
+                  <div class="age-detail-card"><div class="age-detail-icon">⏲️</div><div class="age-detail-label">Total Seconds</div><div id="result-seconds" class="age-detail-value">0</div></div>
                 </div>
 
                 <div class="flex gap-2 mt-4">
                   <button id="print-result-btn" class="age-reset-btn" style="background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #1a1a1a; font-weight: 700;">
                     🖨️ Print Result
                   </button>
-                  <button id="reset-time" class="age-reset-btn" data-help="reset-time">
-                    🔄 Calculate Again
-                  </button>
+                  <button id="reset-time" class="age-reset-btn">🔄 Calculate Again</button>
                 </div>
-
               </div>
             </div>
 
@@ -295,81 +157,40 @@
               <div class="stamp-subtext">C R E A T I O N S</div>
             </div>
           </div>
-
-          <div class="gold-info-section">
-            <h2 class="text-lg font-bold text-white/90 mb-3">📖 How to Use This Time Calculator</h2>
-            <ol class="text-sm text-white/70 space-y-2 list-decimal list-inside mb-4">
-              <li><strong>Enter your name</strong> (optional)</li>
-              <li>Choose <strong>Add</strong> or <strong>Subtract</strong> mode</li>
-              <li>Enter <strong>Time 1</strong> (hours, minutes, seconds)</li>
-              <li>Enter <strong>Time 2</strong> (hours, minutes, seconds)</li>
-              <li>Click <strong>"Calculate Time"</strong></li>
-              <li>View total hours, minutes, and seconds</li>
-            </ol>
-
-            <h2 class="text-lg font-bold text-white/90 mb-3 mt-6">✨ Features</h2>
-            <ul class="text-sm text-white/70 space-y-1 list-disc list-inside">
-              <li>Add two time values</li>
-              <li>Subtract two time values</li>
-              <li>Auto-conversion (60 sec = 1 min, 60 min = 1 hour)</li>
-              <li>Total hours, minutes, seconds</li>
-              <li>Optional name for personalized results</li>
-              <li>Print or save as PDF</li>
-            </ul>
-          </div>
-
         </div>
 
-        <!-- RIGHT SIDEBAR — GUIDE -->
         <aside id="help-sidebar" class="help-sidebar w-full lg:w-80 lg:max-w-xs">
-          
           <div class="help-header">
-            <h2 class="help-title">📖 Button Guide</h2>
-            <button id="help-toggle" class="help-toggle-btn lg:hidden" title="Toggle Guide">▼</button>
+            <h2 class="help-title">📖 Guide</h2>
+            <button id="help-toggle" class="help-toggle-btn lg:hidden">▼</button>
           </div>
-
           <div id="help-content" class="help-content">
-            
             <div class="help-default" id="help-default">
               <div class="help-welcome-icon">👆</div>
-              <h3 class="help-welcome-title">Hover Over Any Field</h3>
-              <p class="help-welcome-text">
-                Point at or tap any input or mode button to see its complete guide.
-              </p>
-              <div class="help-tip-box">
-                <div class="help-tip-icon">💡</div>
-                <p class="help-tip-text">
-                  Select mode, enter two times, and calculate.
-                </p>
-              </div>
+              <h3 class="help-welcome-title">Time Calculator</h3>
+              <p class="help-welcome-text">Add or subtract two times.</p>
             </div>
-
             <div class="help-dynamic hidden" id="help-dynamic"></div>
-
           </div>
-
           <div class="help-quick-ref">
             <h3 class="help-quick-title">⚡ Quick Tips</h3>
             <ul class="help-quick-list">
-              <li>Name is <strong>optional</strong></li>
-              <li>Choose <strong>Add/Subtract</strong> first</li>
-              <li>Minutes: <strong>0-59</strong></li>
-              <li>Press <strong>Print</strong> for receipt</li>
+              <li>Choose Add/Subtract first</li>
+              <li>Minutes: 0-59</li>
+              <li>Seconds: 0-59</li>
+              <li>Press Print for receipt</li>
             </ul>
           </div>
-
         </aside>
-
       </div>
     </main>
 
-    <!-- AD SLOT: IN-CONTENT -->
-    <div class="ad-slot ad-slot-content" id="ad-content">
-      <!-- 👇 YAHAN APNA AD CODE PASTE KAREIN 👇 -->
-      
+    <div class="ad-slot ad-slot-content" id="ad-content"></div>
+
+    <div class="max-w-2xl mx-auto px-4 mb-6">
+      <button id="download-app-big" class="download-btn">Download SciCalcPro App</button>
     </div>
 
-    <!-- SIGNATURE SPACE -->
     <div class="signature-space">
       <div class="max-w-2xl mx-auto text-center">
         <div class="brand-signature mb-3">
@@ -394,13 +215,8 @@
       </div>
     </div>
 
-    <!-- AD SLOT: BOTTOM -->
-    <div class="ad-slot ad-slot-bottom" id="ad-bottom">
-      <!-- 👇 YAHAN APNA AD CODE PASTE KAREIN 👇 -->
-      
-    </div>
+    <div class="ad-slot ad-slot-bottom" id="ad-bottom"></div>
 
-    <!-- FOOTER -->
     <footer class="main-footer">
       <div class="footer-content">
         <div class="footer-links">
@@ -420,19 +236,15 @@
     </footer>
   </div>
 
-  <!-- PRINT MODAL -->
   <div id="print-modal" class="print-modal hidden">
     <div class="print-modal-overlay" id="print-modal-overlay"></div>
     <div class="print-modal-content">
-      
       <div class="print-modal-header">
-        <h3 class="text-lg font-bold text-white">🖨️ Print Preview</h3>
+        <h3>🖨️ Print Preview</h3>
         <button id="print-modal-close" class="print-modal-close">✕</button>
       </div>
-
       <div class="print-modal-body">
         <div id="receipt-content" class="receipt">
-          
           <div class="receipt-header">
             <div class="receipt-logo">
               <span class="receipt-logo-icon">🧮</span>
@@ -448,9 +260,7 @@
               <div>Receipt #: <span id="receipt-number">—</span></div>
             </div>
           </div>
-
           <div class="receipt-divider"></div>
-
           <div class="receipt-section">
             <div class="receipt-section-title">👤 Details</div>
             <table class="receipt-table">
@@ -460,9 +270,7 @@
               <tr><td>Time 2</td><td id="receipt-time2">—</td></tr>
             </table>
           </div>
-
           <div class="receipt-divider"></div>
-
           <div class="receipt-section">
             <div class="receipt-section-title">📊 Result</div>
             <table class="receipt-table">
@@ -472,9 +280,7 @@
               <tr><td>Total Seconds</td><td id="receipt-seconds">—</td></tr>
             </table>
           </div>
-
           <div class="receipt-divider"></div>
-
           <div class="receipt-footer">
             <div class="receipt-footer-left">
               <div class="receipt-brand">✨ BILAL MARGHOOB CREATIONS</div>
@@ -487,23 +293,203 @@
               <div class="receipt-qr-label">Scan me</div>
             </div>
           </div>
-
-          <div class="receipt-copyright">
-            © 2026 Bilal Marghoob Creations. All rights reserved.
-          </div>
-
+          <div class="receipt-copyright">© 2026 Bilal Marghoob Creations. All rights reserved.</div>
         </div>
       </div>
-
       <div class="print-modal-footer">
         <button id="print-action" class="print-btn-primary">🖨️ Print</button>
         <button id="pdf-action" class="print-btn-secondary">📄 Save PDF</button>
         <button id="share-action" class="print-btn-secondary">💬 Share</button>
       </div>
-
     </div>
   </div>
   
-  <script type="module" src="/src/time-calculator.js"></script>
+  <script type="module">
+    import './src/style.css'
+    
+    // ============================================
+    // DOWNLOAD BUTTONS
+    // ============================================
+    let deferredPrompt = null
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault()
+      deferredPrompt = e
+    })
+    function handleDownloadClick() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt()
+        deferredPrompt.userChoice.then(() => { deferredPrompt = null })
+      } else {
+        alert('💡 SciCalcPro is a Progressive Web App!\n\nTo install:\n• Android Chrome: Menu → Install app\n• iOS Safari: Share → Add to Home Screen\n• Desktop Chrome: Address bar install icon')
+      }
+    }
+    
+    // ============================================
+    // TIME CALCULATOR
+    // ============================================
+    let currentMode = 'add'
+    let lastCalculation = null
+    
+    const modeBtns = document.querySelectorAll('.time-mode-btn')
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentMode = btn.dataset.mode
+        modeBtns.forEach(b => b.classList.remove('active'))
+        btn.classList.add('active')
+      })
+    })
+    
+    document.getElementById('calculate-time').addEventListener('click', () => {
+      const nameValue = document.getElementById('name-input').value.trim()
+      const h1 = parseInt(document.getElementById('time1-hours').value) || 0
+      const m1 = parseInt(document.getElementById('time1-minutes').value) || 0
+      const s1 = parseInt(document.getElementById('time1-seconds').value) || 0
+      const h2 = parseInt(document.getElementById('time2-hours').value) || 0
+      const m2 = parseInt(document.getElementById('time2-minutes').value) || 0
+      const s2 = parseInt(document.getElementById('time2-seconds').value) || 0
+      
+      const total1 = h1 * 3600 + m1 * 60 + s1
+      const total2 = h2 * 3600 + m2 * 60 + s2
+      let resultSeconds = currentMode === 'add' ? total1 + total2 : total1 - total2
+      
+      if (resultSeconds < 0) {
+        alert('Time cannot be negative. Time 1 must be larger than Time 2.')
+        return
+      }
+      
+      const rHours = Math.floor(resultSeconds / 3600)
+      const rMinutes = Math.floor((resultSeconds % 3600) / 60)
+      const rSecs = resultSeconds % 60
+      
+      const resultString = `${String(rHours).padStart(2, '0')}:${String(rMinutes).padStart(2, '0')}:${String(rSecs).padStart(2, '0')}`
+      
+      lastCalculation = {
+        name: nameValue,
+        mode: currentMode === 'add' ? 'Add' : 'Subtract',
+        time1: `${String(h1).padStart(2, '0')}:${String(m1).padStart(2, '0')}:${String(s1).padStart(2, '0')}`,
+        time2: `${String(h2).padStart(2, '0')}:${String(m2).padStart(2, '0')}:${String(s2).padStart(2, '0')}`,
+        resultString: resultString,
+        totalHours: rHours,
+        totalMinutes: Math.floor(resultSeconds / 60),
+        totalSeconds: resultSeconds
+      }
+      
+      document.getElementById('result-greeting').textContent = nameValue ? `${nameValue}'s Time Result` : 'Result'
+      document.getElementById('time-display').textContent = resultString
+      document.getElementById('result-hours').textContent = rHours.toLocaleString()
+      document.getElementById('result-minutes').textContent = Math.floor(resultSeconds / 60).toLocaleString()
+      document.getElementById('result-seconds').textContent = resultSeconds.toLocaleString()
+      
+      const resultDiv = document.getElementById('time-result')
+      resultDiv.classList.remove('hidden')
+      resultDiv.classList.add('fade-in')
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    })
+    
+    document.getElementById('reset-time').addEventListener('click', () => {
+      document.getElementById('name-input').value = ''
+      document.querySelectorAll('.time-input').forEach(i => i.value = '')
+      document.getElementById('time-result').classList.add('hidden')
+      document.getElementById('time-result').classList.remove('fade-in')
+      lastCalculation = null
+    })
+    
+    // ============================================
+    // PRINT MODAL
+    // ============================================
+    function openPrintModal() {
+      if (!lastCalculation) {
+        alert('Please calculate time first')
+        return
+      }
+      const c = lastCalculation
+      const now = new Date()
+      
+      document.getElementById('receipt-date').textContent = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })
+      document.getElementById('receipt-time').textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
+      document.getElementById('receipt-number').textContent = `TIM-${Date.now().toString().slice(-8)}`
+      
+      document.getElementById('receipt-name').textContent = c.name || '—'
+      document.getElementById('receipt-mode').textContent = c.mode
+      document.getElementById('receipt-time1').textContent = c.time1
+      document.getElementById('receipt-time2').textContent = c.time2
+      document.getElementById('receipt-result').textContent = c.resultString
+      document.getElementById('receipt-hours').textContent = c.totalHours.toLocaleString()
+      document.getElementById('receipt-minutes').textContent = c.totalMinutes.toLocaleString()
+      document.getElementById('receipt-seconds').textContent = c.totalSeconds.toLocaleString()
+      
+      const qrDiv = document.getElementById('qrcode')
+      qrDiv.innerHTML = ''
+      if (window.QRCode) {
+        new QRCode(qrDiv, {
+          text: 'https://scicalcpro.vercel.app/time-calculator.html',
+          width: 80, height: 80,
+          colorDark: '#1e1b4b', colorLight: '#ffffff'
+        })
+      }
+      
+      document.getElementById('print-modal').classList.remove('hidden')
+      document.body.style.overflow = 'hidden'
+    }
+    
+    function closePrintModal() {
+      document.getElementById('print-modal').classList.add('hidden')
+      document.body.style.overflow = ''
+    }
+    
+    document.getElementById('print-result-btn').addEventListener('click', openPrintModal)
+    const printBtn = document.getElementById('print-btn')
+    if (printBtn) printBtn.addEventListener('click', openPrintModal)
+    document.getElementById('print-modal-overlay').addEventListener('click', closePrintModal)
+    document.getElementById('print-modal-close').addEventListener('click', closePrintModal)
+    document.getElementById('print-action').addEventListener('click', () => window.print())
+    document.getElementById('pdf-action').addEventListener('click', () => window.print())
+    document.getElementById('share-action').addEventListener('click', async () => {
+      if (!lastCalculation) return
+      const c = lastCalculation
+      const text = `⏰ Time Calculation\n━━━━━━━━━━━━━━━\nOperation: ${c.mode}\nTime 1: ${c.time1}\nTime 2: ${c.time2}\nResult: ${c.resultString}\n\n✨ By Bilal Marghoob Creations`
+      if (navigator.share) {
+        try { await navigator.share({ title: 'Time Calculation', text }) } catch(e) {}
+      } else {
+        navigator.clipboard.writeText(text).then(() => alert('✅ Copied!'))
+      }
+    })
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !document.getElementById('print-modal').classList.contains('hidden')) {
+        closePrintModal()
+      }
+    })
+    
+    // ============================================
+    // THEME TOGGLE
+    // ============================================
+    const themeToggle = document.getElementById('theme-toggle')
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode')
+        const isLight = document.body.classList.contains('light-mode')
+        themeToggle.innerHTML = isLight ? '☀️ <span class="btn-label">Light</span>' : '🌙 <span class="btn-label">Dark</span>'
+      })
+    }
+    
+    // Help toggle
+    const helpToggle = document.getElementById('help-toggle')
+    if (helpToggle) {
+      helpToggle.addEventListener('click', () => {
+        const content = document.getElementById('help-content')
+        content.classList.toggle('collapsed')
+        helpToggle.textContent = content.classList.contains('collapsed') ? '▼' : '▲'
+      })
+    }
+    
+    // Download buttons
+    const dlBtn = document.getElementById('download-app-btn')
+    if (dlBtn) dlBtn.addEventListener('click', handleDownloadClick)
+    const dlBigBtn = document.getElementById('download-app-big')
+    if (dlBigBtn) dlBigBtn.addEventListener('click', handleDownloadClick)
+    
+    console.log('✅ Time Calculator ready')
+  </script>
 </body>
 </html>

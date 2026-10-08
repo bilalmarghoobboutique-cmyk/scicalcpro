@@ -3,13 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  
   <meta name="google-site-verification" content="YURRl7lFPPVBzQPZig0p3ehPlBPsKFwkNoMg5zPHobw" />
-  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GT9PMPYBPF"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -17,97 +14,18 @@
     gtag('js', new Date());
     gtag('config', 'G-GT9PMPYBPF');
   </script>
-  
   <title>Free Engineering Calculator Online — Ohm's Law, Power, Energy | SciCalcPro</title>
-  <meta name="description" content="Free online engineering calculator. Calculate Ohm's Law, Power, and Energy instantly with formulas and printable receipt. By Bilal Marghoob Creations." />
+  <meta name="description" content="Free online engineering calculator. Calculate Ohm's Law, Power, and Energy instantly." />
   <meta name="author" content="Bilal Marghoob" />
-  <meta name="keywords" content="engineering calculator, ohms law calculator, power calculator, energy calculator, electrical calculator, voltage calculator, current calculator, resistance calculator, free engineering calculator online" />
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-  
-  <meta property="og:title" content="Free Engineering Calculator Online — Ohm's Law, Power, Energy" />
-  <meta property="og:description" content="Calculate Ohm's Law, Power, and Energy instantly. Free online tool." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://scicalcpro.vercel.app/engineering-calculator.html" />
-  <meta property="og:site_name" content="SciCalcPro" />
-  
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Free Engineering Calculator — SciCalcPro" />
-  <meta name="twitter:description" content="Calculate Ohm's Law, Power, Energy instantly." />
-  
   <link rel="canonical" href="https://scicalcpro.vercel.app/engineering-calculator.html" />
   <meta name="theme-color" content="#0b1020" />
-  
-  <!-- PWA -->
   <link rel="manifest" href="/manifest.json" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="SciCalcPro" />
-  
   <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Free Engineering Calculator — SciCalcPro",
-    "url": "https://scicalcpro.vercel.app/engineering-calculator.html",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "Any",
-    "description": "Free online engineering calculator for Ohm's Law, Power, and Energy.",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "author": { "@type": "Organization", "name": "Bilal Marghoob Creations" }
-  }
-  </script>
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is Ohm's Law?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ohm's Law states V = I × R (Voltage = Current × Resistance). Enter any two values to find the third."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I calculate electrical power?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Power (P) = Voltage (V) × Current (I). Enter both and click Calculate."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I calculate energy?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Energy (E) = Power (P) × Time (t). Enter power in watts and time in hours."
-        }
-      }
-    ]
-  }
-  </script>
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://scicalcpro.vercel.app/" },
-      { "@type": "ListItem", "position": 2, "name": "Engineering Calculator", "item": "https://scicalcpro.vercel.app/engineering-calculator.html" }
-    ]
-  }
-  </script>
 </head>
 <body data-page="engineering">
   <div id="app">
-    
-    <!-- HEADER -->
     <header class="main-header">
       <div class="header-content">
         <a href="/" class="header-logo">
@@ -118,71 +36,33 @@
           </div>
         </a>
         <div class="header-actions">
-          <button id="print-btn" class="header-btn print-btn" title="Print Result">
-            🖨️ <span class="hidden md:inline">Print</span>
-          </button>
-          <a href="/blog/" class="header-btn" title="Blog">
-            📝 <span class="hidden md:inline">Blog</span>
-          </a>
-          <button id="theme-toggle" class="header-btn" title="Theme">
-            🌙 <span class="hidden md:inline">Dark</span>
-          </button>
+          <button id="print-btn" class="header-btn print-btn" title="Print">🖨️ <span class="btn-label">Print</span></button>
+          <a href="/blog/" class="header-btn blog-btn" title="Blog">📝 <span class="btn-label">Blog</span></a>
+          <button id="download-app-btn" class="header-btn download-btn" title="Download">⬇️ <span class="btn-label">Download</span></button>
+          <button id="theme-toggle" class="header-btn theme-btn" title="Theme">🌙 <span class="btn-label">Dark</span></button>
         </div>
       </div>
     </header>
 
-    <!-- CATEGORY NAVIGATION -->
     <nav class="category-nav">
       <div class="category-nav-content">
-        <a href="/" class="category-btn">
-          <span class="category-icon">🧮</span>
-          <span class="category-label">Scientific Calculator</span>
-        </a>
-        <a href="/age-calculator.html" class="category-btn">
-          <span class="category-icon">🎂</span>
-          <span class="category-label">Age Calculator</span>
-        </a>
-        <a href="/profit-calculator.html" class="category-btn">
-          <span class="category-icon">💰</span>
-          <span class="category-label">Profit Calculator</span>
-        </a>
-        <a href="/area-calculator.html" class="category-btn">
-          <span class="category-icon">📐</span>
-          <span class="category-label">Area Calculator</span>
-        </a>
-        <a href="/time-calculator.html" class="category-btn">
-          <span class="category-icon">⏰</span>
-          <span class="category-label">Time Calculator</span>
-        </a>
-        <a href="/engineering-calculator.html" class="category-btn active">
-          <span class="category-icon">⚙️</span>
-          <span class="category-label">Engineering Calculator</span>
-        </a>
-        <a href="/gold-silver-calculator.html" class="category-btn">
-          <span class="category-icon">🥇</span>
-          <span class="category-label">Gold & Silver Calculator</span>
-        </a>
+        <a href="/" class="category-btn"><span class="category-icon">🧮</span><span class="category-label">Scientific</span></a>
+        <a href="/age-calculator.html" class="category-btn"><span class="category-icon">🎂</span><span class="category-label">Age</span></a>
+        <a href="/profit-calculator.html" class="category-btn"><span class="category-icon">💰</span><span class="category-label">Profit</span></a>
+        <a href="/area-calculator.html" class="category-btn"><span class="category-icon">📐</span><span class="category-label">Area</span></a>
+        <a href="/time-calculator.html" class="category-btn"><span class="category-icon">⏰</span><span class="category-label">Time</span></a>
+        <a href="/engineering-calculator.html" class="category-btn active"><span class="category-icon">⚙️</span><span class="category-label">Engineering</span></a>
+        <a href="/gold-silver-calculator.html" class="category-btn"><span class="category-icon">🥇</span><span class="category-label">Gold & Silver</span></a>
       </div>
     </nav>
 
-    <!-- AD SLOT: TOP -->
-    <div class="ad-slot ad-slot-top" id="ad-top">
-      <!-- 👇 YAHAN APNA AD CODE PASTE KAREIN 👇 -->
-      
-    </div>
+    <div class="ad-slot ad-slot-top" id="ad-top"></div>
 
-    <!-- MAIN CONTENT -->
     <main class="flex-1 flex items-start justify-center p-3 md:p-6">
-      
       <div class="w-full max-w-7xl flex flex-col lg:flex-row gap-4 md:gap-6 items-start justify-center">
         
-        <!-- LEFT SIDEBAR AD SLOT -->
-        <aside class="ad-slot ad-slot-sidebar hidden xl:block" id="ad-sidebar">
-          <!-- 👇 YAHAN APNA AD CODE PASTE KAREIN 👇 -->
-          
-        </aside>
+        <aside class="ad-slot ad-slot-sidebar hidden xl:block" id="ad-sidebar"></aside>
 
-        <!-- CENTER — CALCULATOR -->
         <div class="w-full max-w-2xl mx-auto flex-1">
           
           <div class="text-center mb-6">
@@ -193,21 +73,19 @@
           </div>
 
           <div class="glass-calculator rounded-3xl p-6 md:p-8 relative overflow-hidden">
-            
             <div class="watermark" aria-hidden="true">
               <div class="watermark-text">Engineering</div>
             </div>
 
             <div class="relative z-10">
-              
-              <div class="mb-4" data-help="name-input">
+              <div class="mb-4">
                 <label class="block text-sm font-semibold text-white/80 mb-2">
                   👤 Your Name <span class="text-white/40 font-normal">(optional)</span>
                 </label>
-                <input type="text" id="name-input" class="age-input" placeholder="Enter your name for personalized result" maxlength="30" />
+                <input type="text" id="name-input" class="age-input" placeholder="Enter your name" maxlength="30" />
               </div>
 
-              <div class="mb-6" data-help="eng-selector">
+              <div class="mb-6">
                 <label class="block text-sm font-semibold text-white/80 mb-2">
                   ⚡ Select Calculator <span class="text-rose-400">*</span>
                 </label>
@@ -221,15 +99,15 @@
               <!-- Ohm's Law -->
               <div class="eng-input-group" data-eng="ohm">
                 <p class="text-xs text-white/50 mb-3">V = I × R (Voltage = Current × Resistance)</p>
-                <div class="mb-4" data-help="ohm-voltage">
+                <div class="mb-4">
                   <label class="block text-sm font-semibold text-white/80 mb-2">⚡ Voltage (V)</label>
                   <input type="number" id="ohm-voltage" class="age-input" placeholder="Enter voltage (volts)" step="0.01" />
                 </div>
-                <div class="mb-4" data-help="ohm-current">
+                <div class="mb-4">
                   <label class="block text-sm font-semibold text-white/80 mb-2">🔌 Current (I)</label>
                   <input type="number" id="ohm-current" class="age-input" placeholder="Enter current (amperes)" step="0.01" />
                 </div>
-                <div class="mb-4" data-help="ohm-resistance">
+                <div class="mb-4">
                   <label class="block text-sm font-semibold text-white/80 mb-2">⚙️ Resistance (R)</label>
                   <input type="number" id="ohm-resistance" class="age-input" placeholder="Enter resistance (ohms)" step="0.01" />
                 </div>
@@ -239,11 +117,11 @@
               <!-- Power -->
               <div class="eng-input-group hidden" data-eng="power">
                 <p class="text-xs text-white/50 mb-3">P = V × I (Power = Voltage × Current)</p>
-                <div class="mb-4" data-help="power-voltage">
+                <div class="mb-4">
                   <label class="block text-sm font-semibold text-white/80 mb-2">⚡ Voltage (V)</label>
                   <input type="number" id="power-voltage" class="age-input" placeholder="Enter voltage (volts)" step="0.01" />
                 </div>
-                <div class="mb-4" data-help="power-current">
+                <div class="mb-4">
                   <label class="block text-sm font-semibold text-white/80 mb-2">🔌 Current (I)</label>
                   <input type="number" id="power-current" class="age-input" placeholder="Enter current (amperes)" step="0.01" />
                 </div>
@@ -252,49 +130,37 @@
               <!-- Energy -->
               <div class="eng-input-group hidden" data-eng="energy">
                 <p class="text-xs text-white/50 mb-3">E = P × t (Energy = Power × Time)</p>
-                <div class="mb-4" data-help="energy-power">
+                <div class="mb-4">
                   <label class="block text-sm font-semibold text-white/80 mb-2">⚡ Power (P)</label>
                   <input type="number" id="energy-power" class="age-input" placeholder="Enter power (watts)" step="0.01" />
                 </div>
-                <div class="mb-4" data-help="energy-time">
+                <div class="mb-4">
                   <label class="block text-sm font-semibold text-white/80 mb-2">⏱️ Time (t)</label>
                   <input type="number" id="energy-time" class="age-input" placeholder="Enter time (hours)" step="0.01" />
                 </div>
               </div>
 
-              <button id="calculate-eng" class="eng-calculate-btn" data-help="calculate-eng">
+              <button id="calculate-eng" class="eng-calculate-btn">
                 ✨ Calculate
               </button>
 
               <div id="eng-result" class="age-result hidden">
-                
                 <div class="age-main-result">
                   <div class="text-xs text-white/50 mb-1 uppercase tracking-wider" id="result-greeting">Result</div>
                   <div id="eng-display" class="eng-display">0</div>
                 </div>
 
                 <div class="age-details-grid">
-                  <div class="age-detail-card">
-                    <div class="age-detail-icon">📊</div>
-                    <div class="age-detail-label">Formula</div>
-                    <div id="eng-formula" class="age-detail-value">V = I × R</div>
-                  </div>
-                  <div class="age-detail-card">
-                    <div class="age-detail-icon">🔢</div>
-                    <div class="age-detail-label">Unit</div>
-                    <div id="eng-unit" class="age-detail-value">Volts</div>
-                  </div>
+                  <div class="age-detail-card"><div class="age-detail-icon">📊</div><div class="age-detail-label">Formula</div><div id="eng-formula" class="age-detail-value">V = I × R</div></div>
+                  <div class="age-detail-card"><div class="age-detail-icon">🔢</div><div class="age-detail-label">Unit</div><div id="eng-unit" class="age-detail-value">Volts</div></div>
                 </div>
 
                 <div class="flex gap-2 mt-4">
                   <button id="print-result-btn" class="age-reset-btn" style="background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #1a1a1a; font-weight: 700;">
                     🖨️ Print Result
                   </button>
-                  <button id="reset-eng" class="age-reset-btn" data-help="reset-eng">
-                    🔄 Calculate Again
-                  </button>
+                  <button id="reset-eng" class="age-reset-btn">🔄 Calculate Again</button>
                 </div>
-
               </div>
             </div>
 
@@ -303,78 +169,40 @@
               <div class="stamp-subtext">C R E A T I O N S</div>
             </div>
           </div>
-
-          <div class="gold-info-section">
-            <h2 class="text-lg font-bold text-white/90 mb-3">📖 How to Use This Engineering Calculator</h2>
-            <ol class="text-sm text-white/70 space-y-2 list-decimal list-inside mb-4">
-              <li><strong>Enter your name</strong> (optional)</li>
-              <li>Select <strong>Ohm's Law, Power, or Energy</strong></li>
-              <li>Enter the required values</li>
-              <li>Click <strong>"Calculate"</strong></li>
-              <li>View the result, formula, and unit</li>
-              <li>Click <strong>Print</strong> for a receipt</li>
-            </ol>
-
-            <h2 class="text-lg font-bold text-white/90 mb-3 mt-6">📐 Formulas Used</h2>
-            <ul class="text-sm text-white/70 space-y-1 list-disc list-inside">
-              <li>Ohm's Law: V = I × R</li>
-              <li>Power: P = V × I</li>
-              <li>Energy: E = P × t</li>
-            </ul>
-          </div>
-
         </div>
 
-        <!-- RIGHT SIDEBAR — GUIDE -->
         <aside id="help-sidebar" class="help-sidebar w-full lg:w-80 lg:max-w-xs">
-          
           <div class="help-header">
-            <h2 class="help-title">📖 Button Guide</h2>
-            <button id="help-toggle" class="help-toggle-btn lg:hidden" title="Toggle Guide">▼</button>
+            <h2 class="help-title">📖 Guide</h2>
+            <button id="help-toggle" class="help-toggle-btn lg:hidden">▼</button>
           </div>
-
           <div id="help-content" class="help-content">
-            
             <div class="help-default" id="help-default">
               <div class="help-welcome-icon">👆</div>
-              <h3 class="help-welcome-title">Hover Over Any Field</h3>
-              <p class="help-welcome-text">
-                Point at or tap any input to see its complete guide and formula.
-              </p>
-              <div class="help-tip-box">
-                <div class="help-tip-icon">💡</div>
-                <p class="help-tip-text">
-                  Select calculator type, enter values, and click Calculate.
-                </p>
-              </div>
+              <h3 class="help-welcome-title">Engineering Calculator</h3>
+              <p class="help-welcome-text">Select Ohm's Law, Power, or Energy.</p>
             </div>
-
             <div class="help-dynamic hidden" id="help-dynamic"></div>
-
           </div>
-
           <div class="help-quick-ref">
             <h3 class="help-quick-title">⚡ Quick Tips</h3>
             <ul class="help-quick-list">
-              <li>Name is <strong>optional</strong></li>
-              <li>Ohm's Law: leave <strong>1 field empty</strong></li>
-              <li>Use <strong>decimals</strong> for accuracy</li>
-              <li>Press <strong>Print</strong> for receipt</li>
+              <li>Name is optional</li>
+              <li>Ohm's Law: leave 1 empty</li>
+              <li>Use decimals for accuracy</li>
+              <li>Press Print for receipt</li>
             </ul>
           </div>
-
         </aside>
-
       </div>
     </main>
 
-    <!-- AD SLOT: IN-CONTENT -->
-    <div class="ad-slot ad-slot-content" id="ad-content">
-      <!-- 👇 YAHAN APNA AD CODE PASTE KAREIN 👇 -->
-      
+    <div class="ad-slot ad-slot-content" id="ad-content"></div>
+
+    <div class="max-w-2xl mx-auto px-4 mb-6">
+      <button id="download-app-big" class="download-btn">Download SciCalcPro App</button>
     </div>
 
-    <!-- SIGNATURE SPACE -->
     <div class="signature-space">
       <div class="max-w-2xl mx-auto text-center">
         <div class="brand-signature mb-3">
@@ -399,13 +227,8 @@
       </div>
     </div>
 
-    <!-- AD SLOT: BOTTOM -->
-    <div class="ad-slot ad-slot-bottom" id="ad-bottom">
-      <!-- 👇 YAHAN APNA AD CODE PASTE KAREIN 👇 -->
-      
-    </div>
+    <div class="ad-slot ad-slot-bottom" id="ad-bottom"></div>
 
-    <!-- FOOTER -->
     <footer class="main-footer">
       <div class="footer-content">
         <div class="footer-links">
@@ -425,19 +248,15 @@
     </footer>
   </div>
 
-  <!-- PRINT MODAL -->
   <div id="print-modal" class="print-modal hidden">
     <div class="print-modal-overlay" id="print-modal-overlay"></div>
     <div class="print-modal-content">
-      
       <div class="print-modal-header">
-        <h3 class="text-lg font-bold text-white">🖨️ Print Preview</h3>
+        <h3>🖨️ Print Preview</h3>
         <button id="print-modal-close" class="print-modal-close">✕</button>
       </div>
-
       <div class="print-modal-body">
         <div id="receipt-content" class="receipt">
-          
           <div class="receipt-header">
             <div class="receipt-logo">
               <span class="receipt-logo-icon">🧮</span>
@@ -453,9 +272,7 @@
               <div>Receipt #: <span id="receipt-number">—</span></div>
             </div>
           </div>
-
           <div class="receipt-divider"></div>
-
           <div class="receipt-section">
             <div class="receipt-section-title">👤 Details</div>
             <table class="receipt-table">
@@ -463,9 +280,7 @@
               <tr><td>Calculator Type</td><td id="receipt-type">—</td></tr>
             </table>
           </div>
-
           <div class="receipt-divider"></div>
-
           <div class="receipt-section">
             <div class="receipt-section-title">📊 Result</div>
             <table class="receipt-table">
@@ -475,9 +290,7 @@
               <tr><td>Unit</td><td id="receipt-unit">—</td></tr>
             </table>
           </div>
-
           <div class="receipt-divider"></div>
-
           <div class="receipt-footer">
             <div class="receipt-footer-left">
               <div class="receipt-brand">✨ BILAL MARGHOOB CREATIONS</div>
@@ -490,23 +303,238 @@
               <div class="receipt-qr-label">Scan me</div>
             </div>
           </div>
-
-          <div class="receipt-copyright">
-            © 2026 Bilal Marghoob Creations. All rights reserved.
-          </div>
-
+          <div class="receipt-copyright">© 2026 Bilal Marghoob Creations. All rights reserved.</div>
         </div>
       </div>
-
       <div class="print-modal-footer">
         <button id="print-action" class="print-btn-primary">🖨️ Print</button>
         <button id="pdf-action" class="print-btn-secondary">📄 Save PDF</button>
         <button id="share-action" class="print-btn-secondary">💬 Share</button>
       </div>
-
     </div>
   </div>
   
-  <script type="module" src="/src/engineering-calculator.js"></script>
+  <script type="module">
+    import './src/style.css'
+    
+    // ============================================
+    // DOWNLOAD BUTTONS
+    // ============================================
+    let deferredPrompt = null
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault()
+      deferredPrompt = e
+    })
+    function handleDownloadClick() {
+      if (deferredPrompt) {
+        deferredPrompt.prompt()
+        deferredPrompt.userChoice.then(() => { deferredPrompt = null })
+      } else {
+        alert('💡 SciCalcPro is a Progressive Web App!\n\nTo install:\n• Android Chrome: Menu → Install app\n• iOS Safari: Share → Add to Home Screen\n• Desktop Chrome: Address bar install icon')
+      }
+    }
+    
+    // ============================================
+    // ENGINEERING CALCULATOR
+    // ============================================
+    let currentEng = 'ohm'
+    let lastCalculation = null
+    
+    const engBtns = document.querySelectorAll('.eng-btn')
+    const engGroups = document.querySelectorAll('.eng-input-group')
+    
+    engBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentEng = btn.dataset.eng
+        engBtns.forEach(b => b.classList.remove('active'))
+        btn.classList.add('active')
+        engGroups.forEach(g => {
+          g.classList.toggle('hidden', g.dataset.eng !== currentEng)
+        })
+      })
+    })
+    
+    document.getElementById('calculate-eng').addEventListener('click', () => {
+      const nameValue = document.getElementById('name-input').value.trim()
+      let result = 0, formula = '', unit = '', typeName = '', inputs = ''
+      
+      if (currentEng === 'ohm') {
+        const v = parseFloat(document.getElementById('ohm-voltage').value)
+        const i = parseFloat(document.getElementById('ohm-current').value)
+        const r = parseFloat(document.getElementById('ohm-resistance').value)
+        
+        const count = [v, i, r].filter(x => !isNaN(x)).length
+        if (count < 2) {
+          alert('Please enter at least 2 values')
+          return
+        }
+        
+        if (isNaN(v)) {
+          result = i * r
+          formula = 'V = I × R'
+          unit = 'Volts'
+          typeName = "Ohm's Law — Voltage"
+          inputs = `I = ${i}A, R = ${r}Ω`
+        } else if (isNaN(i)) {
+          result = v / r
+          formula = 'I = V / R'
+          unit = 'Amperes'
+          typeName = "Ohm's Law — Current"
+          inputs = `V = ${v}V, R = ${r}Ω`
+        } else if (isNaN(r)) {
+          result = v / i
+          formula = 'R = V / I'
+          unit = 'Ohms'
+          typeName = "Ohm's Law — Resistance"
+          inputs = `V = ${v}V, I = ${i}A`
+        } else {
+          result = v
+          formula = 'V = I × R'
+          unit = 'Volts'
+          typeName = "Ohm's Law — Voltage"
+          inputs = `V = ${v}V, I = ${i}A, R = ${r}Ω`
+        }
+      } else if (currentEng === 'power') {
+        const v = parseFloat(document.getElementById('power-voltage').value)
+        const i = parseFloat(document.getElementById('power-current').value)
+        if (isNaN(v) || isNaN(i)) {
+          alert('Please enter voltage and current')
+          return
+        }
+        result = v * i
+        formula = 'P = V × I'
+        unit = 'Watts'
+        typeName = 'Electrical Power'
+        inputs = `V = ${v}V, I = ${i}A`
+      } else if (currentEng === 'energy') {
+        const p = parseFloat(document.getElementById('energy-power').value)
+        const t = parseFloat(document.getElementById('energy-time').value)
+        if (isNaN(p) || isNaN(t)) {
+          alert('Please enter power and time')
+          return
+        }
+        result = p * t
+        formula = 'E = P × t'
+        unit = 'Watt-hours'
+        typeName = 'Energy'
+        inputs = `P = ${p}W, t = ${t}h`
+      }
+      
+      lastCalculation = { name: nameValue, typeName, inputs, formula, result, unit }
+      
+      document.getElementById('result-greeting').textContent = nameValue ? `${nameValue}'s Result` : 'Result'
+      document.getElementById('eng-display').textContent = result.toFixed(4) + ' ' + unit
+      document.getElementById('eng-formula').textContent = formula
+      document.getElementById('eng-unit').textContent = unit
+      
+      const resultDiv = document.getElementById('eng-result')
+      resultDiv.classList.remove('hidden')
+      resultDiv.classList.add('fade-in')
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    })
+    
+    document.getElementById('reset-eng').addEventListener('click', () => {
+      document.getElementById('name-input').value = ''
+      document.querySelectorAll('.age-input').forEach(i => i.value = '')
+      document.getElementById('eng-result').classList.add('hidden')
+      document.getElementById('eng-result').classList.remove('fade-in')
+      lastCalculation = null
+    })
+    
+    // ============================================
+    // PRINT MODAL
+    // ============================================
+    function openPrintModal() {
+      if (!lastCalculation) {
+        alert('Please calculate first')
+        return
+      }
+      const c = lastCalculation
+      const now = new Date()
+      
+      document.getElementById('receipt-date').textContent = now.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })
+      document.getElementById('receipt-time').textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
+      document.getElementById('receipt-number').textContent = `ENG-${Date.now().toString().slice(-8)}`
+      
+      document.getElementById('receipt-name').textContent = c.name || '—'
+      document.getElementById('receipt-type').textContent = c.typeName
+      document.getElementById('receipt-inputs').textContent = c.inputs
+      document.getElementById('receipt-formula').textContent = c.formula
+      document.getElementById('receipt-result').textContent = c.result.toFixed(4)
+      document.getElementById('receipt-unit').textContent = c.unit
+      
+      const qrDiv = document.getElementById('qrcode')
+      qrDiv.innerHTML = ''
+      if (window.QRCode) {
+        new QRCode(qrDiv, {
+          text: 'https://scicalcpro.vercel.app/engineering-calculator.html',
+          width: 80, height: 80,
+          colorDark: '#1e1b4b', colorLight: '#ffffff'
+        })
+      }
+      
+      document.getElementById('print-modal').classList.remove('hidden')
+      document.body.style.overflow = 'hidden'
+    }
+    
+    function closePrintModal() {
+      document.getElementById('print-modal').classList.add('hidden')
+      document.body.style.overflow = ''
+    }
+    
+    document.getElementById('print-result-btn').addEventListener('click', openPrintModal)
+    const printBtn = document.getElementById('print-btn')
+    if (printBtn) printBtn.addEventListener('click', openPrintModal)
+    document.getElementById('print-modal-overlay').addEventListener('click', closePrintModal)
+    document.getElementById('print-modal-close').addEventListener('click', closePrintModal)
+    document.getElementById('print-action').addEventListener('click', () => window.print())
+    document.getElementById('pdf-action').addEventListener('click', () => window.print())
+    document.getElementById('share-action').addEventListener('click', async () => {
+      if (!lastCalculation) return
+      const c = lastCalculation
+      const text = `⚙️ Engineering Calculation\n━━━━━━━━━━━━━━━\nType: ${c.typeName}\nInputs: ${c.inputs}\nFormula: ${c.formula}\nResult: ${c.result.toFixed(4)} ${c.unit}\n\n✨ By Bilal Marghoob Creations`
+      if (navigator.share) {
+        try { await navigator.share({ title: 'Engineering Calculation', text }) } catch(e) {}
+      } else {
+        navigator.clipboard.writeText(text).then(() => alert('✅ Copied!'))
+      }
+    })
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !document.getElementById('print-modal').classList.contains('hidden')) {
+        closePrintModal()
+      }
+    })
+    
+    // ============================================
+    // THEME TOGGLE
+    // ============================================
+    const themeToggle = document.getElementById('theme-toggle')
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode')
+        const isLight = document.body.classList.contains('light-mode')
+        themeToggle.innerHTML = isLight ? '☀️ <span class="btn-label">Light</span>' : '🌙 <span class="btn-label">Dark</span>'
+      })
+    }
+    
+    // Help toggle
+    const helpToggle = document.getElementById('help-toggle')
+    if (helpToggle) {
+      helpToggle.addEventListener('click', () => {
+        const content = document.getElementById('help-content')
+        content.classList.toggle('collapsed')
+        helpToggle.textContent = content.classList.contains('collapsed') ? '▼' : '▲'
+      })
+    }
+    
+    // Download buttons
+    const dlBtn = document.getElementById('download-app-btn')
+    if (dlBtn) dlBtn.addEventListener('click', handleDownloadClick)
+    const dlBigBtn = document.getElementById('download-app-big')
+    if (dlBigBtn) dlBigBtn.addEventListener('click', handleDownloadClick)
+    
+    console.log('✅ Engineering Calculator ready')
+  </script>
 </body>
 </html>
